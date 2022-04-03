@@ -1,0 +1,23 @@
+class {{ module_info.name }}Presenter {
+    private let disposeBag = DisposeBag()
+    weak var view: {{ module_info.name }}ViewInput?
+    var interactor: {{ module_info.name }}InteractorInput?
+    var router: {{ module_info.name }}Router?
+    var textManager: {{ module_info.name }}TextManagerProtocol?
+
+    init() {
+        BaseTextManager.onLanguageChanged.bind {[weak self] in
+            self?.languageChanged()
+        }.disposed(by: self.disposeBag)
+    }
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
+
+    func viewDidLoad() {
+    }
+
+    private func languageChanged() {
+        self.view.updateTexts()
+    }
+}

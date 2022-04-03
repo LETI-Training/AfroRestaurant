@@ -1,0 +1,22 @@
+import UIKit
+
+class {{ module_info.name }}Assembly {
+
+    static func assemble() -> UIViewController {
+        let view = {{ module_info.name }}ViewController()
+        let router = {{ module_info.name }}Router()
+        let presenter = {{ module_info.name }}Presenter()
+        let interactor = {{ module_info.name }}Interactor()
+        let textManager = {{ module_info.name }}TextManager()
+
+        view.presenter = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.textManager = textManager
+        presenter.router = router
+        router.view = view
+
+        return view
+    }
+
+}
