@@ -40,6 +40,24 @@ final class SignupViewController: BaseViewController {
         return label
     }()
     
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "Display Name:"
+        label.textColor = .textPrimary
+        label.font = .font(.regular, size: 12.0)
+        label.sizeToFit()
+        return label
+    }()
+    
+    private lazy var nameTextField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.layer.cornerRadius = 12.0
+        textField.textColor = .textPrimary
+        textField.autocapitalizationType = .none
+        textField.backgroundColor = .textField
+        return textField
+    }()
+    
     private lazy var emailLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "E-mail:"
@@ -99,7 +117,7 @@ final class SignupViewController: BaseViewController {
     
     private lazy var phoneNumberLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Verify Password:"
+        label.text = "Phone Number:"
         label.textColor = .textPrimary
         label.font = .font(.regular, size: 12.0)
         label.sizeToFit()
@@ -110,7 +128,6 @@ final class SignupViewController: BaseViewController {
         let textField = UITextField(frame: .zero)
         textField.layer.cornerRadius = 12.0
         textField.textColor = .textPrimary
-        textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.backgroundColor = .textField
         textField.keyboardType = .phonePad
@@ -119,7 +136,7 @@ final class SignupViewController: BaseViewController {
     
     private lazy var signupButton: UIButton = {
         let button = UIButton(frame: .zero)
-        button.setTitle("SIGN IN", for: .normal)
+        button.setTitle("CREATE ACCOUNT", for: .normal)
         button.setTitleColor(.background, for: .normal)
         button.titleLabel?.font = .font(.regular, size: 12.0)
         button.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
@@ -141,8 +158,8 @@ final class SignupViewController: BaseViewController {
             color: .brandOrange,
             text: "here",
             font: .font(.regular, size: 12.0)
-        ) {
-            
+        ) { [weak self] in
+            self?.loginButtonTapped()
         }
         label.addLinkActionsObserving()
         label.attributedText = attributedText
@@ -174,7 +191,9 @@ final class SignupViewController: BaseViewController {
     
     private func addSubviews() {
         view.addSubview(contentScrollView)
-        [welcomeLabel,
+        [nameLabel,
+         nameTextField,
+         welcomeLabel,
          welcomeSubLabel,
          emailLabel,
          emailTextField,
@@ -206,8 +225,20 @@ final class SignupViewController: BaseViewController {
             make.leading.trailing.equalToSuperview().inset(30.0)
         }
         
-        emailLabel.snp.makeConstraints { make in
+        nameLabel.snp.makeConstraints { make in
             make.top.equalTo(welcomeSubLabel.snp.bottom).offset(38.0)
+            make.leading.equalToSuperview().inset(appearance.leadingTrailingInset)
+        }
+        
+        nameTextField.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(5.0)
+            make.leading.equalTo(view.snp.leading).inset(appearance.leadingTrailingInset)
+            make.trailing.equalTo(view.snp.trailing).inset(appearance.leadingTrailingInset)
+            make.height.equalTo(50.0)
+        }
+        
+        emailLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.bottom).offset(20.0)
             make.leading.equalToSuperview().inset(appearance.leadingTrailingInset)
         }
         
@@ -255,14 +286,14 @@ final class SignupViewController: BaseViewController {
         }
         
         signupButton.snp.makeConstraints { make in
-            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(63.0)
+            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(33.0)
             make.width.equalTo(192.0)
             make.centerX.equalToSuperview()
             make.height.equalTo(50.0)
         }
         
         loginLabel.snp.makeConstraints { make in
-            make.top.equalTo(signupButton.snp.bottom).offset(97.0)
+            make.top.equalTo(signupButton.snp.bottom).offset(27.0)
             make.centerX.equalToSuperview()
             make.bottom.lessThanOrEqualToSuperview()
         }
@@ -282,17 +313,18 @@ final class SignupViewController: BaseViewController {
 
 private extension SignupViewController {
     @objc private func signupButtonTapped() {
+        presenter?.didTapCreateAccountButton(
+            name: nameTextField.text,
+            email: emailTextField.text,
+            password: passwordTextField.text,
+            passwordVerify: veryifyPasswordTextField.text,
+            phoneNumber: phoneNumberTextField.text
+        )
     }
     
-    @objc private func loginButtonTapped() {
-        //        presentAlertWithTF(title: "Reset Password",
-        //                           actionCancel: ActionAlertModel(actionText: "Cancel", actionHandler: {}),
-        //                           actionComplete: ActionAlertModel(actionText: "Reset", actionHandler: {}),
-        //                           placeHolder: "Please enter your email") { email in
-        //            self.presenter?.resetPassword(email: email)
-        //        }
+    private func loginButtonTapped() {
+        presenter?.didTapLogInLabel()
     }
 }
 
-extension SignupViewController: SignupViewInput {
-}
+extension SignupViewController: SignupViewInput {}

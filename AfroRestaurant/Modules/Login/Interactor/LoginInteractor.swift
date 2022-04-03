@@ -1,5 +1,5 @@
 class LoginInteractor {
-    let authService: AuthorizationServiceInput?
+    private let authService: AuthorizationServiceInput?
     var authErrorListner: ((_ errorText: String) -> Void)?
     
     init(authService: AuthorizationServiceInput?) {
@@ -23,23 +23,13 @@ extension LoginInteractor: LoginInteractorInput {
 }
 
 extension LoginInteractor: AuthorizationServiceOutput {
-    func authServiceDidLogUserOut() {}
-    
-    func authServiceDidSignUserIn() {}
-    
-    func authServiceDidRegisterUser() {}
-    
-    func authServiceDidSendOutPasswordResetMail() {}
-    
     func authorizationService(didFailWith error: AuthorizationService.ErrorType) {
         switch error {
             
         case .login(error: let error), .passwordReset(error: let error):
             authErrorListner?(error.localizedDescription)
         case .register, .logout:
-        break
+            break
         }
     }
-    
-    
 }

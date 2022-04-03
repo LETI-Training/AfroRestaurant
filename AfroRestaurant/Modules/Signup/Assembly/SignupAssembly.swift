@@ -6,7 +6,8 @@ class SignupAssembly {
         let view = SignupViewController()
         let router = SignupRouter()
         let presenter = SignupPresenter()
-        let interactor = SignupInteractor()
+        let authService: AuthorizationServiceInput? = ServiceLocator.shared.getService()
+        let interactor = SignupInteractor(authService: authService)
 
         view.presenter = presenter
         presenter.view = view

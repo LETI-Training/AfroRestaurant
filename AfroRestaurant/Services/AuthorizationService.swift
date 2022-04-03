@@ -53,7 +53,7 @@ class AuthorizationService {
     }
     
     var outputs: [AuthorizationServiceOutput] = []
-    var appInteractor: AppInteractorProtocol?
+    weak var appInteractor: AppInteractorProtocol?
     
     let updateLock = NSRecursiveLock()
     
@@ -161,4 +161,17 @@ extension AuthorizationService: AuthorizationServiceInput {
         (Firebase.Auth.auth().currentUser?.displayName, Firebase.Auth.auth().currentUser?.email)
     }
     
+}
+
+
+extension AuthorizationServiceOutput {
+    func authServiceDidLogUserOut() {}
+    
+    func authServiceDidSignUserIn() {}
+    
+    func authServiceDidRegisterUser() {}
+    
+    func authServiceDidSendOutPasswordResetMail() {}
+    
+    func authorizationService(didFailWith error: AuthorizationService.ErrorType) {}
 }
