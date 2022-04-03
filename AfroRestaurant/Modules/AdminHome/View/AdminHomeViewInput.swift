@@ -1,0 +1,1 @@
+protocol AdminHomeViewInput: AnyObject {}
