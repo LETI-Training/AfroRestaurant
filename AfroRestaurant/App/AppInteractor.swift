@@ -10,57 +10,55 @@ import UIKit
 import Firebase
 
 protocol AppInteractorProtocol: AnyObject {
-    func checkIfUserisAuthenticated()
+    func userAuthorizationStateChanged()
 }
 
-class AppInteractor: AppInteractorProtocol {
+class AppInteractor {
     
     private var coordinator: AppCoordinatorProtocol
     private weak var windowScene: UIWindowScene!
-//    private var profileService: ProfileServiceProtocol?
-    
+    private let authService: AuthorizationServiceInput?
     
     init(
         windowScene: UIWindowScene,
-        coordinator: AppCoordinatorProtocol
+        coordinator: AppCoordinatorProtocol,
+        authService: AuthorizationServiceInput
     ) {
         self.windowScene = windowScene
         self.coordinator = coordinator
-        self.checkIfUserisAuthenticated()
-        
+        self.authService = authService
         setupFirebase()
         setupServiceLocator()
+        startProcess()
     }
     
     private func setupFirebase() {
         FirebaseApp.configure()
     }
     
-    private func setupServiceLocator() {
-        
-//        let networkService = NetworkService<ArticleEndpoint>()
-//        ServiceLocator.shared.addService(service: networkService as NetworkService)
-//
-//        let profileService = ProfileService()
-//        self.profileService = profileService
-//        profileService.appInteratcor = self
-//        ServiceLocator.shared.addService(service: profileService as ProfileService)
-//
-//        let imagePickerManager = ImagePickerManager()
-//        ServiceLocator.shared.addService(service: imagePickerManager as ImagePickerManager )
-        
+    private func startProcess() {
+        guard let authService = authService else {
+            return
+        }
+
+        if authService.isUserAuthorized() {
+            coordinator.createHomePages(for: .admin, scene: windowScene)
+        } else {
+            coordinator.createLandingPage(scene: windowScene)
+        }
     }
     
-     func checkIfUserisAuthenticated() {
-         coordinator.createLandingPage(scene: windowScene)
-//        guard let profileService = profileService else { return }
-//        if profileService.checkIfUserIsAuth() {
-//            coordinator?.createHomePages(scene: windowScene)
-//        } else {
-//            coordinator?.createLandingPage(scene: windowScene)
-//        }
+    private func setupServiceLocator() {
+        guard let authService = authService else {
+            return
+        }
+        
+        ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
     }
 }
 
-
-
+extension AppInteractor: AppInteractorProtocol {
+    func userAuthorizationStateChanged() {
+        startProcess()
+    }
+}

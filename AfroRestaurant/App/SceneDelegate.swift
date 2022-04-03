@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             adminFactory: AdminAppCoordinatorFactory(),
             customerFactory: AdminAppCoordinatorFactory()
         )
-        self.interactor = AppInteractor(windowScene: windowScene, coordinator: appCoordinator)
+        self.interactor = AppInteractor(windowScene: windowScene, coordinator: appCoordinator, authService: AuthorizationService())
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -258,18 +258,24 @@ final class LoginViewController: BaseViewController {
 }
 
 private extension LoginViewController {
+    
     @objc private func loginButtonTapped() {
+        presenter?.didTapOnSignInButton(
+            email: emailTextField.text,
+            password: passwordTextField.text
+        )
     }
     
     @objc private func forgotPasswordButtonWasClicked() {
-        //        presentAlertWithTF(title: "Reset Password",
-        //                           actionCancel: ActionAlertModel(actionText: "Cancel", actionHandler: {}),
-        //                           actionComplete: ActionAlertModel(actionText: "Reset", actionHandler: {}),
-        //                           placeHolder: "Please enter your email") { email in
-        //            self.presenter?.resetPassword(email: email)
-        //        }
+        presentAlertWithTextField(
+            title: "Reset Password",
+            actionCancel: ActionAlertModel(actionText: "Cancel", actionHandler: {}),
+            actionComplete: ActionAlertModel(actionText: "Reset", actionHandler: {}),
+            placeHolder: "Please enter your email"
+        ) { email in
+            self.presenter?.didTapOnForgetPassword(email: email)
+        }
     }
 }
 
-extension LoginViewController: LoginViewInput {
-}
+extension LoginViewController: LoginViewInput {}

@@ -34,6 +34,9 @@
 		B25E31D227FA05E00057D12C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31D127FA05E00057D12C /* UIView+Extensions.swift */; };
 		B25E31D427FA05FC0057D12C /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31D327FA05FC0057D12C /* AssociatedObject.swift */; };
 		B25E31D627FA062B0057D12C /* AttributedStrings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31D527FA062B0057D12C /* AttributedStrings+Extension.swift */; };
+		B25E31D927FA17DB0057D12C /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31D827FA17DB0057D12C /* AuthorizationService.swift */; };
+		B25E31DB27FA18620057D12C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31DA27FA18620057D12C /* UIViewController+Extension.swift */; };
+		B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31DC27FA27BD0057D12C /* ServiceLocator.swift */; };
 		B2802E8A27F9B04F002EB628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */; };
 		B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8C27F9B2BC002EB628 /* FirebaseAuth */; };
 		B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */; };
@@ -109,6 +112,9 @@
 		B25E31D127FA05E00057D12C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B25E31D327FA05FC0057D12C /* AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
 		B25E31D527FA062B0057D12C /* AttributedStrings+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedStrings+Extension.swift"; sourceTree = "<group>"; };
+		B25E31D827FA17DB0057D12C /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		B25E31DA27FA18620057D12C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B25E31DC27FA27BD0057D12C /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2802E9627F9C028002EB628 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 		B231CC9827F43EB2001DAE9E /* AfroRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				B25E31D727FA17CA0057D12C /* Services */,
 				B2802E9227F9B6F3002EB628 /* App */,
 				B231CCA227F43EB4001DAE9E /* Assets.xcassets */,
 				B2802E9527F9C002002EB628 /* BaseViews */,
@@ -309,6 +316,15 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		B25E31D727FA17CA0057D12C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31D827FA17DB0057D12C /* AuthorizationService.swift */,
+				B25E31DC27FA27BD0057D12C /* ServiceLocator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B2802E9227F9B6F3002EB628 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +365,7 @@
 				B25E31D127FA05E00057D12C /* UIView+Extensions.swift */,
 				B25E31D327FA05FC0057D12C /* AssociatedObject.swift */,
 				B25E31D527FA062B0057D12C /* AttributedStrings+Extension.swift */,
+				B25E31DA27FA18620057D12C /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,8 +571,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25E31DB27FA18620057D12C /* UIViewController+Extension.swift in Sources */,
 				B25E31CE27F9FC4F0057D12C /* SignupRouter.swift in Sources */,
 				B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */,
+				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
 				B25E31CC27F9FC4F0057D12C /* SignupInteractor.swift in Sources */,
 				B25E31CA27F9FC4F0057D12C /* SignupViewController.swift in Sources */,
@@ -571,6 +590,7 @@
 				B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */,
 				B25E31D227FA05E00057D12C /* UIView+Extensions.swift in Sources */,
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
+				B25E31D927FA17DB0057D12C /* AuthorizationService.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
 				B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */,
 				B25E31D027FA02B30057D12C /* UILabel+Extension.swift in Sources */,

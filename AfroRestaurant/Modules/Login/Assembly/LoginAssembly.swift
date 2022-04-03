@@ -6,7 +6,8 @@ class LoginAssembly {
         let view = LoginViewController()
         let router = LoginRouter()
         let presenter = LoginPresenter()
-        let interactor = LoginInteractor()
+        let authService: AuthorizationServiceInput? = ServiceLocator.shared.getService()
+        let interactor = LoginInteractor(authService: authService)
 
         view.presenter = presenter
         presenter.view = view
