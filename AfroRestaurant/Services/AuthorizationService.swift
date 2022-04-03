@@ -23,8 +23,8 @@ protocol AuthorizationServiceInput: AnyObject {
     func isUserAuthorized() -> Bool
     func getUserInfo() -> (name: String?, email: String?)
     
-    func addListner(_ listner: AuthorizationServiceOutput)
-    func removeListner(_ listner: AuthorizationServiceOutput)
+    func addListner(_ listener: AuthorizationServiceOutput)
+    func removeListner(_ listener: AuthorizationServiceOutput)
 }
 
 protocol AuthorizationServiceOutput: AnyObject {
@@ -52,7 +52,7 @@ class AuthorizationService {
         case successPasswordReset
     }
     
-    var outputs: [AuthorizationServiceOutput] = []
+    var outputs: [WeakRefeferenceWrapper<AuthorizationServiceOutput>] = []
     weak var appInteractor: AppInteractorProtocol?
     
     let updateLock = NSRecursiveLock()
@@ -62,15 +62,15 @@ class AuthorizationService {
         self.outputs.forEach {
             switch updateType {
             case .error(let errorType):
-                $0.authorizationService(didFailWith: errorType)
+                $0.object?.authorizationService(didFailWith: errorType)
             case .successLogout:
-                $0.authServiceDidLogUserOut()
+                $0.object?.authServiceDidLogUserOut()
             case .successLogin:
-                $0.authServiceDidSignUserIn()
+                $0.object?.authServiceDidSignUserIn()
             case .successRegister:
-                $0.authServiceDidRegisterUser()
+                $0.object?.authServiceDidRegisterUser()
             case .successPasswordReset:
-                $0.authServiceDidSendOutPasswordResetMail()
+                $0.object?.authServiceDidSendOutPasswordResetMail()
             }
         }
         updateLock.unlock()
@@ -82,15 +82,16 @@ extension AuthorizationService: AuthorizationServiceInput {
         Firebase.Auth.auth().currentUser != nil
     }
     
-    func addListner(_ listner: AuthorizationServiceOutput) {
+    func addListner(_ listener: AuthorizationServiceOutput) {
         updateLock.lock()
-        outputs.append(listner)
+        outputs.append(WeakRefeferenceWrapper(object: listener) )
+        outputs.removeAll(where: { $0.object == nil })
         updateLock.unlock()
     }
     
-    func removeListner(_ listner: AuthorizationServiceOutput) {
+    func removeListner(_ listener: AuthorizationServiceOutput) {
         updateLock.lock()
-        outputs.removeAll(where: { $0 === listner})
+        outputs.removeAll(where: { $0.object === listener || $0.object == nil })
         updateLock.unlock()
     }
     
