@@ -3,12 +3,21 @@ class LoginPresenter {
     var interactor: LoginInteractorInput?
     var router: LoginRouter?
 
-    init() {
-    }
+    init() {}
 }
 
 extension LoginPresenter: LoginPresenterProtocol {
-
-    func viewDidLoad() {
+    func viewDidLoad() {}
+    
+    func didTapOnSignInButton(email: String?, password: String?) {
+        
+    }
+    
+    func didTapOnForgetPassword() {
+        
+    }
+    
+    func didTapOnCreateNewAccount() {
+        router?.routeToSignupPage()
     }
 }

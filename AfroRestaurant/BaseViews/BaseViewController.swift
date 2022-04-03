@@ -40,7 +40,8 @@ class BaseViewController: UIViewController {
     
     func setUpUI() {
         view.backgroundColor = .background
-        //        navigationController?.navigationBar.tintColor = .textPrimary
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = .textPrimary
         //TODO: -  fix me
         //        navigationController?.navigationBar.titleTextAttributes = [
         ////            NSAttributedString.Key.font: UIFont.extraBoldItalic28,
@@ -108,6 +109,9 @@ class BaseViewController: UIViewController {
     
     @objc private func dismissKeyboard() {
         handleTapGesture()
+    }
+    
+    private func handleTapGesture() {
         view.endEditing(true)
     }
     
@@ -119,7 +123,7 @@ class BaseViewController: UIViewController {
     
     func handleKeyboardHeight(rect: CGRect) {}
     
-    func handleTapGesture() {}
+    
 }
 
 extension BaseViewController {

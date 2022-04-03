@@ -37,6 +37,7 @@ final class LoginViewController: BaseViewController {
         label.font = .font(.extraBold, size: 32.0)
         label.textAlignment = .center
         label.sizeToFit()
+        label.numberOfLines = 0
         return label
     }()
     
@@ -56,6 +57,7 @@ final class LoginViewController: BaseViewController {
         label.textColor = .textPrimary
         label.font = .font(.regular, size: 12.0)
         label.sizeToFit()
+        label.numberOfLines = 0
         return label
     }()
     
@@ -93,7 +95,7 @@ final class LoginViewController: BaseViewController {
         button.setTitle("SIGN IN", for: .normal)
         button.setTitleColor(.background, for: .normal)
         button.titleLabel?.font = .font(.regular, size: 12.0)
-        button.addTarget(self, action: #selector(forgotPasswordButtonWasClicked), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         button.clipsToBounds = true
         button.backgroundColor = .brandGreen
         button.layer.cornerRadius = 25.0
@@ -115,11 +117,20 @@ final class LoginViewController: BaseViewController {
     
     private lazy var signupLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Don’t have an account? Create one here"
         label.textColor = .textPrimary
         label.font = .font(.regular, size: 12.0)
         label.sizeToFit()
         label.textAlignment = .center
+        let attributedText = NSMutableAttributedString(string: "Don’t have an account? Create one here")
+        attributedText.linkAction(
+            color: .brandOrange,
+            text: "here",
+            font: .font(.regular, size: 12.0)
+        ) { [weak self] in
+            self?.presenter?.didTapOnCreateNewAccount()
+        }
+        label.addLinkActionsObserving()
+        label.attributedText = attributedText
         return label
     }()
     
@@ -181,11 +192,13 @@ final class LoginViewController: BaseViewController {
         welcomeLabel.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom).offset(59.0)
             make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(30.0)
         }
         
         welcomeSubLabel.snp.makeConstraints { make in
-            make.top.equalTo(welcomeLabel.snp.bottom).offset(16.0)
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(11.0)
             make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(30.0)
         }
         
         emailLabel.snp.makeConstraints { make in
@@ -226,15 +239,26 @@ final class LoginViewController: BaseViewController {
         }
         
         signupLabel.snp.makeConstraints { make in
-            make.top.equalTo(forgotPasswordButton.snp.bottom).offset(20.0)
+            make.top.equalTo(forgotPasswordButton.snp.bottom).offset(65.0)
             make.centerX.equalToSuperview()
             make.bottom.lessThanOrEqualToSuperview()
         }
     }
+    
+    override func handleKeyboardHeight(rect: CGRect) {
+        super.handleKeyboardHeight(rect: rect)
+        contentScrollView.contentInset = UIEdgeInsets(
+            top: 0.0,
+            left: 0.0,
+            bottom: rect.height,
+            right: 0.0
+        )
+        view.layoutIfNeeded()
+    }
 }
 
 private extension LoginViewController {
-    @objc private func loginToYourAccount() {
+    @objc private func loginButtonTapped() {
     }
     
     @objc private func forgotPasswordButtonWasClicked() {
