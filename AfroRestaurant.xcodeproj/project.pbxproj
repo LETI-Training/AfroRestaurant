@@ -20,6 +20,8 @@
 		B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */; };
 		B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9027F9B2BC002EB628 /* FirebaseStorage */; };
 		B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802E9627F9C028002EB628 /* BaseViewController.swift */; };
+		B2802E9A27F9C0AA002EB628 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9927F9C0AA002EB628 /* SnapKit */; };
+		B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 		B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2802E9627F9C028002EB628 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */,
+				B2802E9A27F9C0AA002EB628 /* SnapKit in Frameworks */,
 				B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */,
 				B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */,
 			);
@@ -107,6 +111,7 @@
 		B231CC9827F43EB2001DAE9E /* AfroRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				B2802E9B27F9C152002EB628 /* Extensions */,
 				B2802E9527F9C002002EB628 /* BaseViews */,
 				B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */,
 				B231CCA727F43EB4001DAE9E /* Info.plist */,
@@ -168,6 +173,14 @@
 			path = BaseViews;
 			sourceTree = "<group>";
 		};
+		B2802E9B27F9C152002EB628 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,6 +201,7 @@
 				B2802E8C27F9B2BC002EB628 /* FirebaseAuth */,
 				B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */,
 				B2802E9027F9B2BC002EB628 /* FirebaseStorage */,
+				B2802E9927F9C0AA002EB628 /* SnapKit */,
 			);
 			productName = AfroRestaurant;
 			productReference = B231CC9627F43EB2001DAE9E /* AfroRestaurant.app */;
@@ -263,6 +277,7 @@
 			mainGroup = B231CC8D27F43EB2001DAE9E;
 			packageReferences = (
 				B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B2802E9827F9C0AA002EB628 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = B231CC9727F43EB2001DAE9E /* Products */;
 			projectDirPath = "";
@@ -308,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B231CC9E27F43EB2001DAE9E /* ViewController.swift in Sources */,
+				B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */,
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
@@ -656,6 +672,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		B2802E9827F9C0AA002EB628 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -673,6 +697,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		B2802E9927F9C0AA002EB628 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2802E9827F9C0AA002EB628 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
