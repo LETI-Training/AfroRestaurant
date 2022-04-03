@@ -47,7 +47,7 @@ class BaseViewController: UIViewController {
         
 //        self.navigationController?.navigationBar.tintColor = .textColorGray
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.addSubViews()
         self.makeConstraints()
