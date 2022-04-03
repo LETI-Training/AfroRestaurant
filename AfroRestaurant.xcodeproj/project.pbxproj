@@ -200,13 +200,13 @@
 		B231CC9827F43EB2001DAE9E /* AfroRestaurant */ = {
 			isa = PBXGroup;
 			children = (
-				B2802E9E27F9C2DB002EB628 /* Fonts */,
-				B2802E9B27F9C152002EB628 /* Extensions */,
+				B2802E9227F9B6F3002EB628 /* App */,
+				B231CCA227F43EB4001DAE9E /* Assets.xcassets */,
 				B2802E9527F9C002002EB628 /* BaseViews */,
+				B2802E9B27F9C152002EB628 /* Extensions */,
+				B2802E9E27F9C2DB002EB628 /* Fonts */,
 				B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */,
 				B231CCA727F43EB4001DAE9E /* Info.plist */,
-				B231CCA227F43EB4001DAE9E /* Assets.xcassets */,
-				B2802E9227F9B6F3002EB628 /* App */,
 				B231CCA427F43EB4001DAE9E /* LaunchScreen.storyboard */,
 				B2802E9327F9BFA0002EB628 /* Modules */,
 			);
