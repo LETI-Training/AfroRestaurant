@@ -27,36 +27,43 @@ class BaseViewController: UIViewController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpUI()
-        
+        setUpUI()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
     }
     
     func setUpUI() {
-        self.view.backgroundColor = .background
-        
+        view.backgroundColor = .background
+        //        navigationController?.navigationBar.tintColor = .textPrimary
         //TODO: -  fix me
-//        self.navigationController?.navigationBar.titleTextAttributes = [
-////            NSAttributedString.Key.font: UIFont.extraBoldItalic28,
-////            NSAttributedString.Key.foregroundColor: UIColor.textColorBlack
-//        ]
+        //        navigationController?.navigationBar.titleTextAttributes = [
+        ////            NSAttributedString.Key.font: UIFont.extraBoldItalic28,
+        ////            NSAttributedString.Key.foregroundColor: UIColor.textColorBlack
+        //        ]
         
-//        self.navigationController?.navigationBar.largeTitleTextAttributes = [
-////            NSAttributedString.Key.font: UIFont.extraBoldItalic48,
-////            NSAttributedString.Key.foregroundColor: UIColor.textColorBlack
-//        ]
+        //        navigationController?.navigationBar.largeTitleTextAttributes = [
+        ////            NSAttributedString.Key.font: UIFont.extraBoldItalic48,
+        ////            NSAttributedString.Key.foregroundColor: UIColor.textColorBlack
+        //        ]
         
-//        self.navigationController?.navigationBar.tintColor = .textColorGray
+        //        navigationController?.navigationBar.tintColor = .textColorGray
         
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //        navigationController?.navigationBar.prefersLargeTitles = true
         
-        self.addSubViews()
-        self.makeConstraints()
+        addSubViews()
+        makeConstraints()
     }
     
     
     private func addSubViews() {
-        self.view.addSubview(indicatorBlurView)
-        self.indicatorBlurView.contentView.addSubview(indicator)
+        view.addSubview(indicatorBlurView)
+        indicatorBlurView.contentView.addSubview(indicator)
     }
     
     private func makeConstraints() {
@@ -73,25 +80,19 @@ class BaseViewController: UIViewController {
     
     // MARK: Functions
     func showActivityIndicator() {
-        self.indicatorBlurView.isHidden = false
-        self.view.bringSubviewToFront(self.indicatorBlurView)
-        self.indicator.startAnimating()
+        indicatorBlurView.isHidden = false
+        view.bringSubviewToFront(indicatorBlurView)
+        indicator.startAnimating()
     }
     
     func hideActivityIndicator() {
-        self.indicatorBlurView.isHidden = true
-        self.indicator.stopAnimating()
+        indicatorBlurView.isHidden = true
+        indicator.stopAnimating()
     }
     
-    func addKeyBoardObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardStartSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        self.handleKeyboardHeight(rect: keyboardStartSize)
+        handleKeyboardHeight(rect: keyboardStartSize)
         
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -101,23 +102,31 @@ class BaseViewController: UIViewController {
         view.addGestureRecognizer(swipeGesture)
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        handleKeyboardHeight(rect: .zero)
     }
     
-    @objc func dismissKeyboard() {
-        self.handleTapGesture()
+    @objc private func dismissKeyboard() {
+        handleTapGesture()
         view.endEditing(true)
     }
     
-    @objc func dismissKeyboardOnSwipe(gesture: UISwipeGestureRecognizer) {
+    @objc private func dismissKeyboardOnSwipe(gesture: UISwipeGestureRecognizer) {
         if gesture.direction == .down {
-            self.dismissKeyboard()
+            dismissKeyboard()
         }
     }
     
     func handleKeyboardHeight(rect: CGRect) {}
     
     func handleTapGesture() {}
+}
+
+extension BaseViewController {
+    
+    func addKeyBoardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }
 
