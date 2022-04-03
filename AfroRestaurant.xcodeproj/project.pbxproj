@@ -19,6 +19,7 @@
 		B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8C27F9B2BC002EB628 /* FirebaseAuth */; };
 		B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */; };
 		B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9027F9B2BC002EB628 /* FirebaseStorage */; };
+		B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802E9627F9C028002EB628 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITests.swift; sourceTree = "<group>"; };
 		B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2802E9627F9C028002EB628 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,14 @@
 		B231CC9827F43EB2001DAE9E /* AfroRestaurant */ = {
 			isa = PBXGroup;
 			children = (
-				B2802E9227F9B6F3002EB628 /* App */,
+				B2802E9527F9C002002EB628 /* BaseViews */,
+				B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */,
+				B231CCA727F43EB4001DAE9E /* Info.plist */,
 				B231CC9D27F43EB2001DAE9E /* ViewController.swift */,
 				B231CCA227F43EB4001DAE9E /* Assets.xcassets */,
+				B2802E9227F9B6F3002EB628 /* App */,
 				B231CCA427F43EB4001DAE9E /* LaunchScreen.storyboard */,
-				B231CCA727F43EB4001DAE9E /* Info.plist */,
-				B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */,
+				B2802E9327F9BFA0002EB628 /* Modules */,
 			);
 			path = AfroRestaurant;
 			sourceTree = "<group>";
@@ -139,6 +143,29 @@
 				B231CC9B27F43EB2001DAE9E /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		B2802E9327F9BFA0002EB628 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B2802E9427F9BFB8002EB628 /* Autorization */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B2802E9427F9BFB8002EB628 /* Autorization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Autorization;
+			sourceTree = "<group>";
+		};
+		B2802E9527F9C002002EB628 /* BaseViews */ = {
+			isa = PBXGroup;
+			children = (
+				B2802E9627F9C028002EB628 /* BaseViewController.swift */,
+			);
+			path = BaseViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B231CC9E27F43EB2001DAE9E /* ViewController.swift in Sources */,
+				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
 			);
