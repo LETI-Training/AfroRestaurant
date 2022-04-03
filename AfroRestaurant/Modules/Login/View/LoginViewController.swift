@@ -9,14 +9,12 @@ extension LoginViewController {
 final class LoginViewController: BaseViewController {
     
     private let appearance = Appearance()
-    private let disposeBag = DisposeBag()
     var presenter: LoginPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        updateTexts()
-        presenter.viewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     func setupUI() {
@@ -32,6 +30,4 @@ final class LoginViewController: BaseViewController {
 }
 
 extension LoginViewController: LoginViewInput {
-    func updateTexts() {
-    }
 }

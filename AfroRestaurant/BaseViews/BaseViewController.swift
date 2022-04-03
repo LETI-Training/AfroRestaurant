@@ -54,12 +54,12 @@ class BaseViewController: UIViewController {
     }
     
     
-    func addSubViews() {
+    private func addSubViews() {
         self.view.addSubview(indicatorBlurView)
         self.indicatorBlurView.contentView.addSubview(indicator)
     }
     
-    func makeConstraints() {
+    private func makeConstraints() {
         
         indicatorBlurView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

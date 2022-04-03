@@ -15,8 +15,7 @@ final class {{ module_info.name }}ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        updateTexts()
-        presenter.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 
     func setupUI() {
@@ -32,6 +31,4 @@ final class {{ module_info.name }}ViewController: BaseViewController {
 }
 
 extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput {
-    func updateTexts() {
-    }
 }
