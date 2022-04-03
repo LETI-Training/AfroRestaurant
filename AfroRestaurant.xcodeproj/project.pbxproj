@@ -15,6 +15,10 @@
 		B231CCB127F43EB4001DAE9E /* AfroRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCB027F43EB4001DAE9E /* AfroRestaurantTests.swift */; };
 		B231CCBB27F43EB4001DAE9E /* AfroRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */; };
 		B231CCBD27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */; };
+		B2802E8A27F9B04F002EB628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */; };
+		B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8C27F9B2BC002EB628 /* FirebaseAuth */; };
+		B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */; };
+		B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9027F9B2BC002EB628 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 		B231CCB627F43EB4001DAE9E /* AfroRestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfroRestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITests.swift; sourceTree = "<group>"; };
 		B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */,
+				B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */,
+				B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +111,7 @@
 				B231CCA227F43EB4001DAE9E /* Assets.xcassets */,
 				B231CCA427F43EB4001DAE9E /* LaunchScreen.storyboard */,
 				B231CCA727F43EB4001DAE9E /* Info.plist */,
+				B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */,
 			);
 			path = AfroRestaurant;
 			sourceTree = "<group>";
@@ -140,6 +149,11 @@
 			dependencies = (
 			);
 			name = AfroRestaurant;
+			packageProductDependencies = (
+				B2802E8C27F9B2BC002EB628 /* FirebaseAuth */,
+				B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */,
+				B2802E9027F9B2BC002EB628 /* FirebaseStorage */,
+			);
 			productName = AfroRestaurant;
 			productReference = B231CC9627F43EB2001DAE9E /* AfroRestaurant.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +226,9 @@
 				Base,
 			);
 			mainGroup = B231CC8D27F43EB2001DAE9E;
+			packageReferences = (
+				B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B231CC9727F43EB2001DAE9E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,6 +247,7 @@
 			files = (
 				B231CCA627F43EB4001DAE9E /* LaunchScreen.storyboard in Resources */,
 				B231CCA327F43EB4001DAE9E /* Assets.xcassets in Resources */,
+				B2802E8A27F9B04F002EB628 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +610,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2802E8C27F9B2BC002EB628 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B2802E9027F9B2BC002EB628 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B231CC8E27F43EB2001DAE9E /* Project object */;
 }
