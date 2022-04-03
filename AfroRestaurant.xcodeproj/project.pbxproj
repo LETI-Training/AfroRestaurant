@@ -3,10 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BD5898ABB6F137A04E23A /* LoginPresenterProtocol.swift */; };
+		1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB701173936926B1456D07 /* LoginRouter.swift */; };
+		2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7EDB969AF4BFDBED34DF8 /* LoginPresenter.swift */; };
+		7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FB0A51C5506E6EB73813A /* LoginAssembly.swift */; };
+		77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6BC0362A722FE77CB21E83 /* LoginInteractor.swift */; };
+		91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E018C91CA69016A204784 /* LoginViewInput.swift */; };
+		94D0F25A7A46CCAEB71036EE /* LoginTextManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F442FBB4FAB621052B70919 /* LoginTextManagerProtocol.swift */; };
+		9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A4BB45A3F8BCC8FCF4E79 /* LoginViewController.swift */; };
+		9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */; };
 		B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CC9927F43EB2001DAE9E /* AppDelegate.swift */; };
 		B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CC9B27F43EB2001DAE9E /* SceneDelegate.swift */; };
 		B231CC9E27F43EB2001DAE9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CC9D27F43EB2001DAE9E /* ViewController.swift */; };
@@ -16,11 +25,11 @@
 		B231CCBB27F43EB4001DAE9E /* AfroRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */; };
 		B231CCBD27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */; };
 		B2802E8A27F9B04F002EB628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */; };
-		B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8C27F9B2BC002EB628 /* FirebaseAuth */; };
-		B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */; };
-		B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9027F9B2BC002EB628 /* FirebaseStorage */; };
+		B2802E8D27F9B2BC002EB628 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8C27F9B2BC002EB628 /* SwiftPackageProductDependency */; };
+		B2802E8F27F9B2BC002EB628 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* SwiftPackageProductDependency */; };
+		B2802E9127F9B2BC002EB628 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9027F9B2BC002EB628 /* SwiftPackageProductDependency */; };
 		B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802E9627F9C028002EB628 /* BaseViewController.swift */; };
-		B2802E9A27F9C0AA002EB628 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9927F9C0AA002EB628 /* SnapKit */; };
+		B2802E9A27F9C0AA002EB628 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E9927F9C0AA002EB628 /* SwiftPackageProductDependency */; };
 		B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */; };
 		B2802EAD27F9C2EB002EB628 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EA027F9C2EB002EB628 /* Roboto-Medium.ttf */; };
 		B2802EAE27F9C2EB002EB628 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EA127F9C2EB002EB628 /* Roboto-Light.ttf */; };
@@ -36,6 +45,7 @@
 		B2802EB827F9C2EB002EB628 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EAB27F9C2EB002EB628 /* Roboto-Thin.ttf */; };
 		B2802EB927F9C2EB002EB628 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */; };
 		B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */; };
+		EB66A76E373F4F4E97AD3FD0 /* LoginTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FD9A98F8ED72483C48EE92 /* LoginTextManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05B7EDB969AF4BFDBED34DF8 /* LoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		254E018C91CA69016A204784 /* LoginViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewInput.swift; sourceTree = "<group>"; };
+		30FD9A98F8ED72483C48EE92 /* LoginTextManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginTextManager.swift; sourceTree = "<group>"; };
+		3E0A4BB45A3F8BCC8FCF4E79 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4F3BD5898ABB6F137A04E23A /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		6B6BC0362A722FE77CB21E83 /* LoginInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		7E3FB0A51C5506E6EB73813A /* LoginAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		8F442FBB4FAB621052B70919 /* LoginTextManagerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginTextManagerProtocol.swift; sourceTree = "<group>"; };
 		B231CC9627F43EB2001DAE9E /* AfroRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfroRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B231CC9927F43EB2001DAE9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B231CC9B27F43EB2001DAE9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +103,8 @@
 		B2802EAB27F9C2EB002EB628 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		BBEB701173936926B1456D07 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */,
-				B2802E9A27F9C0AA002EB628 /* SnapKit in Frameworks */,
-				B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */,
-				B2802E9127F9B2BC002EB628 /* FirebaseStorage in Frameworks */,
+				B2802E8D27F9B2BC002EB628 /* BuildFile in Frameworks */,
+				B2802E9A27F9C0AA002EB628 /* BuildFile in Frameworks */,
+				B2802E8F27F9B2BC002EB628 /* BuildFile in Frameworks */,
+				B2802E9127F9B2BC002EB628 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +136,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41FDB7AF3DF7D6CC733041BD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB701173936926B1456D07 /* LoginRouter.swift */,
+			);
+			name = Router;
+			path = Router;
+			sourceTree = "<group>";
+		};
+		60404660B25F68ECDD8EFCF3 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				7E3FB0A51C5506E6EB73813A /* LoginAssembly.swift */,
+			);
+			name = Assembly;
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		7DB6B94A33874AEFE374DD09 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ACD5D46E56D57797138B13F6 /* View */,
+				D49B9CE307BCD280030F06E3 /* Presenter */,
+				ED4BC5E94BC2039FB33ACAFB /* Interactor */,
+				41FDB7AF3DF7D6CC733041BD /* Router */,
+				60404660B25F68ECDD8EFCF3 /* Assembly */,
+				FF31C5ABF08C6D91E8B18D44 /* TextManager */,
+			);
+			name = Login;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		ACD5D46E56D57797138B13F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				254E018C91CA69016A204784 /* LoginViewInput.swift */,
+				3E0A4BB45A3F8BCC8FCF4E79 /* LoginViewController.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
 		B231CC8D27F43EB2001DAE9E = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +244,7 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7DB6B94A33874AEFE374DD09 /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -231,6 +294,36 @@
 			path = Roboto;
 			sourceTree = "<group>";
 		};
+		D49B9CE307BCD280030F06E3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				05B7EDB969AF4BFDBED34DF8 /* LoginPresenter.swift */,
+				4F3BD5898ABB6F137A04E23A /* LoginPresenterProtocol.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ED4BC5E94BC2039FB33ACAFB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */,
+				6B6BC0362A722FE77CB21E83 /* LoginInteractor.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FF31C5ABF08C6D91E8B18D44 /* TextManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F442FBB4FAB621052B70919 /* LoginTextManagerProtocol.swift */,
+				30FD9A98F8ED72483C48EE92 /* LoginTextManager.swift */,
+			);
+			name = TextManager;
+			path = TextManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,10 +341,10 @@
 			);
 			name = AfroRestaurant;
 			packageProductDependencies = (
-				B2802E8C27F9B2BC002EB628 /* FirebaseAuth */,
-				B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */,
-				B2802E9027F9B2BC002EB628 /* FirebaseStorage */,
-				B2802E9927F9C0AA002EB628 /* SnapKit */,
+				B2802E8C27F9B2BC002EB628 /* SwiftPackageProductDependency */,
+				B2802E8E27F9B2BC002EB628 /* SwiftPackageProductDependency */,
+				B2802E9027F9B2BC002EB628 /* SwiftPackageProductDependency */,
+				B2802E9927F9C0AA002EB628 /* SwiftPackageProductDependency */,
 			);
 			productName = AfroRestaurant;
 			productReference = B231CC9627F43EB2001DAE9E /* AfroRestaurant.app */;
@@ -302,6 +395,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
+				ORGANIZATIONNAME = AfroRestaurant;
 				TargetAttributes = {
 					B231CC9527F43EB2001DAE9E = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -317,7 +411,7 @@
 				};
 			};
 			buildConfigurationList = B231CC9127F43EB2001DAE9E /* Build configuration list for PBXProject "AfroRestaurant" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -326,8 +420,8 @@
 			);
 			mainGroup = B231CC8D27F43EB2001DAE9E;
 			packageReferences = (
-				B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				B2802E9827F9C0AA002EB628 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B2802E8B27F9B2BC002EB628 /* RemoteSwiftPackageReference */,
+				B2802E9827F9C0AA002EB628 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = B231CC9727F43EB2001DAE9E /* Products */;
 			projectDirPath = "";
@@ -391,6 +485,16 @@
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
+				91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */,
+				9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */,
+				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
+				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
+				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
+				77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */,
+				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
+				7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */,
+				94D0F25A7A46CCAEB71036EE /* LoginTextManagerProtocol.swift in Sources */,
+				EB66A76E373F4F4E97AD3FD0 /* LoginTextManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +832,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		B2802E8B27F9B2BC002EB628 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -736,7 +840,7 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		B2802E9827F9C0AA002EB628 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		B2802E9827F9C0AA002EB628 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -747,24 +851,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B2802E8C27F9B2BC002EB628 /* FirebaseAuth */ = {
+		B2802E8C27F9B2BC002EB628 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B2802E8B27F9B2BC002EB628 /* RemoteSwiftPackageReference */;
 			productName = FirebaseAuth;
 		};
-		B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */ = {
+		B2802E8E27F9B2BC002EB628 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B2802E8B27F9B2BC002EB628 /* RemoteSwiftPackageReference */;
 			productName = FirebaseFirestore;
 		};
-		B2802E9027F9B2BC002EB628 /* FirebaseStorage */ = {
+		B2802E9027F9B2BC002EB628 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B2802E8B27F9B2BC002EB628 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B2802E8B27F9B2BC002EB628 /* RemoteSwiftPackageReference */;
 			productName = FirebaseStorage;
 		};
-		B2802E9927F9C0AA002EB628 /* SnapKit */ = {
+		B2802E9927F9C0AA002EB628 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B2802E9827F9C0AA002EB628 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = B2802E9827F9C0AA002EB628 /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
