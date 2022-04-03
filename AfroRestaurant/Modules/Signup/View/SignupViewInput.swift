@@ -1,0 +1,1 @@
+protocol SignupViewInput: AnyObject {}

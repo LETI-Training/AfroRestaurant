@@ -17,7 +17,4 @@ project_group_path: /AfroRestaurant/Modules/
 
 ### Templates
 templates:
-#- {name: local_template_name, local: 'absolute/file/path'}
-#- {name: remote_template_name, git: 'https://github.com/igrekde/remote_template'}
-#- {name: catalog_template_name}
 - {name: swifty_viper}

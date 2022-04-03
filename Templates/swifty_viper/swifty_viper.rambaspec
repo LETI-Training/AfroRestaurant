@@ -25,8 +25,3 @@ code_files:
 
 # Assembly
 - {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
-
-# Text Manager
-- {name: TextManager/TextManagerProtocol.swift, path: Code/TextManager/textmanager_protocol.swift.liquid}
-- {name: TextManager/TextManager.swift, path: Code/TextManager/textmanager.swift.liquid}
-

@@ -22,6 +22,14 @@
 		B231CCB127F43EB4001DAE9E /* AfroRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCB027F43EB4001DAE9E /* AfroRestaurantTests.swift */; };
 		B231CCBB27F43EB4001DAE9E /* AfroRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */; };
 		B231CCBD27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */; };
+		B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */; };
+		B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */; };
+		B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */; };
+		B25E31CA27F9FC4F0057D12C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31C027F9FC4E0057D12C /* SignupViewController.swift */; };
+		B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31C127F9FC4E0057D12C /* SignupViewInput.swift */; };
+		B25E31CC27F9FC4F0057D12C /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31C327F9FC4E0057D12C /* SignupInteractor.swift */; };
+		B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31C427F9FC4E0057D12C /* SignupInteractorInput.swift */; };
+		B25E31CE27F9FC4F0057D12C /* SignupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31C627F9FC4E0057D12C /* SignupRouter.swift */; };
 		B2802E8A27F9B04F002EB628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */; };
 		B2802E8D27F9B2BC002EB628 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8C27F9B2BC002EB628 /* FirebaseAuth */; };
 		B2802E8F27F9B2BC002EB628 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2802E8E27F9B2BC002EB628 /* FirebaseFirestore */; };
@@ -85,6 +93,14 @@
 		B231CCB627F43EB4001DAE9E /* AfroRestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfroRestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITests.swift; sourceTree = "<group>"; };
 		B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupAssembly.swift; sourceTree = "<group>"; };
+		B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenterProtocol.swift; sourceTree = "<group>"; };
+		B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		B25E31C027F9FC4E0057D12C /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B25E31C127F9FC4E0057D12C /* SignupViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewInput.swift; sourceTree = "<group>"; };
+		B25E31C327F9FC4E0057D12C /* SignupInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
+		B25E31C427F9FC4E0057D12C /* SignupInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInteractorInput.swift; sourceTree = "<group>"; };
+		B25E31C627F9FC4E0057D12C /* SignupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupRouter.swift; sourceTree = "<group>"; };
 		B2802E8927F9B04F002EB628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2802E9627F9C028002EB628 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -230,6 +246,61 @@
 			path = AfroRestaurantUITests;
 			sourceTree = "<group>";
 		};
+		B25E31B927F9FC4E0057D12C /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31BA27F9FC4E0057D12C /* Assembly */,
+				B25E31BC27F9FC4E0057D12C /* Presenter */,
+				B25E31BF27F9FC4E0057D12C /* View */,
+				B25E31C227F9FC4E0057D12C /* Interactor */,
+				B25E31C527F9FC4E0057D12C /* Router */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		B25E31BA27F9FC4E0057D12C /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B25E31BC27F9FC4E0057D12C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */,
+				B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B25E31BF27F9FC4E0057D12C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31C027F9FC4E0057D12C /* SignupViewController.swift */,
+				B25E31C127F9FC4E0057D12C /* SignupViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B25E31C227F9FC4E0057D12C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31C327F9FC4E0057D12C /* SignupInteractor.swift */,
+				B25E31C427F9FC4E0057D12C /* SignupInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B25E31C527F9FC4E0057D12C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B25E31C627F9FC4E0057D12C /* SignupRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		B2802E9227F9B6F3002EB628 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +317,7 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B25E31B927F9FC4E0057D12C /* Signup */,
 				7DB6B94A33874AEFE374DD09 /* Login */,
 			);
 			path = Modules;
@@ -470,7 +542,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25E31CE27F9FC4F0057D12C /* SignupRouter.swift in Sources */,
+				B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
+				B25E31CC27F9FC4F0057D12C /* SignupInteractor.swift in Sources */,
+				B25E31CA27F9FC4F0057D12C /* SignupViewController.swift in Sources */,
 				B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */,
 				B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */,
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
@@ -479,15 +555,19 @@
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
 				91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */,
 				9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */,
+				B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */,
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
+				B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */,
 				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
+				B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */,
 				77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */,
 				B2802EE227F9DF38002EB628 /* AppCoordinator.swift in Sources */,
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
 				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,
 				B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */,
 				7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */,
+				B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
