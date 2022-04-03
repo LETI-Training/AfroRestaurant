@@ -32,5 +32,9 @@ extension UIColor {
     class var brandOrange: UIColor {
         UIColor(red: 0.957, green: 0.475, blue: 0.227, alpha: 1)
     }
+    
+    class var tabBarPrimary: UIColor {
+        UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 0.92)
+    }
 }
 

@@ -50,6 +50,16 @@ extension AppCoordinator: AppCoordinatorProtocol {
     
     func createHomePages(for userType: UserType, scene: UIWindowScene) {
         window = UIWindow(windowScene: scene)
+        UITabBar.appearance().tintColor = .brandGreen
+        UIBarButtonItem.appearance()
+            .setTitleTextAttributes(
+                [NSAttributedString.Key.font: UIFont.font(.medium, size: 10.0)], for: .normal
+            )
+        UIBarButtonItem.appearance()
+            .setTitleTextAttributes(
+                [NSAttributedString.Key.font: UIFont.font(.medium, size: 10.0)],
+                for: .highlighted
+            )
         switch userType {
         case .customer:
             window?.rootViewController = customerFactory.createTabBar()

@@ -10,25 +10,47 @@ import UIKit
 
 class AdminAppCoordinatorFactory {
     private func createHomeVC() -> UINavigationController {
-//        let discoverViewController = DiscoverAssembly.assemble(endpoint: .getTopHeadlines)
-//        discoverViewController.title = "Discover"
-//        discoverViewController.tabBarItem = UITabBarItem(title: "Discover", image: UIImage.tabBarItems.discover, selectedImage:  UIImage.tabBarItems.discover)
-        return UINavigationController(rootViewController: UIViewController())
+        let viewController = AdminHomeAssembly.assemble()
+        viewController.title = "Testing"
+        viewController.tabBarItem = UITabBarItem(
+            title: "Home",
+            image: .tabBarItems.home,
+            selectedImage: .tabBarItems.homeHighlighted
+        )
+        return UINavigationController(rootViewController: viewController)
     }
     
     private func createProfitsVC() -> UINavigationController {
-        UINavigationController(rootViewController: UIViewController())
+        let viewController = AdminHomeAssembly.assemble()
+        viewController.title = "Testing"
+        viewController.tabBarItem = UITabBarItem(
+            title: "Profits",
+            image: .tabBarItems.profits,
+            selectedImage: .tabBarItems.profitsHighlighted
+        )
+        return UINavigationController(rootViewController: viewController)
     }
     
     private func createInventoryVC() -> UINavigationController {
-        UINavigationController(rootViewController: UIViewController())
+        let viewController = AdminHomeAssembly.assemble()
+        viewController.title = "Testing"
+        viewController.tabBarItem = UITabBarItem(
+            title: "Inventory",
+            image: .tabBarItems.inventory,
+            selectedImage: .tabBarItems.inventoryHighlighted
+        )
+        return UINavigationController(rootViewController: viewController)
     }
 }
 
 extension AdminAppCoordinatorFactory: AppCordinatorFactory {
     func createTabBar() -> UITabBarController {
-        let tabBar = UITabBarController()
-        tabBar.viewControllers = [createHomeVC(), createProfitsVC(), createInventoryVC()]
-        return tabBar
+        let tabBarVC = UITabBarController()
+        let appearance = UITabBarAppearance()
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.textPrimary]
+        tabBarVC.tabBar.standardAppearance = appearance
+        tabBarVC.viewControllers = [createHomeVC(), createProfitsVC(), createInventoryVC()]
+        tabBarVC.tabBar.backgroundColor = .tabBarPrimary
+        return tabBarVC
     }
 }

@@ -9,7 +9,6 @@ extension AdminHomeViewController {
 final class AdminHomeViewController: BaseViewController {
 
     private let appearance = Appearance()
-    private let disposeBag = DisposeBag()
     var presenter: AdminHomePresenterProtocol?
 
     override func viewDidLoad() {
@@ -21,6 +20,16 @@ final class AdminHomeViewController: BaseViewController {
     private func setupUI() {
         addSubviews()
         makeConstraints()
+        
+        if #available(iOS 14.0, *) {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", image: nil, primaryAction: UIAction.init(handler: { _ in
+                
+                // remove later
+                AuthorizationService().signOut()
+            }), menu: nil)
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     private func addSubviews() {
