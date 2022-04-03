@@ -36,18 +36,6 @@
 		B2802EB827F9C2EB002EB628 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EAB27F9C2EB002EB628 /* Roboto-Thin.ttf */; };
 		B2802EB927F9C2EB002EB628 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */; };
 		B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */; };
-		B2802ED227F9C823002EB628 /* header.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802EBF27F9C823002EB628 /* header.liquid */; };
-		B2802ED327F9C823002EB628 /* swifty_viper.rambaspec in Resources */ = {isa = PBXBuildFile; fileRef = B2802EC027F9C823002EB628 /* swifty_viper.rambaspec */; };
-		B2802ED427F9C823002EB628 /* assembly.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802EC327F9C823002EB628 /* assembly.swift.liquid */; };
-		B2802ED527F9C823002EB628 /* presenter.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802EC527F9C823002EB628 /* presenter.swift.liquid */; };
-		B2802ED627F9C823002EB628 /* presenter_protocol.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802EC627F9C823002EB628 /* presenter_protocol.swift.liquid */; };
-		B2802ED727F9C823002EB628 /* textmanager_protocol.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802EC827F9C823002EB628 /* textmanager_protocol.swift.liquid */; };
-		B2802ED827F9C823002EB628 /* textmanager.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802EC927F9C823002EB628 /* textmanager.swift.liquid */; };
-		B2802ED927F9C823002EB628 /* viewcontroller.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802ECB27F9C823002EB628 /* viewcontroller.swift.liquid */; };
-		B2802EDA27F9C823002EB628 /* view_input.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802ECC27F9C823002EB628 /* view_input.swift.liquid */; };
-		B2802EDB27F9C823002EB628 /* interactor_input.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802ECE27F9C823002EB628 /* interactor_input.swift.liquid */; };
-		B2802EDC27F9C823002EB628 /* interactor.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802ECF27F9C823002EB628 /* interactor.swift.liquid */; };
-		B2802EDD27F9C823002EB628 /* router.swift.liquid in Resources */ = {isa = PBXBuildFile; fileRef = B2802ED127F9C823002EB628 /* router.swift.liquid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,18 +85,6 @@
 		B2802EAB27F9C2EB002EB628 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		B2802EBF27F9C823002EB628 /* header.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = header.liquid; sourceTree = "<group>"; };
-		B2802EC027F9C823002EB628 /* swifty_viper.rambaspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swifty_viper.rambaspec; sourceTree = "<group>"; };
-		B2802EC327F9C823002EB628 /* assembly.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assembly.swift.liquid; sourceTree = "<group>"; };
-		B2802EC527F9C823002EB628 /* presenter.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = presenter.swift.liquid; sourceTree = "<group>"; };
-		B2802EC627F9C823002EB628 /* presenter_protocol.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = presenter_protocol.swift.liquid; sourceTree = "<group>"; };
-		B2802EC827F9C823002EB628 /* textmanager_protocol.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = textmanager_protocol.swift.liquid; sourceTree = "<group>"; };
-		B2802EC927F9C823002EB628 /* textmanager.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = textmanager.swift.liquid; sourceTree = "<group>"; };
-		B2802ECB27F9C823002EB628 /* viewcontroller.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viewcontroller.swift.liquid; sourceTree = "<group>"; };
-		B2802ECC27F9C823002EB628 /* view_input.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = view_input.swift.liquid; sourceTree = "<group>"; };
-		B2802ECE27F9C823002EB628 /* interactor_input.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = interactor_input.swift.liquid; sourceTree = "<group>"; };
-		B2802ECF27F9C823002EB628 /* interactor.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = interactor.swift.liquid; sourceTree = "<group>"; };
-		B2802ED127F9C823002EB628 /* router.swift.liquid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = router.swift.liquid; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +139,6 @@
 		B231CC9827F43EB2001DAE9E /* AfroRestaurant */ = {
 			isa = PBXGroup;
 			children = (
-				B2802EBC27F9C823002EB628 /* Templates */,
 				B2802E9E27F9C2DB002EB628 /* Fonts */,
 				B2802E9B27F9C152002EB628 /* Extensions */,
 				B2802E9527F9C002002EB628 /* BaseViews */,
@@ -254,97 +229,6 @@
 				B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */,
 			);
 			path = Roboto;
-			sourceTree = "<group>";
-		};
-		B2802EBC27F9C823002EB628 /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EBD27F9C823002EB628 /* swifty_viper */,
-			);
-			path = Templates;
-			sourceTree = "<group>";
-		};
-		B2802EBD27F9C823002EB628 /* swifty_viper */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EBE27F9C823002EB628 /* snippets */,
-				B2802EC027F9C823002EB628 /* swifty_viper.rambaspec */,
-				B2802EC127F9C823002EB628 /* Code */,
-			);
-			path = swifty_viper;
-			sourceTree = "<group>";
-		};
-		B2802EBE27F9C823002EB628 /* snippets */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EBF27F9C823002EB628 /* header.liquid */,
-			);
-			path = snippets;
-			sourceTree = "<group>";
-		};
-		B2802EC127F9C823002EB628 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EC227F9C823002EB628 /* Assembly */,
-				B2802EC427F9C823002EB628 /* Presenter */,
-				B2802EC727F9C823002EB628 /* TextManager */,
-				B2802ECA27F9C823002EB628 /* View */,
-				B2802ECD27F9C823002EB628 /* Interactor */,
-				B2802ED027F9C823002EB628 /* Router */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		B2802EC227F9C823002EB628 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EC327F9C823002EB628 /* assembly.swift.liquid */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		B2802EC427F9C823002EB628 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EC527F9C823002EB628 /* presenter.swift.liquid */,
-				B2802EC627F9C823002EB628 /* presenter_protocol.swift.liquid */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B2802EC727F9C823002EB628 /* TextManager */ = {
-			isa = PBXGroup;
-			children = (
-				B2802EC827F9C823002EB628 /* textmanager_protocol.swift.liquid */,
-				B2802EC927F9C823002EB628 /* textmanager.swift.liquid */,
-			);
-			path = TextManager;
-			sourceTree = "<group>";
-		};
-		B2802ECA27F9C823002EB628 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B2802ECB27F9C823002EB628 /* viewcontroller.swift.liquid */,
-				B2802ECC27F9C823002EB628 /* view_input.swift.liquid */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B2802ECD27F9C823002EB628 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				B2802ECE27F9C823002EB628 /* interactor_input.swift.liquid */,
-				B2802ECF27F9C823002EB628 /* interactor.swift.liquid */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B2802ED027F9C823002EB628 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				B2802ED127F9C823002EB628 /* router.swift.liquid */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,31 +345,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2802EDB27F9C823002EB628 /* interactor_input.swift.liquid in Resources */,
 				B2802EB727F9C2EB002EB628 /* Roboto-Bold.ttf in Resources */,
-				B2802ED327F9C823002EB628 /* swifty_viper.rambaspec in Resources */,
 				B2802EB527F9C2EB002EB628 /* LICENSE.txt in Resources */,
 				B2802EB227F9C2EB002EB628 /* Roboto-BoldItalic.ttf in Resources */,
 				B2802EAF27F9C2EB002EB628 /* Roboto-Regular.ttf in Resources */,
-				B2802EDA27F9C823002EB628 /* view_input.swift.liquid in Resources */,
 				B2802EB327F9C2EB002EB628 /* Roboto-LightItalic.ttf in Resources */,
 				B2802EAD27F9C2EB002EB628 /* Roboto-Medium.ttf in Resources */,
-				B2802ED527F9C823002EB628 /* presenter.swift.liquid in Resources */,
 				B231CCA627F43EB4001DAE9E /* LaunchScreen.storyboard in Resources */,
-				B2802EDC27F9C823002EB628 /* interactor.swift.liquid in Resources */,
-				B2802ED227F9C823002EB628 /* header.liquid in Resources */,
 				B2802EB627F9C2EB002EB628 /* Roboto-BlackItalic.ttf in Resources */,
-				B2802ED727F9C823002EB628 /* textmanager_protocol.swift.liquid in Resources */,
 				B2802EB827F9C2EB002EB628 /* Roboto-Thin.ttf in Resources */,
 				B2802EAE27F9C2EB002EB628 /* Roboto-Light.ttf in Resources */,
-				B2802ED827F9C823002EB628 /* textmanager.swift.liquid in Resources */,
-				B2802ED427F9C823002EB628 /* assembly.swift.liquid in Resources */,
 				B2802EB127F9C2EB002EB628 /* Roboto-ThinItalic.ttf in Resources */,
 				B2802EB927F9C2EB002EB628 /* Roboto-Black.ttf in Resources */,
-				B2802EDD27F9C823002EB628 /* router.swift.liquid in Resources */,
 				B2802EB027F9C2EB002EB628 /* Roboto-MediumItalic.ttf in Resources */,
-				B2802ED927F9C823002EB628 /* viewcontroller.swift.liquid in Resources */,
-				B2802ED627F9C823002EB628 /* presenter_protocol.swift.liquid in Resources */,
 				B231CCA327F43EB4001DAE9E /* Assets.xcassets in Resources */,
 				B2802EB427F9C2EB002EB628 /* Roboto-Italic.ttf in Resources */,
 				B2802E8A27F9B04F002EB628 /* GoogleService-Info.plist in Resources */,

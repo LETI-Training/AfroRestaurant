@@ -1,0 +1,23 @@
+### Headers settings
+company: Sfera
+
+### Xcode project settings
+project_name: AfroRestaurant
+xcodeproj_path: AfroRestaurant.xcodeproj
+prefix:
+
+### Code generation settings section
+# The main project target name
+project_target: AfroRestaurant
+
+# The file path for new modules
+project_file_path: AfroRestaurant/Modules/
+
+# The Xcode group path to new modules
+project_group_path: AfroRestaurant/Modules/
+
+### Templates
+templates:
+- {name: swifty_viper}
+
+
