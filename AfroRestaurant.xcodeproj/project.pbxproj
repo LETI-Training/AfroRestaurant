@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,11 @@
 		B2802EB827F9C2EB002EB628 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EAB27F9C2EB002EB628 /* Roboto-Thin.ttf */; };
 		B2802EB927F9C2EB002EB628 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */; };
 		B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */; };
+		B2802EE027F9D263002EB628 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EDF27F9D263002EB628 /* UIImage+Extensions.swift */; };
+		B2802EE227F9DF38002EB628 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE127F9DF38002EB628 /* AppCoordinator.swift */; };
+		B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */; };
+		B2802EE627F9E20D002EB628 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE527F9E20D002EB628 /* UserType.swift */; };
+		B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE727F9E2BE002EB628 /* AppInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		B2802EAB27F9C2EB002EB628 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		B2802EDF27F9D263002EB628 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		B2802EE127F9DF38002EB628 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppCoordinatorFactory.swift; sourceTree = "<group>"; };
+		B2802EE527F9E20D002EB628 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		B2802EE727F9E2BE002EB628 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
 		BBEB701173936926B1456D07 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,7 +234,11 @@
 			isa = PBXGroup;
 			children = (
 				B231CC9927F43EB2001DAE9E /* AppDelegate.swift */,
+				B2802EE127F9DF38002EB628 /* AppCoordinator.swift */,
+				B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */,
 				B231CC9B27F43EB2001DAE9E /* SceneDelegate.swift */,
+				B2802EE527F9E20D002EB628 /* UserType.swift */,
+				B2802EE727F9E2BE002EB628 /* AppInteractor.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -250,6 +264,7 @@
 			children = (
 				B2802E9C27F9C184002EB628 /* UIColor+Extensions.swift */,
 				B2802EBA27F9C597002EB628 /* UIFont+Extension.swift */,
+				B2802EDF27F9D263002EB628 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,7 +402,7 @@
 				};
 			};
 			buildConfigurationList = B231CC9127F43EB2001DAE9E /* Build configuration list for PBXProject "AfroRestaurant" */;
-			compatibilityVersion = "Xcode 11.4";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -457,7 +472,9 @@
 			files = (
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
 				B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */,
+				B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */,
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
+				B2802EE027F9D263002EB628 /* UIImage+Extensions.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
 				91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */,
@@ -466,7 +483,10 @@
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
 				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
 				77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */,
+				B2802EE227F9DF38002EB628 /* AppCoordinator.swift in Sources */,
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
+				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,
+				B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */,
 				7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
