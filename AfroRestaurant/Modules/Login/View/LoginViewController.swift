@@ -63,7 +63,6 @@ final class LoginViewController: BaseViewController {
         let textField = UITextField(frame: .zero)
         textField.layer.cornerRadius = 12.0
         textField.textColor = .textPrimary
-        textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
         textField.backgroundColor = .textField
