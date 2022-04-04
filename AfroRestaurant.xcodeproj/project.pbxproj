@@ -72,6 +72,7 @@
 		B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */; };
 		B2802EE627F9E20D002EB628 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE527F9E20D002EB628 /* UserType.swift */; };
 		B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE727F9E2BE002EB628 /* AppInteractor.swift */; };
+		B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppCoordinatorFactory.swift; sourceTree = "<group>"; };
 		B2802EE527F9E20D002EB628 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		B2802EE727F9E2BE002EB628 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
+		B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdminHome+NavigationViews.swift"; sourceTree = "<group>"; };
 		BBEB701173936926B1456D07 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				B25E31E627FA3EF00057D12C /* AdminHomeViewInput.swift */,
+				B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */,
 				B25E31E727FA3EF00057D12C /* AdminHomeViewController.swift */,
 			);
 			path = View;
@@ -679,6 +682,7 @@
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
 				B25E31D927FA17DB0057D12C /* AuthorizationService.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
+				B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */,
 				B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */,
 				B25E31ED27FA3EF00057D12C /* AdminHomeAssembly.swift in Sources */,
 				B25E31D027FA02B30057D12C /* UILabel+Extension.swift in Sources */,

@@ -6,7 +6,8 @@ class AdminHomeAssembly {
         let view = AdminHomeViewController()
         let router = AdminHomeRouter()
         let presenter = AdminHomePresenter()
-        let interactor = AdminHomeInteractor()
+        let authService: AuthorizationServiceInput? = ServiceLocator.shared.getService()
+        let interactor = AdminHomeInteractor(authService: authService)
 
         view.presenter = presenter
         presenter.view = view

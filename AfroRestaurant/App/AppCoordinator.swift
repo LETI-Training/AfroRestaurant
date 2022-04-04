@@ -43,9 +43,11 @@ extension AppCoordinator {
 extension AppCoordinator: AppCoordinatorProtocol {
     
     func createLandingPage(scene: UIWindowScene) {
-        window = UIWindow(windowScene: scene)
-        window?.rootViewController = createLoginVC()
-        window?.makeKeyAndVisible()
+//        window = UIWindow(windowScene: scene)
+//        window?.rootViewController = createLoginVC()
+//        window?.makeKeyAndVisible()
+        
+        createHomePages(for: .admin, scene: scene)
     }
     
     func createHomePages(for userType: UserType, scene: UIWindowScene) {

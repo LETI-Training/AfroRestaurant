@@ -24,6 +24,6 @@ extension UIImage {
     static var floatingDivider: UIImage { UIImage(named: "floatingDivider")! }
     static var logoSmall: UIImage { UIImage(named: "logo_small")! }
     static var logo: UIImage { UIImage(named: "logo")! }
-    static var star: UIImage { UIImage(named: "star")! }
+    static var star: UIImage { UIImage(named: "Star")! }
     static var userIcon: UIImage { UIImage(named: "userIcon")! }
 }

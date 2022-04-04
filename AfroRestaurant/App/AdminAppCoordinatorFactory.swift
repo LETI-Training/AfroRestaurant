@@ -11,7 +11,6 @@ import UIKit
 class AdminAppCoordinatorFactory {
     private func createHomeVC() -> UINavigationController {
         let viewController = AdminHomeAssembly.assemble()
-        viewController.title = "Testing"
         viewController.tabBarItem = UITabBarItem(
             title: "Home",
             image: .tabBarItems.home,
@@ -22,7 +21,6 @@ class AdminAppCoordinatorFactory {
     
     private func createProfitsVC() -> UINavigationController {
         let viewController = AdminHomeAssembly.assemble()
-        viewController.title = "Testing"
         viewController.tabBarItem = UITabBarItem(
             title: "Profits",
             image: .tabBarItems.profits,
@@ -33,7 +31,6 @@ class AdminAppCoordinatorFactory {
     
     private func createInventoryVC() -> UINavigationController {
         let viewController = AdminHomeAssembly.assemble()
-        viewController.title = "Testing"
         viewController.tabBarItem = UITabBarItem(
             title: "Inventory",
             image: .tabBarItems.inventory,

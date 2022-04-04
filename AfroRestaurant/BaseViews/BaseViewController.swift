@@ -42,20 +42,15 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .background
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .textPrimary
-        //TODO: -  fix me
-        //        navigationController?.navigationBar.titleTextAttributes = [
-        ////            NSAttributedString.Key.font: UIFont.extraBoldItalic28,
-        ////            NSAttributedString.Key.foregroundColor: UIColor.textColorBlack
-        //        ]
-        
-        //        navigationController?.navigationBar.largeTitleTextAttributes = [
-        ////            NSAttributedString.Key.font: UIFont.extraBoldItalic48,
-        ////            NSAttributedString.Key.foregroundColor: UIColor.textColorBlack
-        //        ]
-        
-        //        navigationController?.navigationBar.tintColor = .textColorGray
-        
-        //        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.titleTextAttributes = [
+//            NSAttributedString.Key.font: UIFont.font(.extraBold, size: 32.0),
+//            NSAttributedString.Key.foregroundColor: UIColor.textPrimary
+//        ]
+//        
+//        navigationController?.navigationBar.largeTitleTextAttributes = [
+//            NSAttributedString.Key.font: UIFont.font(.regular, size: 14.0),
+//            NSAttributedString.Key.foregroundColor: UIColor.textPrimary
+//        ]
         
         addSubViews()
         makeConstraints()
@@ -122,15 +117,22 @@ class BaseViewController: UIViewController {
     }
     
     func handleKeyboardHeight(rect: CGRect) {}
-    
-    
 }
 
 extension BaseViewController {
     
     func addKeyBoardObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification, object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 }
 
