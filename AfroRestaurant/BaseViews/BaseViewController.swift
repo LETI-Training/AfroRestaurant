@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+        .darkContent
     }
     
     func setUpUI() {
