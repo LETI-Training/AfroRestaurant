@@ -76,6 +76,22 @@
 		B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */; };
 		B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */; };
 		B2AA08E927FB57920038DDB1 /* AdminTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E827FB57920038DDB1 /* AdminTableHeaderView.swift */; };
+		B2AA090627FB7E840038DDB1 /* AdminProfitsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08EC27FB7E840038DDB1 /* AdminProfitsAssembly.swift */; };
+		B2AA090727FB7E840038DDB1 /* AdminProfitsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08EE27FB7E840038DDB1 /* AdminProfitsPresenter.swift */; };
+		B2AA090827FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08EF27FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift */; };
+		B2AA090927FB7E840038DDB1 /* AdminProfitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08F127FB7E840038DDB1 /* AdminProfitsViewController.swift */; };
+		B2AA090A27FB7E840038DDB1 /* AdminProfitsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08F227FB7E840038DDB1 /* AdminProfitsViewInput.swift */; };
+		B2AA090B27FB7E840038DDB1 /* AdminProfitsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08F427FB7E840038DDB1 /* AdminProfitsInteractor.swift */; };
+		B2AA090C27FB7E840038DDB1 /* AdminProfitsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08F527FB7E840038DDB1 /* AdminProfitsInteractorInput.swift */; };
+		B2AA090D27FB7E840038DDB1 /* AdminProfitsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08F727FB7E840038DDB1 /* AdminProfitsRouter.swift */; };
+		B2AA090E27FB7E840038DDB1 /* AdminInventoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08FA27FB7E840038DDB1 /* AdminInventoryAssembly.swift */; };
+		B2AA090F27FB7E840038DDB1 /* AdminInventoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08FC27FB7E840038DDB1 /* AdminInventoryPresenter.swift */; };
+		B2AA091027FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08FD27FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift */; };
+		B2AA091127FB7E840038DDB1 /* AdminInventoryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08FF27FB7E840038DDB1 /* AdminInventoryViewInput.swift */; };
+		B2AA091227FB7E840038DDB1 /* AdminInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090027FB7E840038DDB1 /* AdminInventoryViewController.swift */; };
+		B2AA091327FB7E840038DDB1 /* AdminInventoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090227FB7E840038DDB1 /* AdminInventoryInteractor.swift */; };
+		B2AA091427FB7E840038DDB1 /* AdminInventoryInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090327FB7E840038DDB1 /* AdminInventoryInteractorInput.swift */; };
+		B2AA091527FB7E840038DDB1 /* AdminInventoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090527FB7E840038DDB1 /* AdminInventoryRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +179,22 @@
 		B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		B2AA08E827FB57920038DDB1 /* AdminTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableHeaderView.swift; sourceTree = "<group>"; };
+		B2AA08EC27FB7E840038DDB1 /* AdminProfitsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsAssembly.swift; sourceTree = "<group>"; };
+		B2AA08EE27FB7E840038DDB1 /* AdminProfitsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsPresenter.swift; sourceTree = "<group>"; };
+		B2AA08EF27FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsPresenterProtocol.swift; sourceTree = "<group>"; };
+		B2AA08F127FB7E840038DDB1 /* AdminProfitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsViewController.swift; sourceTree = "<group>"; };
+		B2AA08F227FB7E840038DDB1 /* AdminProfitsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsViewInput.swift; sourceTree = "<group>"; };
+		B2AA08F427FB7E840038DDB1 /* AdminProfitsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsInteractor.swift; sourceTree = "<group>"; };
+		B2AA08F527FB7E840038DDB1 /* AdminProfitsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsInteractorInput.swift; sourceTree = "<group>"; };
+		B2AA08F727FB7E840038DDB1 /* AdminProfitsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProfitsRouter.swift; sourceTree = "<group>"; };
+		B2AA08FA27FB7E840038DDB1 /* AdminInventoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryAssembly.swift; sourceTree = "<group>"; };
+		B2AA08FC27FB7E840038DDB1 /* AdminInventoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryPresenter.swift; sourceTree = "<group>"; };
+		B2AA08FD27FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryPresenterProtocol.swift; sourceTree = "<group>"; };
+		B2AA08FF27FB7E840038DDB1 /* AdminInventoryViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryViewInput.swift; sourceTree = "<group>"; };
+		B2AA090027FB7E840038DDB1 /* AdminInventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryViewController.swift; sourceTree = "<group>"; };
+		B2AA090227FB7E840038DDB1 /* AdminInventoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryInteractor.swift; sourceTree = "<group>"; };
+		B2AA090327FB7E840038DDB1 /* AdminInventoryInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryInteractorInput.swift; sourceTree = "<group>"; };
+		B2AA090527FB7E840038DDB1 /* AdminInventoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryRouter.swift; sourceTree = "<group>"; };
 		BBEB701173936926B1456D07 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -434,6 +466,8 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B2AA08F827FB7E840038DDB1 /* AdminInventory */,
+				B2AA08EA27FB7E840038DDB1 /* AdminProfits */,
 				B25E31DF27FA3EF00057D12C /* AdminHome */,
 				7DB6B94A33874AEFE374DD09 /* Login */,
 				B25E31B927F9FC4E0057D12C /* Signup */,
@@ -491,6 +525,116 @@
 				B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		B2AA08EA27FB7E840038DDB1 /* AdminProfits */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08EB27FB7E840038DDB1 /* Assembly */,
+				B2AA08ED27FB7E840038DDB1 /* Presenter */,
+				B2AA08F027FB7E840038DDB1 /* View */,
+				B2AA08F327FB7E840038DDB1 /* Interactor */,
+				B2AA08F627FB7E840038DDB1 /* Router */,
+			);
+			path = AdminProfits;
+			sourceTree = "<group>";
+		};
+		B2AA08EB27FB7E840038DDB1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08EC27FB7E840038DDB1 /* AdminProfitsAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B2AA08ED27FB7E840038DDB1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08EE27FB7E840038DDB1 /* AdminProfitsPresenter.swift */,
+				B2AA08EF27FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B2AA08F027FB7E840038DDB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08F127FB7E840038DDB1 /* AdminProfitsViewController.swift */,
+				B2AA08F227FB7E840038DDB1 /* AdminProfitsViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2AA08F327FB7E840038DDB1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08F427FB7E840038DDB1 /* AdminProfitsInteractor.swift */,
+				B2AA08F527FB7E840038DDB1 /* AdminProfitsInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B2AA08F627FB7E840038DDB1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08F727FB7E840038DDB1 /* AdminProfitsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B2AA08F827FB7E840038DDB1 /* AdminInventory */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08F927FB7E840038DDB1 /* Assembly */,
+				B2AA08FB27FB7E840038DDB1 /* Presenter */,
+				B2AA08FE27FB7E840038DDB1 /* View */,
+				B2AA090127FB7E840038DDB1 /* Interactor */,
+				B2AA090427FB7E840038DDB1 /* Router */,
+			);
+			path = AdminInventory;
+			sourceTree = "<group>";
+		};
+		B2AA08F927FB7E840038DDB1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08FA27FB7E840038DDB1 /* AdminInventoryAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B2AA08FB27FB7E840038DDB1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08FC27FB7E840038DDB1 /* AdminInventoryPresenter.swift */,
+				B2AA08FD27FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B2AA08FE27FB7E840038DDB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA08FF27FB7E840038DDB1 /* AdminInventoryViewInput.swift */,
+				B2AA090027FB7E840038DDB1 /* AdminInventoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2AA090127FB7E840038DDB1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA090227FB7E840038DDB1 /* AdminInventoryInteractor.swift */,
+				B2AA090327FB7E840038DDB1 /* AdminInventoryInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B2AA090427FB7E840038DDB1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA090527FB7E840038DDB1 /* AdminInventoryRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		D49B9CE307BCD280030F06E3 /* Presenter */ = {
@@ -673,28 +817,42 @@
 				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
 				B25E31CC27F9FC4F0057D12C /* SignupInteractor.swift in Sources */,
+				B2AA090C27FB7E840038DDB1 /* AdminProfitsInteractorInput.swift in Sources */,
 				B25E31CA27F9FC4F0057D12C /* SignupViewController.swift in Sources */,
 				B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */,
 				B25E31F727FA46DC0057D12C /* WeakRefeferenceWrapper.swift in Sources */,
 				B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */,
+				B2AA091027FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift in Sources */,
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
 				B2802EE027F9D263002EB628 /* UIImage+Extensions.swift in Sources */,
 				B25E31D427FA05FC0057D12C /* AssociatedObject.swift in Sources */,
 				B25E31F027FA3EF00057D12C /* AdminHomeViewInput.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
 				B25E31F327FA3EF00057D12C /* AdminHomeInteractorInput.swift in Sources */,
+				B2AA091327FB7E840038DDB1 /* AdminInventoryInteractor.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
+				B2AA090B27FB7E840038DDB1 /* AdminProfitsInteractor.swift in Sources */,
 				B25E31F427FA3EF00057D12C /* AdminHomeRouter.swift in Sources */,
+				B2AA091527FB7E840038DDB1 /* AdminInventoryRouter.swift in Sources */,
 				91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */,
+				B2AA090827FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift in Sources */,
 				B2AA08E927FB57920038DDB1 /* AdminTableHeaderView.swift in Sources */,
 				9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */,
 				B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */,
 				B25E31D227FA05E00057D12C /* UIView+Extensions.swift in Sources */,
+				B2AA091427FB7E840038DDB1 /* AdminInventoryInteractorInput.swift in Sources */,
+				B2AA090627FB7E840038DDB1 /* AdminProfitsAssembly.swift in Sources */,
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
+				B2AA091127FB7E840038DDB1 /* AdminInventoryViewInput.swift in Sources */,
+				B2AA090E27FB7E840038DDB1 /* AdminInventoryAssembly.swift in Sources */,
+				B2AA090A27FB7E840038DDB1 /* AdminProfitsViewInput.swift in Sources */,
 				B25E31D927FA17DB0057D12C /* AuthorizationService.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
 				B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */,
 				B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */,
+				B2AA090727FB7E840038DDB1 /* AdminProfitsPresenter.swift in Sources */,
+				B2AA090927FB7E840038DDB1 /* AdminProfitsViewController.swift in Sources */,
+				B2AA091227FB7E840038DDB1 /* AdminInventoryViewController.swift in Sources */,
 				B25E31ED27FA3EF00057D12C /* AdminHomeAssembly.swift in Sources */,
 				B25E31D027FA02B30057D12C /* UILabel+Extension.swift in Sources */,
 				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
@@ -703,7 +861,9 @@
 				B25E31F227FA3EF00057D12C /* AdminHomeInteractor.swift in Sources */,
 				77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */,
 				B25E31F127FA3EF00057D12C /* AdminHomeViewController.swift in Sources */,
+				B2AA090D27FB7E840038DDB1 /* AdminProfitsRouter.swift in Sources */,
 				B2802EE227F9DF38002EB628 /* AppCoordinator.swift in Sources */,
+				B2AA090F27FB7E840038DDB1 /* AdminInventoryPresenter.swift in Sources */,
 				B25E31EF27FA3EF00057D12C /* AdminHomePresenter.swift in Sources */,
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
 				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,

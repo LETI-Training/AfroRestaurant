@@ -1,0 +1,2 @@
+protocol AdminProfitsInteractorInput: AnyObject {
+}
