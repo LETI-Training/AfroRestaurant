@@ -34,7 +34,7 @@ final class AdminHomeViewController: BaseViewController {
             UIColor(red: 0.031, green: 0.624, blue: 0.404, alpha: 0).cgColor
         ]
         layer.locations = [0, 1]
-        layer.startPoint = CGPoint(x: 0.20, y: 0.5)
+        layer.startPoint = CGPoint(x: 0.22, y: 0.5)
         layer.endPoint = CGPoint(x: 0.75, y: 0.5)
         layer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
         return layer
@@ -58,7 +58,6 @@ final class AdminHomeViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInsetAdjustmentBehavior = .never
-//        tableView.clipsToBounds = false
         return tableView
     }()
     
@@ -193,6 +192,6 @@ extension AdminHomeViewController: UITableViewDelegate {
         }
         view.layoutIfNeeded()
         gradientView.layoutIfNeeded()
-        setupNavigationBar(isDark: (gradientView.frame.origin.y + 80.0) >= 0)
+        setupNavigationBar(isDark: (gradientView.frame.origin.y + 40.0) >= 0)
     }
 }
