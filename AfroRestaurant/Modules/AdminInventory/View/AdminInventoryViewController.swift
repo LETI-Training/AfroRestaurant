@@ -9,13 +9,13 @@ extension AdminInventoryViewController {
 final class AdminInventoryViewController: BaseViewController {
 
     private let appearance = Appearance()
-    private let disposeBag = DisposeBag()
     var presenter: AdminInventoryPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        title = "Coming Soon"
     }
 
     private func setupUI() {

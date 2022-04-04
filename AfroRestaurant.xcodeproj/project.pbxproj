@@ -92,6 +92,8 @@
 		B2AA091327FB7E840038DDB1 /* AdminInventoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090227FB7E840038DDB1 /* AdminInventoryInteractor.swift */; };
 		B2AA091427FB7E840038DDB1 /* AdminInventoryInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090327FB7E840038DDB1 /* AdminInventoryInteractorInput.swift */; };
 		B2AA091527FB7E840038DDB1 /* AdminInventoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA090527FB7E840038DDB1 /* AdminInventoryRouter.swift */; };
+		B2AA091727FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA091627FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift */; };
+		B2AA091927FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA091827FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +197,8 @@
 		B2AA090227FB7E840038DDB1 /* AdminInventoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryInteractor.swift; sourceTree = "<group>"; };
 		B2AA090327FB7E840038DDB1 /* AdminInventoryInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryInteractorInput.swift; sourceTree = "<group>"; };
 		B2AA090527FB7E840038DDB1 /* AdminInventoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminInventoryRouter.swift; sourceTree = "<group>"; };
+		B2AA091627FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfitsTableViewCell.swift; sourceTree = "<group>"; };
+		B2AA091827FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfitsHeaderView.swift; sourceTree = "<group>"; };
 		BBEB701173936926B1456D07 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -466,9 +470,9 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B25E31DF27FA3EF00057D12C /* AdminHome */,
 				B2AA08F827FB7E840038DDB1 /* AdminInventory */,
 				B2AA08EA27FB7E840038DDB1 /* AdminProfits */,
-				B25E31DF27FA3EF00057D12C /* AdminHome */,
 				7DB6B94A33874AEFE374DD09 /* Login */,
 				B25E31B927F9FC4E0057D12C /* Signup */,
 			);
@@ -560,6 +564,8 @@
 			isa = PBXGroup;
 			children = (
 				B2AA08F127FB7E840038DDB1 /* AdminProfitsViewController.swift */,
+				B2AA091627FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift */,
+				B2AA091827FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift */,
 				B2AA08F227FB7E840038DDB1 /* AdminProfitsViewInput.swift */,
 			);
 			path = View;
@@ -853,6 +859,7 @@
 				B2AA090727FB7E840038DDB1 /* AdminProfitsPresenter.swift in Sources */,
 				B2AA090927FB7E840038DDB1 /* AdminProfitsViewController.swift in Sources */,
 				B2AA091227FB7E840038DDB1 /* AdminInventoryViewController.swift in Sources */,
+				B2AA091927FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift in Sources */,
 				B25E31ED27FA3EF00057D12C /* AdminHomeAssembly.swift in Sources */,
 				B25E31D027FA02B30057D12C /* UILabel+Extension.swift in Sources */,
 				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
@@ -866,6 +873,7 @@
 				B2AA090F27FB7E840038DDB1 /* AdminInventoryPresenter.swift in Sources */,
 				B25E31EF27FA3EF00057D12C /* AdminHomePresenter.swift in Sources */,
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
+				B2AA091727FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift in Sources */,
 				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,
 				B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */,
 				B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */,

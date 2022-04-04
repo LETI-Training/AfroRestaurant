@@ -28,4 +28,5 @@ extension UIImage {
     static var userIcon: UIImage { UIImage(named: "userIcon")! }
     static var blackCoins: UIImage { UIImage(named: "black_coins")! }
     static var greenStar: UIImage { UIImage(named: "greenStar")! }
+    static var greenCoins: UIImage { UIImage(named: "greenCoins")! }
 }

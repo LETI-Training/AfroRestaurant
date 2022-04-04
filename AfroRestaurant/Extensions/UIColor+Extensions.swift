@@ -36,5 +36,9 @@ extension UIColor {
     class var tabBarPrimary: UIColor {
         UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 0.92)
     }
+    
+    class var divider: UIColor {
+        UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+    }
 }
 

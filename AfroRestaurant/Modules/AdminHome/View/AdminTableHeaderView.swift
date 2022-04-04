@@ -18,8 +18,6 @@ extension AdminTableHeaderView {
 class AdminTableHeaderView: UIView {
     let appearance = Appearance()
     
-   
-    
     private lazy var profitsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Here’s your profit for today"

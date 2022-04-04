@@ -141,7 +141,7 @@ extension BaseViewController {
     
     static var dividerView: UIView {
         let view = UIView()
-        view.backgroundColor = .textSecondary
+        view.backgroundColor = .divider
         view.snp.makeConstraints { make in
             make.height.equalTo(0.5)
         }

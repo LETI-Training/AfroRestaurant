@@ -20,7 +20,7 @@ class AdminAppCoordinatorFactory {
     }
     
     private func createProfitsVC() -> UINavigationController {
-        let viewController = AdminHomeAssembly.assemble()
+        let viewController = AdminProfitsAssembly.assemble()
         viewController.tabBarItem = UITabBarItem(
             title: "Profits",
             image: .tabBarItems.profits,
@@ -30,7 +30,7 @@ class AdminAppCoordinatorFactory {
     }
     
     private func createInventoryVC() -> UINavigationController {
-        let viewController = AdminHomeAssembly.assemble()
+        let viewController = AdminInventoryAssembly.assemble()
         viewController.tabBarItem = UITabBarItem(
             title: "Inventory",
             image: .tabBarItems.inventory,
