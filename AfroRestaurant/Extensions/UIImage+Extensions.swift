@@ -20,10 +20,12 @@ extension UIImage {
     }
     
     static var afroHeader: UIImage { UIImage(named: "afro_header")! }
-    static var like: UIImage { UIImage(named: "favorite")! }
+    static var favorite: UIImage { UIImage(named: "Favorite")! }
     static var floatingDivider: UIImage { UIImage(named: "floatingDivider")! }
     static var logoSmall: UIImage { UIImage(named: "logo_small")! }
     static var logo: UIImage { UIImage(named: "logo")! }
     static var star: UIImage { UIImage(named: "Star")! }
     static var userIcon: UIImage { UIImage(named: "userIcon")! }
+    static var blackCoins: UIImage { UIImage(named: "black_coins")! }
+    static var greenStar: UIImage { UIImage(named: "greenStar")! }
 }

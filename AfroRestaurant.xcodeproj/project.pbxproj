@@ -73,6 +73,9 @@
 		B2802EE627F9E20D002EB628 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE527F9E20D002EB628 /* UserType.swift */; };
 		B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE727F9E2BE002EB628 /* AppInteractor.swift */; };
 		B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */; };
+		B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */; };
+		B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */; };
+		B2AA08E927FB57920038DDB1 /* AdminTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E827FB57920038DDB1 /* AdminTableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,9 @@
 		B2802EE527F9E20D002EB628 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		B2802EE727F9E2BE002EB628 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
 		B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdminHome+NavigationViews.swift"; sourceTree = "<group>"; };
+		B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUpdatesTableViewCell.swift; sourceTree = "<group>"; };
+		B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		B2AA08E827FB57920038DDB1 /* AdminTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableHeaderView.swift; sourceTree = "<group>"; };
 		BBEB701173936926B1456D07 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		C26C9CEC55B6470D9607498C /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +387,8 @@
 				B25E31E627FA3EF00057D12C /* AdminHomeViewInput.swift */,
 				B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */,
 				B25E31E727FA3EF00057D12C /* AdminHomeViewController.swift */,
+				B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */,
+				B2AA08E827FB57920038DDB1 /* AdminTableHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +460,7 @@
 				B25E31D327FA05FC0057D12C /* AssociatedObject.swift */,
 				B25E31D527FA062B0057D12C /* AttributedStrings+Extension.swift */,
 				B25E31DA27FA18620057D12C /* UIViewController+Extension.swift */,
+				B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -659,6 +668,7 @@
 			files = (
 				B25E31DB27FA18620057D12C /* UIViewController+Extension.swift in Sources */,
 				B25E31CE27F9FC4F0057D12C /* SignupRouter.swift in Sources */,
+				B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */,
 				B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */,
 				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
@@ -676,6 +686,7 @@
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
 				B25E31F427FA3EF00057D12C /* AdminHomeRouter.swift in Sources */,
 				91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */,
+				B2AA08E927FB57920038DDB1 /* AdminTableHeaderView.swift in Sources */,
 				9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */,
 				B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */,
 				B25E31D227FA05E00057D12C /* UIView+Extensions.swift in Sources */,
@@ -697,6 +708,7 @@
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
 				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,
 				B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */,
+				B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */,
 				7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */,
 				B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */,
 				B25E31EE27FA3EF00057D12C /* AdminHomePresenterProtocol.swift in Sources */,
@@ -875,7 +887,7 @@
 				INFOPLIST_FILE = AfroRestaurant/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -904,7 +916,7 @@
 				INFOPLIST_FILE = AfroRestaurant/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

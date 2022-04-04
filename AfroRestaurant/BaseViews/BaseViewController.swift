@@ -28,6 +28,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        navigationController?.navigationBar.barStyle = .black
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -35,22 +36,22 @@ class BaseViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .darkContent
+        .lightContent
     }
     
     func setUpUI() {
         view.backgroundColor = .background
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .textPrimary
-//        navigationController?.navigationBar.titleTextAttributes = [
-//            NSAttributedString.Key.font: UIFont.font(.extraBold, size: 32.0),
-//            NSAttributedString.Key.foregroundColor: UIColor.textPrimary
-//        ]
-//        
-//        navigationController?.navigationBar.largeTitleTextAttributes = [
-//            NSAttributedString.Key.font: UIFont.font(.regular, size: 14.0),
-//            NSAttributedString.Key.foregroundColor: UIColor.textPrimary
-//        ]
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.font(.extraBold, size: 32.0),
+            NSAttributedString.Key.foregroundColor: UIColor.textPrimary
+        ]
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.font(.regular, size: 14.0),
+            NSAttributedString.Key.foregroundColor: UIColor.textPrimary
+        ]
         
         addSubViews()
         makeConstraints()
@@ -136,3 +137,14 @@ extension BaseViewController {
     }
 }
 
+extension BaseViewController {
+    
+    static var dividerView: UIView {
+        let view = UIView()
+        view.backgroundColor = .textSecondary
+        view.snp.makeConstraints { make in
+            make.height.equalTo(0.5)
+        }
+        return view
+    }
+}

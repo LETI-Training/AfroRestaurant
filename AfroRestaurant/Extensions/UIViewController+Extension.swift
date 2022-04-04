@@ -70,3 +70,30 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+class CustomNavigationController: UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    open override var childForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
+    
+    open override var childForStatusBarHidden: UIViewController? {
+        return topViewController
+    }
+}
+
+class CustomTabBarController: UITabBarController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+    open override var childForStatusBarStyle: UIViewController? {
+        return children.first
+    }
+    
+    open override var childForStatusBarHidden: UIViewController? {
+        return children.first
+    }
+}

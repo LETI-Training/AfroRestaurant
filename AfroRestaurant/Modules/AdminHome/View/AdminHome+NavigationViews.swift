@@ -11,8 +11,7 @@ import SnapKit
 
 extension AdminHomeViewController {
     
-    func makeRightBar(text: String) -> UIView {
-        
+    func makeRightBar(text: String, isDark: Bool) -> UIView {
         let starImageView = UIImageView(image: .star)
         starImageView.contentMode = .scaleAspectFit
         starImageView.snp.makeConstraints { make in
@@ -20,17 +19,20 @@ extension AdminHomeViewController {
         }
         let label = UILabel()
         label.text = text
-        label.textColor = .textPrimary
+        label.textColor = isDark ? .background : .textPrimary
         label.font = .font(.regular, size: 15.0)
         label.textAlignment = .left
         label.sizeToFit()
         
         let button = UIButton()
         button.addTarget(self, action: #selector(profileImageTapped), for: .touchUpInside)
-        button.setImage(.userIcon, for: .normal)
+        let image: UIImage = .userIcon.withRenderingMode(.alwaysTemplate).withTintColor(isDark ? .background : .textPrimary)
+
+        button.setImage(image, for: .normal)
         button.snp.makeConstraints { make in
             make.width.height.equalTo(36.0)
         }
+        button.tintColor = isDark ? .background : .textPrimary
         button.layer.cornerRadius = 18.0
         
         let stackView = UIStackView(arrangedSubviews: [

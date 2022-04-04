@@ -16,7 +16,7 @@ class AdminAppCoordinatorFactory {
             image: .tabBarItems.home,
             selectedImage: .tabBarItems.homeHighlighted
         )
-        return UINavigationController(rootViewController: viewController)
+        return CustomNavigationController(rootViewController: viewController)
     }
     
     private func createProfitsVC() -> UINavigationController {
@@ -26,7 +26,7 @@ class AdminAppCoordinatorFactory {
             image: .tabBarItems.profits,
             selectedImage: .tabBarItems.profitsHighlighted
         )
-        return UINavigationController(rootViewController: viewController)
+        return CustomNavigationController(rootViewController: viewController)
     }
     
     private func createInventoryVC() -> UINavigationController {
@@ -36,13 +36,13 @@ class AdminAppCoordinatorFactory {
             image: .tabBarItems.inventory,
             selectedImage: .tabBarItems.inventoryHighlighted
         )
-        return UINavigationController(rootViewController: viewController)
+        return CustomNavigationController(rootViewController: viewController)
     }
 }
 
 extension AdminAppCoordinatorFactory: AppCordinatorFactory {
     func createTabBar() -> UITabBarController {
-        let tabBarVC = UITabBarController()
+        let tabBarVC = CustomTabBarController()
         let appearance = UITabBarAppearance()
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.textPrimary]
         tabBarVC.tabBar.standardAppearance = appearance
