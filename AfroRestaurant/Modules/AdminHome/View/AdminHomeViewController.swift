@@ -179,10 +179,20 @@ extension AdminHomeViewController: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateNavigationTitleWhileScrolling(scrollView: scrollView)
+        updateGradientLayerWhileScrolling(scrollView: scrollView)
+    }
+    
+    private func updateNavigationTitleWhileScrolling(scrollView: UIScrollView) {
+        navLargeLabel.text = scrollView.contentOffset.y <= gradientView.frame.height - 75.0
+        ? "Welcome,"
+        : "Updates"
+        setupNavigationBar(isDark: (gradientView.frame.origin.y + 40.0) >= 0)
+    }
+    
+    private func updateGradientLayerWhileScrolling(scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
-            guard abs(scrollView.contentOffset.y) <= 50.0 else {
-                return
-            }
+            guard abs(scrollView.contentOffset.y) <= 50.0 else { return }
         } else {
             guard scrollView.contentOffset.y < gradientView.frame.height - 50.0 else { return }
         }
@@ -192,6 +202,5 @@ extension AdminHomeViewController: UITableViewDelegate {
         }
         view.layoutIfNeeded()
         gradientView.layoutIfNeeded()
-        setupNavigationBar(isDark: (gradientView.frame.origin.y + 40.0) >= 0)
     }
 }
