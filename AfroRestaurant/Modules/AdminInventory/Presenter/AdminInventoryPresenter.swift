@@ -29,7 +29,9 @@ extension AdminInventoryPresenter: AdminInventoryPresenterProtocol {
         router?.presentNewCategory(output: self)
     }
     
-    func didSelectItem(at row: Int) {}
+    func didSelectItem(at row: Int) {
+        router?.routeToDishes()
+    }
     
     func didDeleteItem(at row: Int) {
         interactor?.deleteCategory(categoryModel: categoryModels[row], completion: { [weak self] in
