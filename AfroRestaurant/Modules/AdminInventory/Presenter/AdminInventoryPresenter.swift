@@ -7,6 +7,10 @@ class AdminInventoryPresenter {
 }
 
 extension AdminInventoryPresenter: AdminInventoryPresenterProtocol {
+    func didTapAddNewCategory() {
+        
+    }
+    
     func didSelectItem(at row: Int) {
         
     }

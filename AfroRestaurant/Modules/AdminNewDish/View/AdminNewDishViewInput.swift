@@ -1,0 +1,1 @@
+protocol AdminNewDishViewInput: AnyObject {}

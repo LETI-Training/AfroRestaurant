@@ -55,6 +55,19 @@ final class AdminInventoryViewController: BaseViewController {
         return tableView
     }()
     
+    private lazy var newCategoryButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("ADD CATEGORY", for: .normal)
+        button.setTitleColor(.background, for: .normal)
+        button.titleLabel?.font = .font(.regular, size: 14.0)
+        button.addTarget(self, action: #selector(newCategoryButtonTapped), for: .touchUpInside)
+        button.clipsToBounds = true
+        button.backgroundColor = .brandGreen
+        button.layer.cornerRadius = 25.0
+        button.sizeToFit()
+        return button
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -84,6 +97,7 @@ final class AdminInventoryViewController: BaseViewController {
     
     private func addSubviews() {
         view.addSubview(tableView)
+        view.addSubview(newCategoryButton)
     }
     
     private func makeConstraints() {
@@ -93,6 +107,17 @@ final class AdminInventoryViewController: BaseViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
+        
+        newCategoryButton.snp.makeConstraints { make in
+            make.width.equalTo(192.0)
+            make.height.equalTo(50.0)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(57.0)
+        }
+    }
+    
+    @objc private func newCategoryButtonTapped() {
+        presenter?.didTapAddNewCategory()
     }
 }
 

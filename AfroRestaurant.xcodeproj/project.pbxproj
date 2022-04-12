@@ -23,6 +23,38 @@
 		B231CCBB27F43EB4001DAE9E /* AfroRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */; };
 		B231CCBD27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */; };
 		B246DC2F2805DF3800849F76 /* AdminInventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC2E2805DF3800849F76 /* AdminInventoryTableViewCell.swift */; };
+		B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */; };
+		B246DC692805EA9B00849F76 /* AdminNewCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */; };
+		B246DC6A2805EA9B00849F76 /* AdminNewCategoryPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC352805EA9B00849F76 /* AdminNewCategoryPresenterProtocol.swift */; };
+		B246DC6B2805EA9B00849F76 /* AdminNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC372805EA9B00849F76 /* AdminNewCategoryViewController.swift */; };
+		B246DC6C2805EA9B00849F76 /* AdminNewCategoryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC382805EA9B00849F76 /* AdminNewCategoryViewInput.swift */; };
+		B246DC6D2805EA9B00849F76 /* AdminNewCategoryInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC3A2805EA9B00849F76 /* AdminNewCategoryInteractorInput.swift */; };
+		B246DC6E2805EA9B00849F76 /* AdminNewCategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC3B2805EA9B00849F76 /* AdminNewCategoryInteractor.swift */; };
+		B246DC6F2805EA9B00849F76 /* AdminNewCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC3D2805EA9B00849F76 /* AdminNewCategoryRouter.swift */; };
+		B246DC702805EA9B00849F76 /* AdminDishesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC402805EA9B00849F76 /* AdminDishesAssembly.swift */; };
+		B246DC712805EA9B00849F76 /* AdminDishesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC422805EA9B00849F76 /* AdminDishesPresenter.swift */; };
+		B246DC722805EA9B00849F76 /* AdminDishesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC432805EA9B00849F76 /* AdminDishesPresenterProtocol.swift */; };
+		B246DC732805EA9B00849F76 /* AdminDishesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC452805EA9B00849F76 /* AdminDishesViewInput.swift */; };
+		B246DC742805EA9B00849F76 /* AdminDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC462805EA9B00849F76 /* AdminDishesViewController.swift */; };
+		B246DC752805EA9B00849F76 /* AdminDishesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC482805EA9B00849F76 /* AdminDishesInteractor.swift */; };
+		B246DC762805EA9B00849F76 /* AdminDishesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC492805EA9B00849F76 /* AdminDishesInteractorInput.swift */; };
+		B246DC772805EA9B00849F76 /* AdminDishesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC4B2805EA9B00849F76 /* AdminDishesRouter.swift */; };
+		B246DC782805EA9B00849F76 /* AdminDishViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC4E2805EA9B00849F76 /* AdminDishViewAssembly.swift */; };
+		B246DC792805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC502805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift */; };
+		B246DC7A2805EA9B00849F76 /* AdminDishViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC512805EA9B00849F76 /* AdminDishViewPresenter.swift */; };
+		B246DC7B2805EA9B00849F76 /* AdminDishViewViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC532805EA9B00849F76 /* AdminDishViewViewInput.swift */; };
+		B246DC7C2805EA9B00849F76 /* AdminDishViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC542805EA9B00849F76 /* AdminDishViewViewController.swift */; };
+		B246DC7D2805EA9B00849F76 /* AdminDishViewInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC562805EA9B00849F76 /* AdminDishViewInteractorInput.swift */; };
+		B246DC7E2805EA9B00849F76 /* AdminDishViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC572805EA9B00849F76 /* AdminDishViewInteractor.swift */; };
+		B246DC7F2805EA9B00849F76 /* AdminDishViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC592805EA9B00849F76 /* AdminDishViewRouter.swift */; };
+		B246DC802805EA9B00849F76 /* AdminNewDishAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC5C2805EA9B00849F76 /* AdminNewDishAssembly.swift */; };
+		B246DC812805EA9B00849F76 /* AdminNewDishPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC5E2805EA9B00849F76 /* AdminNewDishPresenter.swift */; };
+		B246DC822805EA9B00849F76 /* AdminNewDishPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC5F2805EA9B00849F76 /* AdminNewDishPresenterProtocol.swift */; };
+		B246DC832805EA9B00849F76 /* AdminNewDishViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC612805EA9B00849F76 /* AdminNewDishViewInput.swift */; };
+		B246DC842805EA9B00849F76 /* AdminNewDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC622805EA9B00849F76 /* AdminNewDishViewController.swift */; };
+		B246DC852805EA9B00849F76 /* AdminNewDishInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC642805EA9B00849F76 /* AdminNewDishInteractor.swift */; };
+		B246DC862805EA9B00849F76 /* AdminNewDishInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC652805EA9B00849F76 /* AdminNewDishInteractorInput.swift */; };
+		B246DC872805EA9B00849F76 /* AdminNewDishRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */; };
 		B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */; };
 		B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */; };
 		B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */; };
@@ -133,6 +165,38 @@
 		B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITests.swift; sourceTree = "<group>"; };
 		B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B246DC2E2805DF3800849F76 /* AdminInventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInventoryTableViewCell.swift; sourceTree = "<group>"; };
+		B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryAssembly.swift; sourceTree = "<group>"; };
+		B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryPresenter.swift; sourceTree = "<group>"; };
+		B246DC352805EA9B00849F76 /* AdminNewCategoryPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryPresenterProtocol.swift; sourceTree = "<group>"; };
+		B246DC372805EA9B00849F76 /* AdminNewCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryViewController.swift; sourceTree = "<group>"; };
+		B246DC382805EA9B00849F76 /* AdminNewCategoryViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryViewInput.swift; sourceTree = "<group>"; };
+		B246DC3A2805EA9B00849F76 /* AdminNewCategoryInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryInteractorInput.swift; sourceTree = "<group>"; };
+		B246DC3B2805EA9B00849F76 /* AdminNewCategoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryInteractor.swift; sourceTree = "<group>"; };
+		B246DC3D2805EA9B00849F76 /* AdminNewCategoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryRouter.swift; sourceTree = "<group>"; };
+		B246DC402805EA9B00849F76 /* AdminDishesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesAssembly.swift; sourceTree = "<group>"; };
+		B246DC422805EA9B00849F76 /* AdminDishesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesPresenter.swift; sourceTree = "<group>"; };
+		B246DC432805EA9B00849F76 /* AdminDishesPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesPresenterProtocol.swift; sourceTree = "<group>"; };
+		B246DC452805EA9B00849F76 /* AdminDishesViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesViewInput.swift; sourceTree = "<group>"; };
+		B246DC462805EA9B00849F76 /* AdminDishesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesViewController.swift; sourceTree = "<group>"; };
+		B246DC482805EA9B00849F76 /* AdminDishesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesInteractor.swift; sourceTree = "<group>"; };
+		B246DC492805EA9B00849F76 /* AdminDishesInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesInteractorInput.swift; sourceTree = "<group>"; };
+		B246DC4B2805EA9B00849F76 /* AdminDishesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishesRouter.swift; sourceTree = "<group>"; };
+		B246DC4E2805EA9B00849F76 /* AdminDishViewAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewAssembly.swift; sourceTree = "<group>"; };
+		B246DC502805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		B246DC512805EA9B00849F76 /* AdminDishViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewPresenter.swift; sourceTree = "<group>"; };
+		B246DC532805EA9B00849F76 /* AdminDishViewViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewViewInput.swift; sourceTree = "<group>"; };
+		B246DC542805EA9B00849F76 /* AdminDishViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewViewController.swift; sourceTree = "<group>"; };
+		B246DC562805EA9B00849F76 /* AdminDishViewInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewInteractorInput.swift; sourceTree = "<group>"; };
+		B246DC572805EA9B00849F76 /* AdminDishViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewInteractor.swift; sourceTree = "<group>"; };
+		B246DC592805EA9B00849F76 /* AdminDishViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDishViewRouter.swift; sourceTree = "<group>"; };
+		B246DC5C2805EA9B00849F76 /* AdminNewDishAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishAssembly.swift; sourceTree = "<group>"; };
+		B246DC5E2805EA9B00849F76 /* AdminNewDishPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishPresenter.swift; sourceTree = "<group>"; };
+		B246DC5F2805EA9B00849F76 /* AdminNewDishPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishPresenterProtocol.swift; sourceTree = "<group>"; };
+		B246DC612805EA9B00849F76 /* AdminNewDishViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishViewInput.swift; sourceTree = "<group>"; };
+		B246DC622805EA9B00849F76 /* AdminNewDishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishViewController.swift; sourceTree = "<group>"; };
+		B246DC642805EA9B00849F76 /* AdminNewDishInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishInteractor.swift; sourceTree = "<group>"; };
+		B246DC652805EA9B00849F76 /* AdminNewDishInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishInteractorInput.swift; sourceTree = "<group>"; };
+		B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishRouter.swift; sourceTree = "<group>"; };
 		B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupAssembly.swift; sourceTree = "<group>"; };
 		B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenterProtocol.swift; sourceTree = "<group>"; };
 		B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
@@ -326,6 +390,226 @@
 			path = AfroRestaurantUITests;
 			sourceTree = "<group>";
 		};
+		B246DC302805EA9A00849F76 /* AdminNewCategory */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC312805EA9A00849F76 /* Assembly */,
+				B246DC332805EA9A00849F76 /* Presenter */,
+				B246DC362805EA9B00849F76 /* View */,
+				B246DC392805EA9B00849F76 /* Interactor */,
+				B246DC3C2805EA9B00849F76 /* Router */,
+			);
+			path = AdminNewCategory;
+			sourceTree = "<group>";
+		};
+		B246DC312805EA9A00849F76 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B246DC332805EA9A00849F76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */,
+				B246DC352805EA9B00849F76 /* AdminNewCategoryPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B246DC362805EA9B00849F76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC372805EA9B00849F76 /* AdminNewCategoryViewController.swift */,
+				B246DC382805EA9B00849F76 /* AdminNewCategoryViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B246DC392805EA9B00849F76 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC3A2805EA9B00849F76 /* AdminNewCategoryInteractorInput.swift */,
+				B246DC3B2805EA9B00849F76 /* AdminNewCategoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B246DC3C2805EA9B00849F76 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC3D2805EA9B00849F76 /* AdminNewCategoryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B246DC3E2805EA9B00849F76 /* AdminDishes */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC3F2805EA9B00849F76 /* Assembly */,
+				B246DC412805EA9B00849F76 /* Presenter */,
+				B246DC442805EA9B00849F76 /* View */,
+				B246DC472805EA9B00849F76 /* Interactor */,
+				B246DC4A2805EA9B00849F76 /* Router */,
+			);
+			path = AdminDishes;
+			sourceTree = "<group>";
+		};
+		B246DC3F2805EA9B00849F76 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC402805EA9B00849F76 /* AdminDishesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B246DC412805EA9B00849F76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC422805EA9B00849F76 /* AdminDishesPresenter.swift */,
+				B246DC432805EA9B00849F76 /* AdminDishesPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B246DC442805EA9B00849F76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC452805EA9B00849F76 /* AdminDishesViewInput.swift */,
+				B246DC462805EA9B00849F76 /* AdminDishesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B246DC472805EA9B00849F76 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC482805EA9B00849F76 /* AdminDishesInteractor.swift */,
+				B246DC492805EA9B00849F76 /* AdminDishesInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B246DC4A2805EA9B00849F76 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC4B2805EA9B00849F76 /* AdminDishesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B246DC4C2805EA9B00849F76 /* AdminDishView */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC4D2805EA9B00849F76 /* Assembly */,
+				B246DC4F2805EA9B00849F76 /* Presenter */,
+				B246DC522805EA9B00849F76 /* View */,
+				B246DC552805EA9B00849F76 /* Interactor */,
+				B246DC582805EA9B00849F76 /* Router */,
+			);
+			path = AdminDishView;
+			sourceTree = "<group>";
+		};
+		B246DC4D2805EA9B00849F76 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC4E2805EA9B00849F76 /* AdminDishViewAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B246DC4F2805EA9B00849F76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC502805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift */,
+				B246DC512805EA9B00849F76 /* AdminDishViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B246DC522805EA9B00849F76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC532805EA9B00849F76 /* AdminDishViewViewInput.swift */,
+				B246DC542805EA9B00849F76 /* AdminDishViewViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B246DC552805EA9B00849F76 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC562805EA9B00849F76 /* AdminDishViewInteractorInput.swift */,
+				B246DC572805EA9B00849F76 /* AdminDishViewInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B246DC582805EA9B00849F76 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC592805EA9B00849F76 /* AdminDishViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B246DC5A2805EA9B00849F76 /* AdminNewDish */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC5B2805EA9B00849F76 /* Assembly */,
+				B246DC5D2805EA9B00849F76 /* Presenter */,
+				B246DC602805EA9B00849F76 /* View */,
+				B246DC632805EA9B00849F76 /* Interactor */,
+				B246DC662805EA9B00849F76 /* Router */,
+			);
+			path = AdminNewDish;
+			sourceTree = "<group>";
+		};
+		B246DC5B2805EA9B00849F76 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC5C2805EA9B00849F76 /* AdminNewDishAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B246DC5D2805EA9B00849F76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC5E2805EA9B00849F76 /* AdminNewDishPresenter.swift */,
+				B246DC5F2805EA9B00849F76 /* AdminNewDishPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B246DC602805EA9B00849F76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC612805EA9B00849F76 /* AdminNewDishViewInput.swift */,
+				B246DC622805EA9B00849F76 /* AdminNewDishViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B246DC632805EA9B00849F76 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC642805EA9B00849F76 /* AdminNewDishInteractor.swift */,
+				B246DC652805EA9B00849F76 /* AdminNewDishInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B246DC662805EA9B00849F76 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		B25E31B927F9FC4E0057D12C /* Signup */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,8 +756,12 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B246DC3E2805EA9B00849F76 /* AdminDishes */,
+				B246DC4C2805EA9B00849F76 /* AdminDishView */,
 				B25E31DF27FA3EF00057D12C /* AdminHome */,
 				B2AA08F827FB7E840038DDB1 /* AdminInventory */,
+				B246DC302805EA9A00849F76 /* AdminNewCategory */,
+				B246DC5A2805EA9B00849F76 /* AdminNewDish */,
 				B2AA08EA27FB7E840038DDB1 /* AdminProfits */,
 				7DB6B94A33874AEFE374DD09 /* Login */,
 				B25E31B927F9FC4E0057D12C /* Signup */,
@@ -821,55 +1109,82 @@
 			files = (
 				B25E31DB27FA18620057D12C /* UIViewController+Extension.swift in Sources */,
 				B25E31CE27F9FC4F0057D12C /* SignupRouter.swift in Sources */,
+				B246DC832805EA9B00849F76 /* AdminNewDishViewInput.swift in Sources */,
 				B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */,
 				B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */,
+				B246DC802805EA9B00849F76 /* AdminNewDishAssembly.swift in Sources */,
+				B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */,
 				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
+				B246DC6D2805EA9B00849F76 /* AdminNewCategoryInteractorInput.swift in Sources */,
+				B246DC6F2805EA9B00849F76 /* AdminNewCategoryRouter.swift in Sources */,
 				B25E31CC27F9FC4F0057D12C /* SignupInteractor.swift in Sources */,
 				B2AA090C27FB7E840038DDB1 /* AdminProfitsInteractorInput.swift in Sources */,
 				B25E31CA27F9FC4F0057D12C /* SignupViewController.swift in Sources */,
 				B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */,
 				B25E31F727FA46DC0057D12C /* WeakRefeferenceWrapper.swift in Sources */,
 				B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */,
+				B246DC6E2805EA9B00849F76 /* AdminNewCategoryInteractor.swift in Sources */,
 				B2AA091027FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift in Sources */,
+				B246DC7F2805EA9B00849F76 /* AdminDishViewRouter.swift in Sources */,
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
 				B2802EE027F9D263002EB628 /* UIImage+Extensions.swift in Sources */,
+				B246DC7D2805EA9B00849F76 /* AdminDishViewInteractorInput.swift in Sources */,
 				B25E31D427FA05FC0057D12C /* AssociatedObject.swift in Sources */,
+				B246DC6B2805EA9B00849F76 /* AdminNewCategoryViewController.swift in Sources */,
+				B246DC872805EA9B00849F76 /* AdminNewDishRouter.swift in Sources */,
 				B25E31F027FA3EF00057D12C /* AdminHomeViewInput.swift in Sources */,
+				B246DC7E2805EA9B00849F76 /* AdminDishViewInteractor.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
+				B246DC822805EA9B00849F76 /* AdminNewDishPresenterProtocol.swift in Sources */,
 				B25E31F327FA3EF00057D12C /* AdminHomeInteractorInput.swift in Sources */,
+				B246DC722805EA9B00849F76 /* AdminDishesPresenterProtocol.swift in Sources */,
 				B2AA091327FB7E840038DDB1 /* AdminInventoryInteractor.swift in Sources */,
+				B246DC732805EA9B00849F76 /* AdminDishesViewInput.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
 				B2AA090B27FB7E840038DDB1 /* AdminProfitsInteractor.swift in Sources */,
 				B25E31F427FA3EF00057D12C /* AdminHomeRouter.swift in Sources */,
+				B246DC762805EA9B00849F76 /* AdminDishesInteractorInput.swift in Sources */,
 				B2AA091527FB7E840038DDB1 /* AdminInventoryRouter.swift in Sources */,
+				B246DC862805EA9B00849F76 /* AdminNewDishInteractorInput.swift in Sources */,
+				B246DC6C2805EA9B00849F76 /* AdminNewCategoryViewInput.swift in Sources */,
 				91DB5A9363EE1310B0DFFDA2 /* LoginViewInput.swift in Sources */,
 				B2AA090827FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift in Sources */,
 				B2AA08E927FB57920038DDB1 /* AdminTableHeaderView.swift in Sources */,
 				9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */,
 				B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */,
+				B246DC842805EA9B00849F76 /* AdminNewDishViewController.swift in Sources */,
 				B25E31D227FA05E00057D12C /* UIView+Extensions.swift in Sources */,
+				B246DC7A2805EA9B00849F76 /* AdminDishViewPresenter.swift in Sources */,
+				B246DC852805EA9B00849F76 /* AdminNewDishInteractor.swift in Sources */,
+				B246DC752805EA9B00849F76 /* AdminDishesInteractor.swift in Sources */,
 				B2AA091427FB7E840038DDB1 /* AdminInventoryInteractorInput.swift in Sources */,
 				B2AA090627FB7E840038DDB1 /* AdminProfitsAssembly.swift in Sources */,
+				B246DC692805EA9B00849F76 /* AdminNewCategoryPresenter.swift in Sources */,
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
 				B2AA091127FB7E840038DDB1 /* AdminInventoryViewInput.swift in Sources */,
 				B2AA090E27FB7E840038DDB1 /* AdminInventoryAssembly.swift in Sources */,
 				B2AA090A27FB7E840038DDB1 /* AdminProfitsViewInput.swift in Sources */,
 				B25E31D927FA17DB0057D12C /* AuthorizationService.swift in Sources */,
+				B246DC782805EA9B00849F76 /* AdminDishViewAssembly.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
 				B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */,
 				B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */,
 				B2AA090727FB7E840038DDB1 /* AdminProfitsPresenter.swift in Sources */,
 				B2AA090927FB7E840038DDB1 /* AdminProfitsViewController.swift in Sources */,
+				B246DC792805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift in Sources */,
 				B2AA091227FB7E840038DDB1 /* AdminInventoryViewController.swift in Sources */,
 				B246DC2F2805DF3800849F76 /* AdminInventoryTableViewCell.swift in Sources */,
 				B2AA091927FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift in Sources */,
+				B246DC7B2805EA9B00849F76 /* AdminDishViewViewInput.swift in Sources */,
 				B25E31ED27FA3EF00057D12C /* AdminHomeAssembly.swift in Sources */,
 				B25E31D027FA02B30057D12C /* UILabel+Extension.swift in Sources */,
 				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
 				B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */,
 				B25E31D627FA062B0057D12C /* AttributedStrings+Extension.swift in Sources */,
+				B246DC772805EA9B00849F76 /* AdminDishesRouter.swift in Sources */,
 				B25E31F227FA3EF00057D12C /* AdminHomeInteractor.swift in Sources */,
+				B246DC742805EA9B00849F76 /* AdminDishesViewController.swift in Sources */,
 				77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */,
 				B25E31F127FA3EF00057D12C /* AdminHomeViewController.swift in Sources */,
 				B2AA090D27FB7E840038DDB1 /* AdminProfitsRouter.swift in Sources */,
@@ -878,10 +1193,15 @@
 				B25E31EF27FA3EF00057D12C /* AdminHomePresenter.swift in Sources */,
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
 				B2AA091727FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift in Sources */,
+				B246DC712805EA9B00849F76 /* AdminDishesPresenter.swift in Sources */,
 				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,
 				B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */,
 				B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */,
 				7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */,
+				B246DC7C2805EA9B00849F76 /* AdminDishViewViewController.swift in Sources */,
+				B246DC812805EA9B00849F76 /* AdminNewDishPresenter.swift in Sources */,
+				B246DC6A2805EA9B00849F76 /* AdminNewCategoryPresenterProtocol.swift in Sources */,
+				B246DC702805EA9B00849F76 /* AdminDishesAssembly.swift in Sources */,
 				B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */,
 				B25E31EE27FA3EF00057D12C /* AdminHomePresenterProtocol.swift in Sources */,
 			);

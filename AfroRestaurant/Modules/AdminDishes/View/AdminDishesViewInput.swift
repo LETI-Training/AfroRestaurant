@@ -1,0 +1,1 @@
+protocol AdminDishesViewInput: AnyObject {}
