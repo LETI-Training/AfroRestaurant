@@ -55,7 +55,7 @@
 		B246DC852805EA9B00849F76 /* AdminNewDishInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC642805EA9B00849F76 /* AdminNewDishInteractor.swift */; };
 		B246DC862805EA9B00849F76 /* AdminNewDishInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC652805EA9B00849F76 /* AdminNewDishInteractorInput.swift */; };
 		B246DC872805EA9B00849F76 /* AdminNewDishRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */; };
-		B246DC892805FBCA00849F76 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC882805FBCA00849F76 /* DataBaseService.swift */; };
+		B246DC892805FBCA00849F76 /* AdminDataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */; };
 		B246DC8B280600E600849F76 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC8A280600E600849F76 /* Models.swift */; };
 		B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */; };
 		B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */; };
@@ -199,7 +199,7 @@
 		B246DC642805EA9B00849F76 /* AdminNewDishInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishInteractor.swift; sourceTree = "<group>"; };
 		B246DC652805EA9B00849F76 /* AdminNewDishInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishInteractorInput.swift; sourceTree = "<group>"; };
 		B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishRouter.swift; sourceTree = "<group>"; };
-		B246DC882805FBCA00849F76 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDataBaseService.swift; sourceTree = "<group>"; };
 		B246DC8A280600E600849F76 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupAssembly.swift; sourceTree = "<group>"; };
 		B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 		B231CC9827F43EB2001DAE9E /* AfroRestaurant */ = {
 			isa = PBXGroup;
 			children = (
-				B2802E9227F9B6F3002EB628 /* App */,
+				B2802E9227F9B6F3002EB628 /* AppBaseHelpers */,
 				B231CCA227F43EB4001DAE9E /* Assets.xcassets */,
 				B2802E9527F9C002002EB628 /* BaseViews */,
 				B2802E9B27F9C152002EB628 /* Extensions */,
@@ -674,7 +674,7 @@
 			children = (
 				B25E31D827FA17DB0057D12C /* AuthorizationService.swift */,
 				B25E31DC27FA27BD0057D12C /* ServiceLocator.swift */,
-				B246DC882805FBCA00849F76 /* DataBaseService.swift */,
+				B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */,
 				B246DC8A280600E600849F76 /* Models.swift */,
 			);
 			path = Services;
@@ -746,7 +746,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		B2802E9227F9B6F3002EB628 /* App */ = {
+		B2802E9227F9B6F3002EB628 /* AppBaseHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				B231CC9927F43EB2001DAE9E /* AppDelegate.swift */,
@@ -756,7 +756,7 @@
 				B2802EE527F9E20D002EB628 /* UserType.swift */,
 				B2802EE727F9E2BE002EB628 /* AppInteractor.swift */,
 			);
-			path = App;
+			path = AppBaseHelpers;
 			sourceTree = "<group>";
 		};
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
@@ -1119,7 +1119,7 @@
 				B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */,
 				B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */,
 				B246DC802805EA9B00849F76 /* AdminNewDishAssembly.swift in Sources */,
-				B246DC892805FBCA00849F76 /* DataBaseService.swift in Sources */,
+				B246DC892805FBCA00849F76 /* AdminDataBaseService.swift in Sources */,
 				B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */,
 				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,

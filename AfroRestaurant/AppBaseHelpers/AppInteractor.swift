@@ -49,14 +49,13 @@ class AppInteractor {
     }
     
     private func setupServiceLocator() {
-        guard let authService = authService else {
-            return
-        }
+        guard let authService = authService else { return }
+        
         DispatchQueue.global().async {
-            let dataBaseService = DataBaseService()
+            let adminDataBaseService = AdminDataBaseService()
             
             ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
-            ServiceLocator.shared.addService(service: dataBaseService as DataBaseServiceProtocol)
+            ServiceLocator.shared.addService(service: adminDataBaseService as AdminDataBaseServiceProtocol)
         }
     }
 }

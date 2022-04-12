@@ -1,7 +1,7 @@
 class AdminNewCategoryInteractor {
-    let databaseService: DataBaseServiceProtocol?
+    let databaseService: AdminDataBaseServiceProtocol?
     
-    init(databaseService: DataBaseServiceProtocol?) {
+    init(databaseService: AdminDataBaseServiceProtocol?) {
         self.databaseService = databaseService
     }
 }

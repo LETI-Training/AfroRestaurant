@@ -1,5 +1,5 @@
 //
-//  DataBaseService.swift
+//  AdminDataBaseService.swift
 //  AfroRestaurant
 //
 //  Created by Ebubechukwu Dimobi on 12.04.2022.
@@ -10,7 +10,7 @@ import Foundation
 import FirebaseFirestore
 import Firebase
 
-protocol DataBaseServiceProtocol {
+protocol AdminDataBaseServiceProtocol {
     var userName: String { get }
     var email: String { get }
     
@@ -19,7 +19,7 @@ protocol DataBaseServiceProtocol {
     func deleteCategory(categoryModel: AdminCategoryModel, completion: @escaping () -> Void)
 }
 
-final class DataBaseService: DataBaseServiceProtocol {
+final class AdminDataBaseService {
     
     let userName: String = {
         Firebase.Auth.auth().currentUser?.email ?? ""
@@ -29,10 +29,15 @@ final class DataBaseService: DataBaseServiceProtocol {
         Firebase.Auth.auth().currentUser?.displayName ?? ""
     }()
     
-    let userId: String = {
-        Firebase.Auth.auth().currentUser?.uid ?? ""
-    }()
-    
+    private func deleteSavedDocuments(documents: [QueryDocumentSnapshot]?) {
+        guard let documents = documents else { return }
+        for document in documents {
+            document.reference.delete()
+        }
+    }
+}
+
+extension AdminDataBaseService: AdminDataBaseServiceProtocol {
     func createNewCategory(categoryModel: AdminCategoryModel) {
         Firestore
             .firestore()
@@ -80,8 +85,8 @@ final class DataBaseService: DataBaseServiceProtocol {
     }
     
     func deleteCategory(categoryModel: AdminCategoryModel, completion: @escaping () -> Void) {
-        let db = Firestore.firestore()
-        let queriedCollection = db
+        let database = Firestore.firestore()
+        let queriedCollection = database
             .collection("Restaurants")
             .document("AfroRestaurant")
             .collection("Categories")
@@ -94,16 +99,6 @@ final class DataBaseService: DataBaseServiceProtocol {
             if !querySnapShot.documents.isEmpty {
                 self?.deleteSavedDocuments(documents: querySnapShot.documents)
             }
-        }
-    }
-    
-}
-
-private extension DataBaseService {
-    private func deleteSavedDocuments(documents: [QueryDocumentSnapshot]?) {
-        guard let documents = documents else { return }
-        for document in documents {
-            document.reference.delete()
         }
     }
 }
