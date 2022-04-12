@@ -6,7 +6,7 @@ class AdminInventoryAssembly {
         let view = AdminInventoryViewController()
         let router = AdminInventoryRouter()
         let presenter = AdminInventoryPresenter()
-        let interactor = AdminInventoryInteractor()
+        let interactor = AdminInventoryInteractor(databaseService: ServiceLocator.shared.getService())
 
         view.presenter = presenter
         presenter.view = view

@@ -205,7 +205,7 @@ final class AdminNewCategoryViewController: BaseViewController {
 
 private extension AdminNewCategoryViewController {
     @objc private func createCategoryButtonTapped() {
-        presenter?.createCategoryButtonTapped()
+        presenter?.createCategoryButtonTapped(categoryName: nameTextField.text, categoryDescription: descriptionTextField.text)
     }
     
     @objc private func cancelTapped() {

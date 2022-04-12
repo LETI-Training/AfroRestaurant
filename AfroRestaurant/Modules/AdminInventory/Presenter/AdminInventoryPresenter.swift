@@ -2,64 +2,52 @@ class AdminInventoryPresenter {
     weak var view: AdminInventoryViewInput?
     var interactor: AdminInventoryInteractorInput?
     var router: AdminInventoryRouter?
+    
+    var categoryModels: [AdminCategoryModel] = []
 
     init() {}
+    
+    private func loadCategories() {
+        interactor?.loadCategories(completion: { [weak self] models in
+            self?.createViewModels(from: models)
+        })
+    }
+    
+    private func createViewModels(from categoryModels: [AdminCategoryModel]?) {
+        guard let categoryModels = categoryModels else {
+            return
+        }
+        let viewModels = categoryModels
+            .compactMap { AdminInventoryTableViewCell.ViewModel(categoryName: $0.categoryName) }
+        self.categoryModels = categoryModels
+        view?.updateItems(viewModels: viewModels)
+    }
 }
 
 extension AdminInventoryPresenter: AdminInventoryPresenterProtocol {
     func didTapAddNewCategory() {
-        router?.presentNewCategory()
+        router?.presentNewCategory(output: self)
     }
     
-    func didSelectItem(at row: Int) {
-        
-    }
+    func didSelectItem(at row: Int) {}
     
     func didDeleteItem(at row: Int) {
-        
+        interactor?.deleteCategory(categoryModel: categoryModels[row], completion: { [weak self] in
+            self?.loadCategories()
+        })
     }
     
+    func viewDidAppear() {
+        loadCategories()
+    }
 
     func viewDidLoad() {
-        view?.updateItems(viewModels: [
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek"),
-            .init(categoryName: "kekek")
-        ])
+        loadCategories()
+    }
+}
+
+extension AdminInventoryPresenter: AdminNewCategoryPresenterOutput {
+    func didCreateNewCategory() {
+        loadCategories()
     }
 }

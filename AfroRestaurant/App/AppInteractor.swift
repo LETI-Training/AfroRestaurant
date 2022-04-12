@@ -52,8 +52,12 @@ class AppInteractor {
         guard let authService = authService else {
             return
         }
-        
-        ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
+        DispatchQueue.global().async {
+            let dataBaseService = DataBaseService()
+            
+            ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
+            ServiceLocator.shared.addService(service: dataBaseService as DataBaseServiceProtocol)
+        }
     }
 }
 

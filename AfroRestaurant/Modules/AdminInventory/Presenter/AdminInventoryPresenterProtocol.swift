@@ -3,4 +3,5 @@ protocol AdminInventoryPresenterProtocol: AnyObject {
     func didSelectItem(at row: Int)
     func didDeleteItem(at row: Int)
     func didTapAddNewCategory()
+    func viewDidAppear()
 }
