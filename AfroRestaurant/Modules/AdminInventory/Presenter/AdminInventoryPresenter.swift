@@ -7,7 +7,55 @@ class AdminInventoryPresenter {
 }
 
 extension AdminInventoryPresenter: AdminInventoryPresenterProtocol {
+    func didSelectItem(at row: Int) {
+        
+    }
+    
+    func didDeleteItem(at row: Int) {
+        
+    }
+    
 
     func viewDidLoad() {
+        view?.updateItems(viewModels: [
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek"),
+            .init(categoryName: "kekek")
+        ])
     }
 }

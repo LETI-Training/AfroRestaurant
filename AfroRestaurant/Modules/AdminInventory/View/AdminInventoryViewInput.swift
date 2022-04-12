@@ -1,1 +1,3 @@
-protocol AdminInventoryViewInput: AnyObject {}
+protocol AdminInventoryViewInput: AnyObject {
+    func updateItems(viewModels: [AdminInventoryTableViewCell.ViewModel])
+}
