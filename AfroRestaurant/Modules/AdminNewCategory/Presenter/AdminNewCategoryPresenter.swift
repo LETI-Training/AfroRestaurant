@@ -7,6 +7,13 @@ class AdminNewCategoryPresenter {
 }
 
 extension AdminNewCategoryPresenter: AdminNewCategoryPresenterProtocol {
+    func createCategoryButtonTapped() {
+        
+    }
+    
+    func cancelTapped() {
+        router?.dismiss()
+    }
 
     func viewDidLoad() {
     }

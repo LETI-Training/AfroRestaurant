@@ -8,7 +8,7 @@ class AdminInventoryPresenter {
 
 extension AdminInventoryPresenter: AdminInventoryPresenterProtocol {
     func didTapAddNewCategory() {
-        
+        router?.presentNewCategory()
     }
     
     func didSelectItem(at row: Int) {

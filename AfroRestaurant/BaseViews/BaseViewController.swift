@@ -43,13 +43,13 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .background
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .textPrimary
-        navigationController?.navigationBar.titleTextAttributes = [
+        navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.font(.extraBold, size: 32.0),
             NSAttributedString.Key.foregroundColor: UIColor.textPrimary
         ]
         
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.font(.regular, size: 14.0),
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.font(.medium, size: 17.0),
             NSAttributedString.Key.foregroundColor: UIColor.textPrimary
         ]
         

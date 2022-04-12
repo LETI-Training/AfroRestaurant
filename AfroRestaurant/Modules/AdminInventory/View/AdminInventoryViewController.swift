@@ -173,8 +173,15 @@ extension AdminInventoryViewController: UITableViewDelegate {
     ) {
         if editingStyle == .delete {
             viewModels.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            presenter?.didDeleteItem(at: indexPath.row)
+            presentAlert(
+                title: "Are you sure you want to delete?",
+                message: "You will loose all dishes under this category",
+                action: .init(actionText: "No", actionHandler: {}),
+                action2: .init(actionText: "Yes", actionHandler: { [weak self] in
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self?.presenter?.didDeleteItem(at: indexPath.row)
+                })
+            )
         }
     }
 }
