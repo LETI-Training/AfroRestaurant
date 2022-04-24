@@ -71,13 +71,7 @@ final class AdminInventoryViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
-            self?.presenter?.viewDidAppear()
-        }
+        presenter?.viewDidAppear()
     }
     
     override func viewDidLoad() {

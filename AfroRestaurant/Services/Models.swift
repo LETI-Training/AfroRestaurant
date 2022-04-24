@@ -18,22 +18,22 @@ struct AdminCreateDishModel {
     let dishDescription: String
     let calories: Int
     let price: Double
-    let imageString: String?
+    let imageString: String
 }
 
-struct CategoryModel {
+struct CategoryModel: Hashable {
     let categoryName: String
     let categoryDescription: String
     let dishes: [DishModel]
 }
 
-struct DishModel {
+struct DishModel: Hashable {
     let dishName: String
     let dishDescription: String
     let calories: Int
     let price: Double
-    let rating: Double
-    let favoritesCount: Double
-    let profitsMade: Double
-    let imageString: String?
+    let imageString: String
+    let rating: Double?
+    let favoritesCount: Int?
+    let profitsMade: Double?
 }

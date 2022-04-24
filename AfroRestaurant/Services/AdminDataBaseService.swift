@@ -22,6 +22,11 @@ protocol AdminDataBaseServiceProtocol {
 
 final class AdminDataBaseService {
     
+    let lock = NSConditionLock()
+    
+    var dishesContainer = [String: [DishModel]]()
+    var categories = [CategoryModel]()
+    
     let userName: String = {
         Firebase.Auth.auth().currentUser?.email ?? ""
     }()
@@ -29,6 +34,10 @@ final class AdminDataBaseService {
     let email: String = {
         Firebase.Auth.auth().currentUser?.displayName ?? ""
     }()
+    
+    init() {
+        loadCategoriesFromDataBase { _ in }
+    }
     
     private func deleteSavedDocuments(documents: [QueryDocumentSnapshot]?) {
         guard let documents = documents else { return }
@@ -45,6 +54,50 @@ final class AdminDataBaseService {
             .collection("Categories")
             .document(categoryName)
     }
+    
+    private func updateDishes(dishesModels: [DishModel], categoryName: String) {
+        lock.lock()
+        defer { lock.unlock() }
+        dishesContainer.updateValue(dishesModels, forKey: categoryName)
+    }
+    
+    private func updateCategories(categories: [CategoryModel]) {
+        lock.lock()
+        defer { lock.unlock() }
+        self.categories = categories
+    }
+    
+    private func getCategories() -> [CategoryModel] {
+        lock.lock()
+        defer { lock.unlock() }
+        
+        return categories.map {
+            CategoryModel(
+                categoryName: $0.categoryName,
+                categoryDescription: $0.categoryDescription,
+                dishes: dishesContainer[$0.categoryName] ?? []
+            )
+        }
+    }
+    
+    private func deleteCategoryLocally(categoryName: String) {
+        lock.lock()
+        defer { lock.unlock() }
+        categories.removeAll(where: { $0.categoryName == categoryName })
+        dishesContainer.removeValue(forKey: categoryName)
+    }
+    
+    private func createCategoryLocally(category: AdminCreateCategoryModel) {
+        lock.lock()
+        defer { lock.unlock() }
+        categories.append(
+            .init(
+                categoryName: category.categoryName,
+                categoryDescription: category.categoryDescription,
+                dishes: []
+            )
+        )
+    }
 }
 
 extension AdminDataBaseService: AdminDataBaseServiceProtocol {
@@ -59,7 +112,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                 "dishDescription" : dishModel.dishDescription,
                 "calories" : dishModel.calories,
                 "price" : dishModel.price,
-                "imageString" : dishModel.imageString ?? ""
+                "imageString" : dishModel.imageString
             ], merge: true)
     }
     
@@ -70,10 +123,11 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                 "categoryName" : categoryModel.categoryName,
                 "categoryDescription" : categoryModel.categoryDescription
             ], merge: true)
+        createCategoryLocally(category: categoryModel)
+        loadCategoriesFromDataBase { _ in }
     }
     
-    func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
-        
+    private func loadCategoriesFromDataBase(completion: @escaping ([CategoryModel]?) -> ()) {
         var categories: [CategoryModel] = []
         
         Firestore
@@ -81,7 +135,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
             .collection("Restaurants")
             .document("AfroRestaurant")
             .collection("Categories")
-            .getDocuments { querySnapshot, error in
+            .getDocuments { [weak self] querySnapshot, error in
                 guard
                     error == nil,
                     let querySnapshot = querySnapshot
@@ -102,6 +156,63 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                         .append(.init(categoryName: categoryName, categoryDescription: categoryDescription, dishes: []))
                 }
                 completion(categories)
+                self?.updateCategories(categories: categories)
+            }
+    }
+    
+    func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
+        guard
+            categories.isEmpty,
+            dishesContainer.isEmpty
+        else {
+            completion(getCategories())
+            return
+        }
+        loadCategoriesFromDataBase { _ in }
+    }
+    
+    func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void) {
+        var dishes: [DishModel] = []
+        Firestore
+            .firestore()
+            .collection("Restaurants")
+            .document("AfroRestaurant")
+            .collection("Categories")
+            .document(categoryName)
+            .collection("Dishes")
+            .getDocuments { [weak self] querySnapshot, error in
+                guard
+                    error == nil,
+                    let querySnapshot = querySnapshot
+                else {
+                    completion(nil)
+                    return
+                }
+                
+                for category in querySnapshot.documents {
+                    let data = category.data()
+                    
+                    guard
+                        let dishName = data["dishName"] as? String,
+                        let dishDescription = data["dishDescription"] as? String,
+                        let calories = data["calories"] as? Int,
+                        let price = data["price"] as? Double,
+                        let imageString = data["imageString"] as? String
+                    else { break }
+                    
+                    dishes.append(DishModel(
+                        dishName: dishName,
+                        dishDescription: dishDescription,
+                        calories: calories,
+                        price: price,
+                        imageString: imageString,
+                        rating: data["rating"] as? Double,
+                        favoritesCount: data["favoritesCount"] as? Int,
+                        profitsMade: data["profitsMade"] as? Double)
+                    )
+                }
+                completion(dishes)
+                self?.updateDishes(dishesModels: dishes, categoryName: categoryName)
             }
     }
     
@@ -119,6 +230,8 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                   let querySnapShot = querySnapShot else { return }
             if !querySnapShot.documents.isEmpty {
                 self?.deleteSavedDocuments(documents: querySnapShot.documents)
+                self?.deleteCategoryLocally(categoryName: categoryModel.categoryName)
+                self?.loadCategoriesFromDataBase { _ in }
             }
         }
     }
