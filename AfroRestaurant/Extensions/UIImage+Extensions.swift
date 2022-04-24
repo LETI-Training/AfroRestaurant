@@ -29,4 +29,6 @@ extension UIImage {
     static var blackCoins: UIImage { UIImage(named: "black_coins")! }
     static var greenStar: UIImage { UIImage(named: "greenStar")! }
     static var greenCoins: UIImage { UIImage(named: "greenCoins")! }
+    static var delete: UIImage { UIImage(named: "delete")! }
+    static var launchScreen: UIImage { UIImage(named: "launchScreen")! }
 }

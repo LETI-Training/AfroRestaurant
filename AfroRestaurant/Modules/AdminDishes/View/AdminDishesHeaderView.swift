@@ -91,18 +91,19 @@ class AdminDishesHeaderView: UICollectionReusableView {
     private func makeConstraints() {
         
         descriptionTitle.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(appearance.leadingTrailingInset)
+            make.leading.equalToSuperview()
             make.top.equalToSuperview().inset(18.0)
         }
         
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionTitle.snp.bottom).offset(14.0)
-            make.leading.trailing.equalToSuperview().inset(appearance.leadingTrailingInset)
+            make.leading.trailing.equalToSuperview()
         }
         
         dishesLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(18.0)
-            make.leading.equalToSuperview().inset(appearance.leadingTrailingInset)
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview().inset(14.0)
         }
         
         descriptionDividerView.snp.makeConstraints { make in

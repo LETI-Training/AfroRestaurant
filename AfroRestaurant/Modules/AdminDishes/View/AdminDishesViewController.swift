@@ -12,6 +12,9 @@ final class AdminDishesViewController: BaseViewController {
     private let appearance = Appearance()
     var presenter: AdminDishesPresenterProtocol?
     
+    var viewModels: [DishesCollectionViewCell.ViewModel] = []
+    var categoryDescription: String = ""
+    
     private lazy var headerView: UIView = {
         
         let view = UIView()
@@ -36,20 +39,23 @@ final class AdminDishesViewController: BaseViewController {
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumLineSpacing = 24
         flowLayout.minimumInteritemSpacing = 0
         collectionView.register(
             AdminDishesHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: AdminDishesHeaderView.identifier
         )
-//        collectionView.register(AdminInventoryTableViewCell.self, forCellReuseIdentifier: AdminInventoryTableViewCell.identifier)
+        collectionView.register(
+            DishesCollectionViewCell.self,
+            forCellWithReuseIdentifier: DishesCollectionViewCell.identifier
+        )
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
     
-    private lazy var newCategoryButton: UIButton = {
+    private lazy var newDishButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("ADD New Dish", for: .normal)
         button.setTitleColor(.background, for: .normal)
@@ -75,17 +81,17 @@ final class AdminDishesViewController: BaseViewController {
     
     private func addSubviews() {
         view.addSubview(collectionView)
-        view.addSubview(newCategoryButton)
+        view.addSubview(newDishButton)
     }
 
     private func makeConstraints() {
         collectionView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(appearance.leadingTrailingInset)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
         
-        newCategoryButton.snp.makeConstraints { make in
+        newDishButton.snp.makeConstraints { make in
             make.width.equalTo(192.0)
             make.height.equalTo(50.0)
             make.centerX.equalToSuperview()
@@ -99,15 +105,27 @@ final class AdminDishesViewController: BaseViewController {
 }
 
 extension AdminDishesViewController: AdminDishesViewInput {
+    func updateItems(description: String, viewModels: [DishesCollectionViewCell.ViewModel]) {
+        categoryDescription = description
+        self.viewModels = viewModels
+        collectionView.reloadData()
+    }
+    
 }
 
 extension AdminDishesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return viewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DishesCollectionViewCell.identifier,
+            for: indexPath) as? DishesCollectionViewCell
+        else { return UICollectionViewCell() }
+        
+        cell.viewModel = viewModels[indexPath.row]
+        return cell
     }
 }
 
@@ -124,14 +142,17 @@ extension AdminDishesViewController: UICollectionViewDelegate {
         referenceSizeForHeaderInSection section: Int
     ) -> CGSize {
         let indexPath = IndexPath(row: 0, section: section)
-        let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath)
-        headerView.layoutIfNeeded()
-       
+        let headerView = self.collectionView(
+            collectionView,
+            viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader,
+            at: indexPath
+        )
         return headerView.systemLayoutSizeFitting(
             CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
             withHorizontalFittingPriority: .required,
             verticalFittingPriority: .fittingSizeLevel
         )
+
     }
     
 }
@@ -142,7 +163,7 @@ extension AdminDishesViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return .init(width: collectionView.frame.width, height: 10)
+        return .init(width: (collectionView.frame.width - 16) / 2, height: 45 + 113)
     }
     
     func collectionView(
@@ -156,6 +177,7 @@ extension AdminDishesViewController: UICollectionViewDelegateFlowLayout {
                 withReuseIdentifier: AdminDishesHeaderView.identifier,
                 for: indexPath
             ) as! AdminDishesHeaderView
+        header.updateText(text: categoryDescription)
         
         return header
     }
