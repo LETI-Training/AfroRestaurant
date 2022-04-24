@@ -21,16 +21,17 @@ final class AdminNewDishViewController: BaseViewController {
     private lazy var dishImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .gray
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
         return imageView
     }()
     
     private lazy var addImageButton: UIButton = {
-        let button = UIButton(frame: .zero)
+        let button = UIButton(type: .system)
         button.setImage(.addPhoto, for: .normal)
         button.addTarget(self, action: #selector(addPhotoTapped), for: .touchUpInside)
         button.clipsToBounds = true
+        button.tintColor = .gray
         button.sizeToFit()
         return button
     }()
@@ -351,4 +352,10 @@ private extension AdminNewDishViewController {
 }
 
 extension AdminNewDishViewController: AdminNewDishViewInput {
+    func updateImage(image: UIImage?) {
+        DispatchQueue.main.async {
+            self.dishImageView.image = image
+        }
+    }
+    
 }
