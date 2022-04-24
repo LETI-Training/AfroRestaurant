@@ -40,7 +40,7 @@ final class AdminDishesViewController: BaseViewController {
     
     private lazy var newDishButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("ADD New Dish", for: .normal)
+        button.setTitle("Add New Dish", for: .normal)
         button.setTitleColor(.background, for: .normal)
         button.titleLabel?.font = .font(.regular, size: 14.0)
         button.addTarget(self, action: #selector(newDishButtonTapped), for: .touchUpInside)

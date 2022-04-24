@@ -40,7 +40,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
             dishLabel.text = viewModel.dishName
             ratingsLabel.text = String(format: "%.1f", viewModel.rating)
             priceLabel.text = "RUB " + String(format: "%.1f", viewModel.price)
-            caloriesLabel.text = String(format: "%.1f", viewModel.price) + "Cal."
+            caloriesLabel.text = String(format: "%.f", viewModel.price) + " Cal."
             
             switch viewModel.type {
                 
@@ -80,6 +80,12 @@ class DishesCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var ratingContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black.withAlphaComponent(0.4)
+        return view
+    }()
+    
     private lazy var bottomContainerView: UIView = {
        UIView()
     }()
@@ -117,7 +123,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
             priceLabel
         ])
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 3.0
         stackView.axis = .horizontal
         stackView.clipsToBounds = true
@@ -172,9 +178,10 @@ class DishesCollectionViewCell: UICollectionViewCell {
          deleteButton
         ].forEach { bottomContainerView.addSubview($0) }
         
+        dishImageView.addSubview(ratingContainerView)
         [ratingsImageView,
          ratingsLabel
-        ].forEach { dishImageView.addSubview($0) }
+        ].forEach { ratingContainerView.addSubview($0) }
         
     }
     
@@ -185,12 +192,18 @@ class DishesCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(113.0)
         }
         
+        ratingContainerView.snp.makeConstraints { make in
+            make.height.equalTo(20.0)
+            make.bottom.leading.trailing.equalToSuperview()
+        }
+        
         ratingsLabel.snp.makeConstraints { make in
-            make.bottom.trailing.equalToSuperview().inset(4.0)
+            make.trailing.equalToSuperview().inset(4.0)
+            make.centerY.equalToSuperview()
         }
         
         ratingsImageView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(4)
+            make.centerY.equalToSuperview()
             make.width.height.equalTo(10.0)
             make.trailing.equalTo(ratingsLabel.snp.leading).offset(-2.0)
         }
@@ -208,7 +221,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
         
         stackView.snp.makeConstraints { make in
             make.bottom.leading.equalToSuperview().inset(7.0)
-            make.trailing.equalTo(deleteButton.snp.leading).offset(4.0)
+            make.trailing.equalTo(deleteButton.snp.leading).offset(-4.0)
             make.height.equalTo(priceLabel)
         }
         
