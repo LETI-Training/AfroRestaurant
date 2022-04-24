@@ -19,6 +19,7 @@ protocol AdminDataBaseServiceProtocol {
     func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void)
     func addDishToCategory(dishModel: AdminCreateDishModel)
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
+    func deleteDish(_ dishName: String, in categoryName: String, completion: @escaping () -> Void)
 }
 
 final class AdminDataBaseService {
@@ -85,6 +86,12 @@ final class AdminDataBaseService {
         lock.lock()
         defer { lock.unlock() }
         categories.removeAll(where: { $0.categoryName == categoryName })
+        dishesContainer.removeValue(forKey: categoryName)
+    }
+    
+    private func deleteDishLocally(categoryName: String) {
+        lock.lock()
+        defer { lock.unlock() }
         dishesContainer.removeValue(forKey: categoryName)
     }
     
@@ -236,6 +243,25 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                 self?.deleteSavedDocuments(documents: querySnapShot.documents)
                 self?.deleteCategoryLocally(categoryName: categoryModel.categoryName)
                 self?.loadCategoriesFromDataBase { _ in }
+            }
+        }
+    }
+    
+    func deleteDish(_ dishName: String, in categoryName: String, completion: @escaping () -> Void) {
+        let document = getCategoryDocument(for: categoryName)
+        
+        let queriedCollection = document
+            .collection("Dishes")
+            .whereField("dishName", isEqualTo: dishName)
+        
+        queriedCollection.getDocuments { [weak self] (querySnapShot, error) in
+            defer { completion() }
+            guard error == nil,
+                  let querySnapShot = querySnapShot else { return }
+            if !querySnapShot.documents.isEmpty {
+                self?.deleteSavedDocuments(documents: querySnapShot.documents)
+                self?.deleteDishLocally(categoryName: categoryName)
+                self?.loadCategories { _ in }
             }
         }
     }

@@ -24,7 +24,7 @@ class AdminDishesPresenter {
     private func generateViewModels(for dishes: [DishModel]) {
         let viewModel: [DishesCollectionViewCell.ViewModel] = dishes.compactMap {
             let data = Data(base64Encoded: $0.imageString) ?? Data()
-            
+            let dishModel = $0
             return DishesCollectionViewCell.ViewModel(
                 type: .delete,
                 dishName: $0.dishName,
@@ -32,14 +32,27 @@ class AdminDishesPresenter {
                 calories: $0.calories,
                 price: $0.price,
                 image: UIImage(data: data)
-            ) { viewModel in
-                
+            ) { [weak self] viewModel in
+                self?.deleteDish(viewModel: dishModel)
             }
-            
         }
         DispatchQueue.main.async {
             self.view?.updateItems(description: self.category.categoryDescription, viewModels: viewModel)
         }
+    }
+    
+    private func deleteDish(viewModel: DishModel) {
+        view?.presentAlert(
+            title: "Deletion",
+            message: "Are you sure you want to delete",
+            action: .init(actionText: "No", actionHandler: {}),
+            action2: .init(actionText: "Yes", actionHandler: { [weak self] in
+                guard let self = self else { return }
+                self.interactor?.deleteDish(viewModel.dishName, in: self.category.categoryName, completion: {
+                    self.loadDishes()
+                })
+            })
+        )
     }
 }
 
