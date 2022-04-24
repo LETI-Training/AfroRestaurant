@@ -25,7 +25,7 @@ extension DishesCollectionViewCell {
         let rating: Double
         let calories: Int
         let price: Double
-        let image: UIImage
+        let image: UIImage?
         let buttonTapHandler: (ViewModel) -> Void
     }
 }
@@ -48,6 +48,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
                 break
             case .delete:
                 deleteButton.setImage(.delete, for: .normal)
+                break
             case .like(isLiked: _):
                 break
             }
@@ -133,6 +134,10 @@ class DishesCollectionViewCell: UICollectionViewCell {
         button.sizeToFit()
         return button
     }()
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dishImageView.image = nil
+    }
     
     @objc private func deleteButtonTapped() {
         guard let viewModel = viewModel else { return }

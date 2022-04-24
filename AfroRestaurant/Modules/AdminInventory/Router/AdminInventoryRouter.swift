@@ -9,7 +9,7 @@ class AdminInventoryRouter {
         view?.navigationController?.present(UINavigationController(rootViewController: newVC), animated: true, completion: nil)
     }
     
-    func routeToDishes(category: AdminCreateCategoryModel) {
+    func routeToDishes(category: CategoryModel) {
         let newVC = AdminDishesAssembly.assemble(category: category)
         view?.navigationController?.pushViewController(newVC, animated: true)
     }

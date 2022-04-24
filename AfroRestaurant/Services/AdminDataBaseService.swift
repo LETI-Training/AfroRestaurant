@@ -18,6 +18,7 @@ protocol AdminDataBaseServiceProtocol {
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
     func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void)
     func addDishToCategory(dishModel: AdminCreateDishModel)
+    func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
 }
 
 final class AdminDataBaseService {
@@ -114,6 +115,8 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                 "price" : dishModel.price,
                 "imageString" : dishModel.imageString
             ], merge: true)
+        
+        loadDishes(for: dishModel.category.categoryName) { _ in }
     }
     
     func createNewCategory(categoryModel: AdminCreateCategoryModel) {
@@ -154,6 +157,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                     
                     categories
                         .append(.init(categoryName: categoryName, categoryDescription: categoryDescription, dishes: []))
+                    self?.loadDishes(for: categoryName, completion: { _ in })
                 }
                 completion(categories)
                 self?.updateCategories(categories: categories)

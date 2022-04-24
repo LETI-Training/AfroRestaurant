@@ -23,6 +23,7 @@ final class AdminNewDishViewController: BaseViewController {
         imageView.backgroundColor = .gray
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
         return imageView
     }()
     

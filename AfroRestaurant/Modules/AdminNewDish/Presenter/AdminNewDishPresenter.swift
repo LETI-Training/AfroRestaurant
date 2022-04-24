@@ -28,16 +28,44 @@ extension AdminNewDishPresenter: AdminNewDishPresenterProtocol {
         calories: String,
         price: String
     ) {
+        guard
+            !dishName.isEmpty,
+            !description.isEmpty,
+            let calories = Int(calories),
+            let price = Double(price)
+        else {
+            view?.presentAlert(
+                title: "Error",
+                message: "Please Fill All Fields",
+                action: .init(actionText: "Ok", actionHandler: {})
+            )
+            return
+        }
         
+        let imageString = image?
+            .jpegData(compressionQuality: 0.1)?
+            .base64EncodedString()
+        
+        interactor?.createNewDish(
+            dishModel: .init(
+                category: category,
+                dishName: dishName,
+                dishDescription: description,
+                calories: calories,
+                price: price,
+                imageString: imageString ?? ""
+            )
+        )
+        output?.didCreateNewDish()
+        router?.dismiss()
     }
     
     func cancelTapped() {
-        
+        router?.dismiss()
     }
     
 
-    func viewDidLoad() {
-    }
+    func viewDidLoad() {}
 }
 
 extension AdminNewDishPresenter: PHPickerViewControllerDelegate {

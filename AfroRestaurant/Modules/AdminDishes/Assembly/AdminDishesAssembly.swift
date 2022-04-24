@@ -2,11 +2,11 @@ import UIKit
 
 class AdminDishesAssembly {
 
-    static func assemble(category: AdminCreateCategoryModel) -> UIViewController {
+    static func assemble(category: CategoryModel) -> UIViewController {
         let view = AdminDishesViewController()
         let router = AdminDishesRouter()
         let presenter = AdminDishesPresenter(category: category)
-        let interactor = AdminDishesInteractor()
+        let interactor = AdminDishesInteractor(databaseService: ServiceLocator.shared.getService())
 
         view.presenter = presenter
         presenter.view = view
