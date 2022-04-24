@@ -1,4 +1,4 @@
 protocol AdminInventoryInteractorInput: AnyObject {
-    func loadCategories(completion: @escaping ([AdminCategoryModel]?) -> ())
-    func deleteCategory(categoryModel: AdminCategoryModel, completion: @escaping () -> Void)
+    func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
+    func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void)
 }

@@ -7,7 +7,7 @@ class AdminNewCategoryInteractor {
 }
 
 extension AdminNewCategoryInteractor: AdminNewCategoryInteractorInput {
-    func createNewCategory(categoryModel: AdminCategoryModel) {
+    func createNewCategory(categoryModel: AdminCreateCategoryModel) {
         databaseService?.createNewCategory(categoryModel: categoryModel)
     }
 }

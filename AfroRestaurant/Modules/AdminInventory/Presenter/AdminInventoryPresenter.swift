@@ -3,7 +3,7 @@ class AdminInventoryPresenter {
     var interactor: AdminInventoryInteractorInput?
     var router: AdminInventoryRouter?
     
-    var categoryModels: [AdminCategoryModel] = []
+    var categoryModels: [CategoryModel] = []
 
     init() {}
     
@@ -13,7 +13,7 @@ class AdminInventoryPresenter {
         })
     }
     
-    private func createViewModels(from categoryModels: [AdminCategoryModel]?) {
+    private func createViewModels(from categoryModels: [CategoryModel]?) {
         guard let categoryModels = categoryModels else {
             return
         }

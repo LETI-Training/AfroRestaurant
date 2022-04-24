@@ -7,11 +7,11 @@ class AdminInventoryInteractor {
 }
 
 extension AdminInventoryInteractor: AdminInventoryInteractorInput {
-    func loadCategories(completion: @escaping ([AdminCategoryModel]?) -> ()) {
+    func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
         databaseService?.loadCategories(completion: completion)
     }
     
-    func deleteCategory(categoryModel: AdminCategoryModel, completion: @escaping () -> Void) {
+    func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void) {
         databaseService?.deleteCategory(categoryModel: categoryModel, completion: completion)
     }
 }

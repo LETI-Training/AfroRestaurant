@@ -14,9 +14,10 @@ protocol AdminDataBaseServiceProtocol {
     var userName: String { get }
     var email: String { get }
     
-    func createNewCategory(categoryModel: AdminCategoryModel)
-    func loadCategories(completion: @escaping ([AdminCategoryModel]?) -> ())
-    func deleteCategory(categoryModel: AdminCategoryModel, completion: @escaping () -> Void)
+    func createNewCategory(categoryModel: AdminCreateCategoryModel)
+    func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
+    func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void)
+    func addDishToCategory(dishModel: AdminCreateDishModel)
 }
 
 final class AdminDataBaseService {
@@ -35,25 +36,45 @@ final class AdminDataBaseService {
             document.reference.delete()
         }
     }
-}
-
-extension AdminDataBaseService: AdminDataBaseServiceProtocol {
-    func createNewCategory(categoryModel: AdminCategoryModel) {
+    
+    private func getCategoryDocument(for categoryName: String) -> DocumentReference {
         Firestore
             .firestore()
             .collection("Restaurants")
             .document("AfroRestaurant")
             .collection("Categories")
-            .document()
+            .document(categoryName)
+    }
+}
+
+extension AdminDataBaseService: AdminDataBaseServiceProtocol {
+    func addDishToCategory(dishModel: AdminCreateDishModel) {
+        let document = getCategoryDocument(for: dishModel.category.categoryName)
+        
+        document
+            .collection("Dishes")
+            .document(dishModel.dishName)
+            .setData([
+                "dishName" : dishModel.dishName,
+                "dishDescription" : dishModel.dishDescription,
+                "calories" : dishModel.calories,
+                "price" : dishModel.price,
+                "imageString" : dishModel.imageString ?? ""
+            ], merge: true)
+    }
+    
+    func createNewCategory(categoryModel: AdminCreateCategoryModel) {
+        let document = getCategoryDocument(for: categoryModel.categoryName)
+        document
             .setData([
                 "categoryName" : categoryModel.categoryName,
                 "categoryDescription" : categoryModel.categoryDescription
             ], merge: true)
     }
     
-    func loadCategories(completion: @escaping ([AdminCategoryModel]?) -> ()) {
+    func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
         
-        var categories: [AdminCategoryModel] = [AdminCategoryModel]()
+        var categories: [CategoryModel] = []
         
         Firestore
             .firestore()
@@ -78,13 +99,13 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                     else { break }
                     
                     categories
-                        .append(.init(categoryName: categoryName, categoryDescription: categoryDescription))
+                        .append(.init(categoryName: categoryName, categoryDescription: categoryDescription, dishes: []))
                 }
                 completion(categories)
             }
     }
     
-    func deleteCategory(categoryModel: AdminCategoryModel, completion: @escaping () -> Void) {
+    func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void) {
         let database = Firestore.firestore()
         let queriedCollection = database
             .collection("Restaurants")
