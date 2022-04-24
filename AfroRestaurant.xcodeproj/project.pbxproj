@@ -57,6 +57,7 @@
 		B246DC872805EA9B00849F76 /* AdminNewDishRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */; };
 		B246DC892805FBCA00849F76 /* AdminDataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */; };
 		B246DC8B280600E600849F76 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC8A280600E600849F76 /* Models.swift */; };
+		B248124F281576A200373D3C /* AdminDishesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248124E281576A200373D3C /* AdminDishesHeaderView.swift */; };
 		B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */; };
 		B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */; };
 		B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */; };
@@ -201,6 +202,7 @@
 		B246DC672805EA9B00849F76 /* AdminNewDishRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewDishRouter.swift; sourceTree = "<group>"; };
 		B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDataBaseService.swift; sourceTree = "<group>"; };
 		B246DC8A280600E600849F76 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B248124E281576A200373D3C /* AdminDishesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDishesHeaderView.swift; sourceTree = "<group>"; };
 		B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupAssembly.swift; sourceTree = "<group>"; };
 		B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenterProtocol.swift; sourceTree = "<group>"; };
 		B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 			children = (
 				B246DC452805EA9B00849F76 /* AdminDishesViewInput.swift */,
 				B246DC462805EA9B00849F76 /* AdminDishesViewController.swift */,
+				B248124E281576A200373D3C /* AdminDishesHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1140,6 +1143,7 @@
 				B25E31D427FA05FC0057D12C /* AssociatedObject.swift in Sources */,
 				B246DC6B2805EA9B00849F76 /* AdminNewCategoryViewController.swift in Sources */,
 				B246DC872805EA9B00849F76 /* AdminNewDishRouter.swift in Sources */,
+				B248124F281576A200373D3C /* AdminDishesHeaderView.swift in Sources */,
 				B25E31F027FA3EF00057D12C /* AdminHomeViewInput.swift in Sources */,
 				B246DC7E2805EA9B00849F76 /* AdminDishViewInteractor.swift in Sources */,
 				B231CC9A27F43EB2001DAE9E /* AppDelegate.swift in Sources */,
