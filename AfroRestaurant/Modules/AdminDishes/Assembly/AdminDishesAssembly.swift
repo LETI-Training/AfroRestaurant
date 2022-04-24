@@ -2,10 +2,10 @@ import UIKit
 
 class AdminDishesAssembly {
 
-    static func assemble() -> UIViewController {
+    static func assemble(category: AdminCreateCategoryModel) -> UIViewController {
         let view = AdminDishesViewController()
         let router = AdminDishesRouter()
-        let presenter = AdminDishesPresenter()
+        let presenter = AdminDishesPresenter(category: category)
         let interactor = AdminDishesInteractor()
 
         view.presenter = presenter

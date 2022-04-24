@@ -24,8 +24,8 @@ final class AdminDataBaseService {
     
     let lock = NSConditionLock()
     
-    var dishesContainer = [String: [DishModel]]()
-    var categories = [CategoryModel]()
+    private var dishesContainer = [String: [DishModel]]()
+    private var categories = [CategoryModel]()
     
     let userName: String = {
         Firebase.Auth.auth().currentUser?.email ?? ""

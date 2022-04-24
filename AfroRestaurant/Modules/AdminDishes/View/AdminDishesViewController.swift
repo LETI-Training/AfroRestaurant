@@ -15,23 +15,6 @@ final class AdminDishesViewController: BaseViewController {
     var viewModels: [DishesCollectionViewCell.ViewModel] = []
     var categoryDescription: String = ""
     
-    private lazy var headerView: UIView = {
-        
-        let view = UIView()
-        let label = UILabel()
-        label.textColor = .textSecondary
-        label.font = .font(.regular, size: 14.0)
-        label.textAlignment = .left
-        label.text = "Here, you can see all categories of dishes you added"
-        label.sizeToFit()
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(appearance.leadingTrailingInset)
-            make.centerY.equalToSuperview()
-        }
-        return view
-    }()
-    
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -100,11 +83,15 @@ final class AdminDishesViewController: BaseViewController {
     }
     
     @objc private func newDishButtonTapped() {
-//        presenter?.didTapAddNewCategory()
+        presenter?.createNewDishTapped()
     }
 }
 
 extension AdminDishesViewController: AdminDishesViewInput {
+    func updateTitle(title: String) {
+        self.title = title
+    }
+    
     func updateItems(description: String, viewModels: [DishesCollectionViewCell.ViewModel]) {
         categoryDescription = description
         self.viewModels = viewModels

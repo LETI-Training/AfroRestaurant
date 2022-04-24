@@ -31,4 +31,5 @@ extension UIImage {
     static var greenCoins: UIImage { UIImage(named: "greenCoins")! }
     static var delete: UIImage { UIImage(named: "delete")! }
     static var launchScreen: UIImage { UIImage(named: "launchScreen")! }
+    static var addPhoto: UIImage { UIImage(named: "addPhoto")! }
 }

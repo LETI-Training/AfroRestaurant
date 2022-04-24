@@ -30,7 +30,12 @@ extension AdminInventoryPresenter: AdminInventoryPresenterProtocol {
     }
     
     func didSelectItem(at row: Int) {
-        router?.routeToDishes()
+        router?.routeToDishes(
+            category: .init(
+                categoryName: categoryModels[row].categoryName,
+                categoryDescription: categoryModels[row].categoryDescription
+            )
+        )
     }
     
     func didDeleteItem(at row: Int) {
