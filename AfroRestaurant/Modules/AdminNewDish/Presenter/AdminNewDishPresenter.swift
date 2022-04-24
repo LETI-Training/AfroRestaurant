@@ -1,7 +1,7 @@
 import UIKit
 import PhotosUI
 
-class AdminNewDishPresenter {
+class AdminNewDishPresenter: NSObject {
     weak var view: AdminNewDishViewInput?
     var interactor: AdminNewDishInteractorInput?
     var router: AdminNewDishRouter?
@@ -19,7 +19,11 @@ class AdminNewDishPresenter {
 
 extension AdminNewDishPresenter: AdminNewDishPresenterProtocol {
     func addPhotoTapped() {
-        router?.openPhotos(delegate: self)
+        if #available(iOS 14, *) {
+            router?.openPhotos(delegate: self)
+        } else {
+            router?.routeToImagePicker(delegate: self)
+        }
     }
     
     func createDishButtonTapped(
@@ -69,6 +73,7 @@ extension AdminNewDishPresenter: AdminNewDishPresenterProtocol {
 }
 
 extension AdminNewDishPresenter: PHPickerViewControllerDelegate {
+    @available(iOS 14, *)
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
         
@@ -78,5 +83,17 @@ extension AdminNewDishPresenter: PHPickerViewControllerDelegate {
                 self?.view?.updateImage(image: self?.image)
             }
         }
+    }
+}
+
+extension AdminNewDishPresenter: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        image = info[.editedImage] as? UIImage
+        view?.updateImage(image: image)
+        picker.dismiss(animated: true, completion: nil)
     }
 }
