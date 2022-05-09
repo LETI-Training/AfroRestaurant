@@ -12,6 +12,7 @@ import Firebase
 
 protocol AuthorizationServiceInput: AnyObject {
     var userType: UserType { get }
+    var consumerDataBaseService: ConsumerDataBaseServiceProtocol? { get set }
     
     func signIn(email: String, password: String)
     func signUp(
@@ -56,6 +57,7 @@ class AuthorizationService {
     
     private var outputs: [WeakRefeferenceWrapper<AuthorizationServiceOutput>] = []
     weak var appInteractor: AppInteractorProtocol?
+    weak var consumerDataBaseService: ConsumerDataBaseServiceProtocol?
     private let updateLock = NSRecursiveLock()
     
     private var email: String {
@@ -148,6 +150,8 @@ extension AuthorizationService: AuthorizationServiceInput {
             changeRequest?.displayName = fullName
             
             changeRequest?.commitChanges {  (error) in }
+            
+            self.consumerDataBaseService?.set(phoneNumber: phoneNumber, address: "", name: fullName)
             
             self.sendUpdateNotification(updateType: .successRegister)
             self.appInteractor?.userAuthorizationStateChanged()

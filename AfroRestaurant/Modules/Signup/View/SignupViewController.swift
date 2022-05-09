@@ -153,7 +153,7 @@ final class SignupViewController: BaseViewController {
         label.font = .font(.regular, size: 12.0)
         label.sizeToFit()
         label.textAlignment = .center
-        let attributedText = NSMutableAttributedString(string: "Don’t have an account? Create one here")
+        let attributedText = NSMutableAttributedString(string: "Do you already have an account? Log In here")
         attributedText.linkAction(
             color: .brandOrange,
             text: "here",

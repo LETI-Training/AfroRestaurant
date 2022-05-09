@@ -223,6 +223,7 @@ final class AdminDishViewViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        addKeyBoardObserver()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

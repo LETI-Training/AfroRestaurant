@@ -6,7 +6,10 @@ class ConsumerProfileAssembly {
         let view = ConsumerProfileViewController()
         let router = ConsumerProfileRouter()
         let presenter = ConsumerProfilePresenter()
-        let interactor = ConsumerProfileInteractor()
+        let interactor = ConsumerProfileInteractor(
+            consumerDataBase: ServiceLocator.shared.getService()!,
+            authService: ServiceLocator.shared.getService()!
+        )
 
         view.presenter = presenter
         presenter.view = view

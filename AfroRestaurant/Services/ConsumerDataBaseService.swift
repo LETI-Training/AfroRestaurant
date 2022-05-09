@@ -14,18 +14,22 @@ extension ConsumerDataBaseService {
         let dishName: String
         let categoryName: String
     }
-
+    
     struct CartModelMinimal: Hashable {
         let minimalModel: ConsumerDishMinimalModel
         let quantity: Int
     }
+    
+    struct UserDetails {
+        let userName: String
+        let address: String
+        let phoneNumber: String
+        let email: String
+    }
 }
 
-protocol ConsumerDataBaseServiceProtocol {
-    var userName: String { get }
-    var email: String { get }
-    var phoneNumber: String { get }
-    
+protocol ConsumerDataBaseServiceProtocol: AnyObject {
+    func getUserDetails(completion: @escaping (ConsumerDataBaseService.UserDetails?) -> ())
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
     func addDishToFavorite(model: ConsumerDataBaseService.ConsumerDishMinimalModel)
     func addDishToCart(model: ConsumerDataBaseService.CartModelMinimal)
@@ -35,7 +39,7 @@ protocol ConsumerDataBaseServiceProtocol {
     func loadCarts(completion: @escaping ([CartModel]?) -> ())
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
     func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void)
-    func setPhoneNumber(phoneNumber: String)
+    func set(phoneNumber: String, address: String, name: String)
     
     func isDishInCart(dishModel: DishModel) -> Bool
     func isDishInFavorites(dishModel: DishModel) -> Bool
@@ -51,19 +55,13 @@ final class ConsumerDataBaseService {
     let adminService: AdminDataBaseServiceProtocol
     
     private var dishesContainer = [String: [DishModel]]()
-    private let userID = Firebase.Auth.auth().currentUser?.uid ?? ""
+    private var userID: String {
+        Firebase.Auth.auth().currentUser?.uid ?? ""
+    }
     
-    let userName: String = {
-        Firebase.Auth.auth().currentUser?.displayName ?? ""
-    }()
-    
-    let email: String = {
+    var email: String {
         Firebase.Auth.auth().currentUser?.email ?? ""
-    }()
-    
-    let phoneNumber: String = {
-        ""
-    }()
+    }
     
     init(adminDataBaseService: AdminDataBaseServiceProtocol) {
         self.adminService = adminDataBaseService
@@ -167,7 +165,33 @@ final class ConsumerDataBaseService {
 }
 
 extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
-   
+    
+    func getUserDetails(completion: @escaping (UserDetails?) -> ()) {
+        Firestore
+            .firestore()
+            .collection("Users")
+            .document(userID)
+            .getDocument { [weak self] querySnapShot, error in
+                guard
+                    let self = self,
+                    error == nil,
+                    let querySnapShot = querySnapShot,
+                        let data = querySnapShot.data()
+                else {
+                    completion(nil)
+                    return
+                }
+                
+                let details = UserDetails(
+                    userName: data["userName"] as? String ?? "",
+                    address: data["address"] as? String ?? "",
+                    phoneNumber: data["phoneNumber"] as? String ?? "",
+                    email: self.email
+                )
+                completion(details)
+            }
+    }
+    
     func addDishToFavorite(model: ConsumerDishMinimalModel) {
         let FavoriteDocument = getFavoritesDocument(for: model.dishName)
         FavoriteDocument
@@ -248,6 +272,9 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
     }
     
     func loadCartsFromDataBase(completion: @escaping ([CartModel]?) -> ()) {
+        
+        guard Firebase.Auth.auth().currentUser != nil else { return }
+        
         var carts = [CartModelMinimal]()
         Firestore
             .firestore()
@@ -294,6 +321,8 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
     
     
     func loadFavoritesFromDataBase(completion: @escaping ([DishModel]?) -> ()) {
+        
+        guard Firebase.Auth.auth().currentUser != nil else { return }
         
         var favorites = [ConsumerDishMinimalModel]()
         Firestore
@@ -349,9 +378,11 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
         adminService.loadDish(dishName: dishName, for: categoryName, completion: completion)
     }
     
-    func setPhoneNumber(phoneNumber: String) {
+    func set(phoneNumber: String, address: String, name: String) {
         Firestore.firestore().collection("Users").document(userID).setData([
-            "phoneNumber" : phoneNumber
+            "phoneNumber" : phoneNumber,
+            "address": address,
+            "userName": name
         ])
     }
 }

@@ -49,13 +49,15 @@ class AppInteractor {
     }
     
     private func setupServiceLocator() {
+//        authService?.signOut()
         guard let authService = authService else { return }
-            let adminDataBaseService = AdminDataBaseService()
-            let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)
-            
-            ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
-            ServiceLocator.shared.addService(service: adminDataBaseService as AdminDataBaseServiceProtocol)
-            ServiceLocator.shared.addService(service: consumerDataBase as ConsumerDataBaseServiceProtocol)
+        let adminDataBaseService = AdminDataBaseService()
+        let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)
+        authService.consumerDataBaseService = consumerDataBase
+        
+        ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
+        ServiceLocator.shared.addService(service: adminDataBaseService as AdminDataBaseServiceProtocol)
+        ServiceLocator.shared.addService(service: consumerDataBase as ConsumerDataBaseServiceProtocol)
     }
 }
 
