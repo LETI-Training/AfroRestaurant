@@ -60,15 +60,15 @@ class ConsumerHomePresenter {
                     isInCart
                     ? self?.interactor?
                         .removeDishFromCart(
-                        dishModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName),
-                        completion: {
-                        self?.loadData()
-                    })
+                            dishModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName),
+                            completion: {
+                                self?.loadData()
+                            })
                     : self?.interactor?
                         .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), quantity: 1))
                     self?.loadData()
-                } buyNowButtonTapped: {  _ in
-                    // go to cart + weak self
+                } buyNowButtonTapped: { [weak self]  _ in
+                    self?.router?.moveToCartTab()
                 }
         }
     }
@@ -76,7 +76,10 @@ class ConsumerHomePresenter {
 
 extension ConsumerHomePresenter: ConsumerHomePresenterProtocol {
     func dishTapped(at indexPath: IndexPath) {
-        
+        router?.routeToDishe(
+            dish: models[indexPath.section].dishes[indexPath.row],
+            categoryName: models[indexPath.section].categoryName
+        )
     }
     
     func viewWillAppear() {

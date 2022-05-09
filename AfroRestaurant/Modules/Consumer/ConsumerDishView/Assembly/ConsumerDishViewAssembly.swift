@@ -2,7 +2,7 @@ import UIKit
 
 class ConsumerDishViewAssembly {
 
-    static func assemble() -> UIViewController {
+    static func assemble(dishModel: DishModel, categoryName: String) -> UIViewController {
         let view = ConsumerDishViewViewController()
         let router = ConsumerDishViewRouter()
         let presenter = ConsumerDishViewPresenter()
