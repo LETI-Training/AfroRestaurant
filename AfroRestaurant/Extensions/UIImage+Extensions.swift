@@ -42,4 +42,6 @@ extension UIImage {
     static var cartWhite: UIImage { UIImage(named: "cartWhite")! }
     static var favoriteWhite: UIImage { UIImage(named: "favoriteWhite")! }
     static var buyNow: UIImage { UIImage(named: "buyNow")! }
+    static var cartAdd: UIImage { UIImage(named: "cartWhite_add")! }
+    static var cartRemove: UIImage { UIImage(named: "cartWhite_remove")! }
 }

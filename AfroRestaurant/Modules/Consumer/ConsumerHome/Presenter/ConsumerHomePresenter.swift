@@ -47,7 +47,7 @@ class ConsumerHomePresenter {
                 rating: model.rating ?? 0.0,
                 calories: model.calories,
                 price: model.price,
-                image: UIImage(data: data)) { [weak self] viewModel in
+                image: UIImage(data: data)) { [weak self, dishModel] viewModel in
                     if isLiked {
                         self?.interactor?.removeDishFromFavorite(dishModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), completion: {
                             self?.loadData()

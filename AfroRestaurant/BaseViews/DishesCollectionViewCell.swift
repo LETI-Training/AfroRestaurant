@@ -68,6 +68,10 @@ class DishesCollectionViewCell: UICollectionViewCell {
                 ? .brandGreen
                 : .black
                 buyNowNutton.isHidden = false
+                let image: UIImage = isAdded
+                ? .cartRemove
+                : .cartAdd
+                cartButton.setImage(image, for: .normal)
             }
         }
     }
@@ -153,7 +157,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
     }()
     
     private lazy var iconButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(frame: .zero)
         button.backgroundColor = .red
         button.setImage(.delete, for: .normal)
         button.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
@@ -163,8 +167,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
     }()
     
     private lazy var cartButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(.cartWhite, for: .normal)
+        let button = UIButton(frame: .zero)
         button.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
         button.clipsToBounds = true
         button.sizeToFit()

@@ -177,6 +177,7 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                 "categoryName" : model.categoryName
             ], merge: true)
         addFavoriteLocally(model: model)
+        loadFavoritesFromDataBase(completion: { _ in })
     }
     
     func addDishToCart(model: CartModelMinimal) {
@@ -188,6 +189,7 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                 "quantity": model.quantity
             ], merge: true)
         addCartLocally(model: model)
+        loadCartsFromDataBase(completion: { _ in })
     }
     
     func removeDishFromFavorite(dishModel: ConsumerDishMinimalModel, completion: @escaping () -> Void) {
