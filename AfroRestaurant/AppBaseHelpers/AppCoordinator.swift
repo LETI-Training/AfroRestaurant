@@ -28,6 +28,10 @@ class AppCoordinator {
     ) {
         self.adminFactory = adminFactory
         self.customerFactory = customerFactory
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
     }
 }
 

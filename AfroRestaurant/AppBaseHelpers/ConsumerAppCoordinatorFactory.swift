@@ -54,10 +54,10 @@ extension ConsumerAppCoordinatorFactory: AppCordinatorFactory {
     func createTabBar() -> UITabBarController {
         let tabBarVC = CustomTabBarController()
         let appearance = UITabBarAppearance()
+        appearance.backgroundColor = .tabBarPrimary
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.textPrimary]
         tabBarVC.tabBar.standardAppearance = appearance
         tabBarVC.viewControllers = [createHomeVC(), createFavoritesVC(), createCartVC(), createProfileVC()]
-        tabBarVC.tabBar.backgroundColor = .tabBarPrimary
         return tabBarVC
     }
 }
