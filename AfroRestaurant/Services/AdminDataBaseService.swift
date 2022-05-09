@@ -30,6 +30,7 @@ final class AdminDataBaseService {
     
     private var dishesContainer = [String: [DishModel]]()
     private var categories = [CategoryModel]()
+    var categoriesLoadCompletion: ((([CategoryModel])?) -> Void)?
     
     let userName: String = {
         Firebase.Auth.auth().currentUser?.displayName ?? ""
@@ -63,6 +64,7 @@ final class AdminDataBaseService {
         lock.lock()
         defer { lock.unlock() }
         dishesContainer.updateValue(dishesModels, forKey: categoryName)
+        categoriesLoadCompletion?(getCategories())
     }
     
     private func updateCategories(categories: [CategoryModel]) {
@@ -187,6 +189,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
             completion(getCategories())
             return
         }
+        self.categoriesLoadCompletion = completion
         loadCategoriesFromDataBase(completion: completion)
     }
     
