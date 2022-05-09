@@ -6,7 +6,7 @@ class ConsumerHomeAssembly {
         let view = ConsumerHomeViewController()
         let router = ConsumerHomeRouter()
         let presenter = ConsumerHomePresenter()
-        let interactor = ConsumerHomeInteractor()
+        let interactor = ConsumerHomeInteractor(consumerDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view

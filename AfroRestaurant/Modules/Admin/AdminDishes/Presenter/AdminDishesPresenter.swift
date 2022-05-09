@@ -26,15 +26,15 @@ class AdminDishesPresenter {
             let data = Data(base64Encoded: $0.imageString) ?? Data()
             let dishModel = $0
             return DishesCollectionViewCell.ViewModel(
-                type: .delete,
+                type: .default,
+                buttonType: .delete,
                 dishName: $0.dishName,
                 rating: $0.rating ?? 0.0,
                 calories: $0.calories,
                 price: $0.price,
-                image: UIImage(data: data)
-            ) { [weak self] viewModel in
-                self?.deleteDish(viewModel: dishModel)
-            }
+                image: UIImage(data: data)) { [weak self] viewModel in
+                    self?.deleteDish(viewModel: dishModel)
+                } cartButtonTapped: { _ in } buyNowButtonTapped: { _ in }
         }
         DispatchQueue.main.async {
             self.view?.updateItems(description: self.category.categoryDescription, viewModels: viewModel)

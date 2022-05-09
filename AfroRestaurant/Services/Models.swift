@@ -37,3 +37,8 @@ struct DishModel: Hashable {
     let favoritesCount: Int?
     let profitsMade: Double?
 }
+
+struct CartModel: Hashable {
+    let dishModel: DishModel
+    let quantity: Int
+}

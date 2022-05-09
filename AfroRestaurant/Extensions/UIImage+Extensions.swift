@@ -39,4 +39,7 @@ extension UIImage {
     static var delete: UIImage { UIImage(named: "delete")! }
     static var launchScreen: UIImage { UIImage(named: "launchScreen")! }
     static var addPhoto: UIImage { UIImage(named: "addPhoto")! }
+    static var cartWhite: UIImage { UIImage(named: "cartWhite")! }
+    static var favoriteWhite: UIImage { UIImage(named: "favoriteWhite")! }
+    static var buyNow: UIImage { UIImage(named: "buyNow")! }
 }

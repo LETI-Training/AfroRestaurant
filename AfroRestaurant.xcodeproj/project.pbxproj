@@ -72,6 +72,7 @@
 		B245559E28293EF100D4B8FE /* ConsumerCartInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556D28293EF000D4B8FE /* ConsumerCartInteractorInput.swift */; };
 		B245559F28293EF100D4B8FE /* ConsumerCartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556E28293EF000D4B8FE /* ConsumerCartInteractor.swift */; };
 		B24555A028293EF100D4B8FE /* ConsumerCartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245557028293EF000D4B8FE /* ConsumerCartRouter.swift */; };
+		B24555A228294D3D00D4B8FE /* ConsumerHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24555A128294D3D00D4B8FE /* ConsumerHomeHeaderView.swift */; };
 		B246DC2F2805DF3800849F76 /* AdminInventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC2E2805DF3800849F76 /* AdminInventoryTableViewCell.swift */; };
 		B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */; };
 		B246DC692805EA9B00849F76 /* AdminNewCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */; };
@@ -108,7 +109,7 @@
 		B246DC892805FBCA00849F76 /* AdminDataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */; };
 		B246DC8B280600E600849F76 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC8A280600E600849F76 /* Models.swift */; };
 		B248124F281576A200373D3C /* AdminDishesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248124E281576A200373D3C /* AdminDishesHeaderView.swift */; };
-		B24812512815891E00373D3C /* AdminDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24812502815891E00373D3C /* AdminDishesCollectionViewCell.swift */; };
+		B24812512815891E00373D3C /* DishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24812502815891E00373D3C /* DishesCollectionViewCell.swift */; };
 		B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */; };
 		B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */; };
 		B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */; };
@@ -268,6 +269,7 @@
 		B245556D28293EF000D4B8FE /* ConsumerCartInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartInteractorInput.swift; sourceTree = "<group>"; };
 		B245556E28293EF000D4B8FE /* ConsumerCartInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartInteractor.swift; sourceTree = "<group>"; };
 		B245557028293EF000D4B8FE /* ConsumerCartRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartRouter.swift; sourceTree = "<group>"; };
+		B24555A128294D3D00D4B8FE /* ConsumerHomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerHomeHeaderView.swift; sourceTree = "<group>"; };
 		B246DC2E2805DF3800849F76 /* AdminInventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInventoryTableViewCell.swift; sourceTree = "<group>"; };
 		B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryAssembly.swift; sourceTree = "<group>"; };
 		B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryPresenter.swift; sourceTree = "<group>"; };
@@ -304,7 +306,7 @@
 		B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDataBaseService.swift; sourceTree = "<group>"; };
 		B246DC8A280600E600849F76 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B248124E281576A200373D3C /* AdminDishesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDishesHeaderView.swift; sourceTree = "<group>"; };
-		B24812502815891E00373D3C /* AdminDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDishesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B24812502815891E00373D3C /* DishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B25E31BB27F9FC4E0057D12C /* SignupAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupAssembly.swift; sourceTree = "<group>"; };
 		B25E31BD27F9FC4E0057D12C /* SignupPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenterProtocol.swift; sourceTree = "<group>"; };
 		B25E31BE27F9FC4E0057D12C /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 			children = (
 				B245554E28293EF000D4B8FE /* ConsumerHomeViewController.swift */,
 				B245554F28293EF000D4B8FE /* ConsumerHomeViewInput.swift */,
+				B24555A128294D3D00D4B8FE /* ConsumerHomeHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -929,7 +932,6 @@
 			isa = PBXGroup;
 			children = (
 				B246DC452805EA9B00849F76 /* AdminDishesViewInput.swift */,
-				B24812502815891E00373D3C /* AdminDishesCollectionViewCell.swift */,
 				B246DC462805EA9B00849F76 /* AdminDishesViewController.swift */,
 				B248124E281576A200373D3C /* AdminDishesHeaderView.swift */,
 			);
@@ -1224,6 +1226,7 @@
 		B2802E9527F9C002002EB628 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				B24812502815891E00373D3C /* DishesCollectionViewCell.swift */,
 				B2802E9627F9C028002EB628 /* BaseViewController.swift */,
 			);
 			path = BaseViews;
@@ -1581,6 +1584,7 @@
 				B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */,
 				B25E31C827F9FC4F0057D12C /* SignupPresenterProtocol.swift in Sources */,
 				B246DC802805EA9B00849F76 /* AdminNewDishAssembly.swift in Sources */,
+				B24555A228294D3D00D4B8FE /* ConsumerHomeHeaderView.swift in Sources */,
 				B246DC892805FBCA00849F76 /* AdminDataBaseService.swift in Sources */,
 				B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */,
 				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
@@ -1673,7 +1677,7 @@
 				B245557528293EF000D4B8FE /* ConsumerFavoritesViewInput.swift in Sources */,
 				B2AA090927FB7E840038DDB1 /* AdminProfitsViewController.swift in Sources */,
 				B246DC792805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift in Sources */,
-				B24812512815891E00373D3C /* AdminDishesCollectionViewCell.swift in Sources */,
+				B24812512815891E00373D3C /* DishesCollectionViewCell.swift in Sources */,
 				B2AA091227FB7E840038DDB1 /* AdminInventoryViewController.swift in Sources */,
 				B246DC2F2805DF3800849F76 /* AdminInventoryTableViewCell.swift in Sources */,
 				B245558A28293EF100D4B8FE /* ConsumerHomePresenterProtocol.swift in Sources */,

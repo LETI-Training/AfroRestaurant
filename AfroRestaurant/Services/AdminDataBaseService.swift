@@ -178,6 +178,8 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
     }
     
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
+        lock.lock()
+        defer { lock.unlock() }
         guard
             categories.isEmpty,
             dishesContainer.isEmpty
@@ -185,7 +187,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
             completion(getCategories())
             return
         }
-        loadCategoriesFromDataBase { _ in }
+        loadCategoriesFromDataBase(completion: completion)
     }
     
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void) {

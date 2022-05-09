@@ -12,9 +12,9 @@ final class AdminDishesViewController: BaseViewController {
     private let appearance = Appearance()
     var presenter: AdminDishesPresenterProtocol?
     
-    var viewModels: [DishesCollectionViewCell.ViewModel] = []
     var categoryDescription: String = ""
-    
+    var viewModels: [DishesCollectionViewCell.ViewModel] = []
+   
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)

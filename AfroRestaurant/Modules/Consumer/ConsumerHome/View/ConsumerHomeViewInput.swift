@@ -1,1 +1,3 @@
-protocol ConsumerHomeViewInput: AnyObject {}
+protocol ConsumerHomeViewInput: AnyObject {
+    func updateView(viewModels: [ConsumerHomeViewController.ViewModel])
+}

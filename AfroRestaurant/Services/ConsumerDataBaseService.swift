@@ -15,10 +15,17 @@ protocol ConsumerDataBaseServiceProtocol {
     var phoneNumber: String { get }
     
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
+    func addDishToFavorite(dishModel: DishModel)
+    func addDishToCart(dishModel: DishModel, quantity: Int)
+    func removeDishFromFavorite(dishModel: DishModel, completion: @escaping () -> Void)
+    func removeDishFromCart(dishModel: DishModel, completion: @escaping () -> Void)
     func loadFavorites(completion: @escaping ([DishModel]?) -> ())
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
     func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void)
     func setPhoneNumber(phoneNumber: String)
+    
+    func isDishInCart(dishModel: DishModel) -> CartModel?
+    func isDishInFavorites(dishModel: DishModel) -> Bool
 }
 
 final class ConsumerDataBaseService {
@@ -69,6 +76,30 @@ final class ConsumerDataBaseService {
 }
 
 extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
+    func addDishToFavorite(dishModel: DishModel) {
+        
+    }
+    
+    func addDishToCart(dishModel: DishModel, quantity: Int) {
+        
+    }
+    
+    func removeDishFromFavorite(dishModel: DishModel, completion: @escaping () -> Void) {
+        
+    }
+    
+    func removeDishFromCart(dishModel: DishModel, completion: @escaping () -> Void) {
+        
+    }
+    
+    func isDishInCart(dishModel: DishModel) -> CartModel? {
+        nil
+    }
+    
+    func isDishInFavorites(dishModel: DishModel) -> Bool {
+        false
+    }
+    
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
         adminService.loadCategories(completion: completion)
     }
