@@ -768,13 +768,7 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B246DC3E2805EA9B00849F76 /* AdminDishes */,
-				B246DC4C2805EA9B00849F76 /* AdminDishView */,
-				B25E31DF27FA3EF00057D12C /* AdminHome */,
-				B2AA08F827FB7E840038DDB1 /* AdminInventory */,
-				B246DC302805EA9A00849F76 /* AdminNewCategory */,
-				B246DC5A2805EA9B00849F76 /* AdminNewDish */,
-				B2AA08EA27FB7E840038DDB1 /* AdminProfits */,
+				B28F69AC28291CAC00EEDE74 /* Admin */,
 				7DB6B94A33874AEFE374DD09 /* Login */,
 				B25E31B927F9FC4E0057D12C /* Signup */,
 			);
@@ -831,6 +825,20 @@
 				B2802EAC27F9C2EB002EB628 /* Roboto-Black.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		B28F69AC28291CAC00EEDE74 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				B246DC3E2805EA9B00849F76 /* AdminDishes */,
+				B246DC4C2805EA9B00849F76 /* AdminDishView */,
+				B25E31DF27FA3EF00057D12C /* AdminHome */,
+				B2AA08F827FB7E840038DDB1 /* AdminInventory */,
+				B246DC302805EA9A00849F76 /* AdminNewCategory */,
+				B246DC5A2805EA9B00849F76 /* AdminNewDish */,
+				B2AA08EA27FB7E840038DDB1 /* AdminProfits */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		B2AA08EA27FB7E840038DDB1 /* AdminProfits */ = {

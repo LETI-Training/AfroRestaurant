@@ -30,11 +30,11 @@ final class AdminDataBaseService {
     private var categories = [CategoryModel]()
     
     let userName: String = {
-        Firebase.Auth.auth().currentUser?.email ?? ""
+        Firebase.Auth.auth().currentUser?.displayName ?? ""
     }()
     
     let email: String = {
-        Firebase.Auth.auth().currentUser?.displayName ?? ""
+        Firebase.Auth.auth().currentUser?.email ?? ""
     }()
     
     init() {

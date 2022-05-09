@@ -358,5 +358,4 @@ extension AdminNewDishViewController: AdminNewDishViewInput {
             self.dishImageView.image = image
         }
     }
-    
 }
