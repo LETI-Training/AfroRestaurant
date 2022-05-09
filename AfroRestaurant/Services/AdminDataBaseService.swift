@@ -22,6 +22,7 @@ protocol AdminDataBaseServiceProtocol {
     func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void)
     func deleteDish(_ dishName: String, in categoryName: String, completion: @escaping () -> Void)
     func updateDishToCategory(dishModel: AdminCreateDishModel)
+    func getDishModel(dishName: String, categoryName: String) -> DishModel?
 }
 
 final class AdminDataBaseService {
@@ -281,5 +282,13 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                 self?.loadCategories { _ in }
             }
         }
+    }
+    
+    func getDishModel(dishName: String, categoryName: String) -> DishModel? {
+        lock.lock()
+        defer { lock.unlock() }
+        
+        let dishes = dishesContainer[categoryName]
+        return dishes?.first(where: { $0.dishName == dishName})
     }
 }

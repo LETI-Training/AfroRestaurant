@@ -12,7 +12,9 @@ class ConsumerHomePresenter {
     
     private func loadData() {
         interactor?.loadCategories(completion: { [weak self] categoryModels in
-            self?.generateData(for: categoryModels)
+            DispatchQueue.main.async {
+                self?.generateData(for: categoryModels)
+            }
         })
     }
     
@@ -28,9 +30,7 @@ class ConsumerHomePresenter {
                 cellModels: getCellModels(from: categoryModel)
             )
         }
-        DispatchQueue.main.async {
-            self.view?.updateView(viewModels: viewModels)
-        }
+        self.view?.updateView(viewModels: viewModels)
     }
     
     private func getCellModels(from categoryModel: CategoryModel) -> [DishesCollectionViewCell.ViewModel] {
@@ -38,25 +38,37 @@ class ConsumerHomePresenter {
             let data = Data(base64Encoded: model.imageString) ?? Data()
             let dishModel = model
             let cartModel = interactor?.isDishInCart(dishModel: model)
-            let isInCart = cartModel != nil
+            let isInCart = cartModel == true
+            let isLiked = interactor?.isDishInFavorites(dishModel: model) ?? false
             return DishesCollectionViewCell.ViewModel(
                 type: .withCart(isAdded: isInCart),
-                buttonType: .like(isLiked: interactor?.isDishInFavorites(dishModel: model) ?? false),
+                buttonType: .like(isLiked: isLiked),
                 dishName: model.dishName,
                 rating: model.rating ?? 0.0,
                 calories: model.calories,
                 price: model.price,
                 image: UIImage(data: data)) { [weak self] viewModel in
-                    self?.interactor?.addDishToFavorite(dishModel: dishModel)
+                    if isLiked {
+                        self?.interactor?.removeDishFromFavorite(dishModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), completion: {
+                            self?.loadData()
+                        })
+                    } else {
+                        self?.interactor?.addDishToFavorite(dishModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName))
+                        self?.loadData()
+                    }
                 } cartButtonTapped: { [weak self] _ in
                     isInCart
-                    ? self?.interactor?.removeDishFromCart(dishModel: dishModel, completion: {
+                    ? self?.interactor?
+                        .removeDishFromCart(
+                        dishModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName),
+                        completion: {
                         self?.loadData()
                     })
-                    : self?.interactor?.addDishToCart(dishModel: dishModel, quantity: 1)
+                    : self?.interactor?
+                        .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), quantity: 1))
                     self?.loadData()
-                } buyNowButtonTapped: { [weak self] _ in
-                    self?.interactor?.addDishToCart(dishModel: dishModel, quantity: 0)
+                } buyNowButtonTapped: {  _ in
+                    // go to cart + weak self
                 }
         }
     }

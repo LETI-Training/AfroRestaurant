@@ -7,7 +7,7 @@ class ConsumerHomeInteractor {
 }
 
 extension ConsumerHomeInteractor: ConsumerHomeInteractorInput {
-    func isDishInCart(dishModel: DishModel) -> CartModel? {
+    func isDishInCart(dishModel: DishModel) -> Bool {
         consumerDataBase.isDishInCart(dishModel: dishModel)
     }
     
@@ -15,19 +15,19 @@ extension ConsumerHomeInteractor: ConsumerHomeInteractorInput {
         consumerDataBase.isDishInFavorites(dishModel: dishModel)
     }
     
-    func addDishToFavorite(dishModel: DishModel) {
-        consumerDataBase.addDishToFavorite(dishModel: dishModel)
+    func addDishToFavorite(dishModel: ConsumerDataBaseService.ConsumerDishMinimalModel) {
+        consumerDataBase.addDishToFavorite(model: dishModel)
     }
     
-    func addDishToCart(dishModel: DishModel, quantity: Int) {
-        consumerDataBase.addDishToCart(dishModel: dishModel, quantity: quantity)
+    func addDishToCart(dishModel: ConsumerDataBaseService.CartModelMinimal) {
+        consumerDataBase.addDishToCart(model: dishModel)
     }
     
-    func removeDishFromFavorite(dishModel: DishModel, completion: @escaping () -> Void) {
+    func removeDishFromFavorite(dishModel: ConsumerDataBaseService.ConsumerDishMinimalModel, completion: @escaping () -> Void) {
         consumerDataBase.removeDishFromFavorite(dishModel: dishModel, completion: completion)
     }
     
-    func removeDishFromCart(dishModel: DishModel, completion: @escaping () -> Void) {
+    func removeDishFromCart(dishModel: ConsumerDataBaseService.ConsumerDishMinimalModel, completion: @escaping () -> Void) {
         consumerDataBase.removeDishFromCart(dishModel: dishModel, completion: completion)
     }
     

@@ -133,7 +133,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .brandGreen
         label.font = .font(.extraBold, size: 10.0)
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.sizeToFit()
         return label
     }()
@@ -144,7 +144,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
             priceLabel
         ])
         stackView.alignment = .center
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         stackView.spacing = 3.0
         stackView.axis = .horizontal
         stackView.clipsToBounds = true
@@ -184,6 +184,12 @@ class DishesCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         dishImageView.image = nil
+        iconButton.isHighlighted = false
+        cartButton.isHighlighted = false
+        buyNowNutton.isHighlighted = false
+        iconButton.isSelected = false
+        cartButton.isSelected = false
+        buyNowNutton.isSelected = false
     }
     
     @objc private func iconButtonTapped() {
