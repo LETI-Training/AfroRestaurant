@@ -126,8 +126,8 @@
             filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
             landmarkName = "loadFavoritesFromDataBase(completion:)"
             landmarkType = "7">
          </BreakpointContent>

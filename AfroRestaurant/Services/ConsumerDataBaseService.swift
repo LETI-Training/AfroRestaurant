@@ -176,9 +176,15 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                     let self = self,
                     error == nil,
                     let querySnapShot = querySnapShot,
-                        let data = querySnapShot.data()
+                    let data = querySnapShot.data()
                 else {
-                    completion(nil)
+                    let details = UserDetails(
+                        userName: "",
+                        address: "",
+                        phoneNumber: "",
+                        email: self?.email ?? ""
+                    )
+                    completion(details)
                     return
                 }
                 
