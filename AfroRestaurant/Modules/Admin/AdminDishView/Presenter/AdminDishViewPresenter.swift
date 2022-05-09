@@ -60,23 +60,31 @@ extension AdminDishViewPresenter: AdminDishViewPresenterProtocol {
     }
     
     func deleteTapped() {
-        interactor?.deleteDish(dishModel.dishName, in: categoryName, completion: { [weak self] in
-            self?.router?.dismiss()
-        })
+        view?.presentAlert(
+            title: "Deletion",
+            message: "Are you sure you want to delete",
+            action: .init(actionText: "No", actionHandler: {}),
+            action2: .init(actionText: "Yes", actionHandler: { [weak self] in
+                guard let self = self else { return }
+                self.interactor?.deleteDish(self.dishModel.dishName, in: self.categoryName, completion: { [weak self] in
+                    self?.router?.dismiss()
+                })
+            })
+        )
     }
-    
-    func addPhotoTapped() {
-        if #available(iOS 14, *) {
-            router?.openPhotos(delegate: self)
-        } else {
-            router?.routeToImagePicker(delegate: self)
-        }
-    }
-    
 
-    func viewDidLoad() {
-        view?.updateUI(model: dishModel)
+func addPhotoTapped() {
+    if #available(iOS 14, *) {
+        router?.openPhotos(delegate: self)
+    } else {
+        router?.routeToImagePicker(delegate: self)
     }
+}
+
+
+func viewDidLoad() {
+    view?.updateUI(model: dishModel)
+}
 }
 
 extension AdminDishViewPresenter: PHPickerViewControllerDelegate {

@@ -306,7 +306,7 @@ final class AdminDishViewViewController: BaseViewController {
         }
         
         addImageButton.snp.makeConstraints { make in
-            make.top.equalTo(dishImageView)
+            make.centerY.equalTo(dishImageView.snp.top)
             make.width.height.equalTo(36)
             make.centerX.equalTo(dishImageView.snp.trailing)
         }

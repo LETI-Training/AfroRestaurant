@@ -28,7 +28,7 @@ class AdminDishesPresenter {
             return DishesCollectionViewCell.ViewModel(
                 type: .delete,
                 dishName: $0.dishName,
-                rating: $0.rating ?? Double.random(in: 0...5),
+                rating: $0.rating ?? 0.0,
                 calories: $0.calories,
                 price: $0.price,
                 image: UIImage(data: data)
