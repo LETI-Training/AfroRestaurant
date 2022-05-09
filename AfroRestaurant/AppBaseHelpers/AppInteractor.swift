@@ -40,9 +40,9 @@ class AppInteractor {
         guard let authService = authService else {
             return
         }
-
+        
         if authService.isUserAuthorized() {
-            coordinator.createHomePages(for: .admin, scene: windowScene)
+            coordinator.createHomePages(for: authService.userType, scene: windowScene)
         } else {
             coordinator.createLandingPage(scene: windowScene)
         }
@@ -53,9 +53,11 @@ class AppInteractor {
         
         DispatchQueue.global().async {
             let adminDataBaseService = AdminDataBaseService()
+            let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)
             
             ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
             ServiceLocator.shared.addService(service: adminDataBaseService as AdminDataBaseServiceProtocol)
+            ServiceLocator.shared.addService(service: consumerDataBase as ConsumerDataBaseServiceProtocol)
         }
     }
 }

@@ -11,6 +11,8 @@ import Firebase
 //MARK: - Protocols
 
 protocol AuthorizationServiceInput: AnyObject {
+    var userType: UserType { get }
+    
     func signIn(email: String, password: String)
     func signUp(
         email: String,
@@ -56,6 +58,10 @@ class AuthorizationService {
     weak var appInteractor: AppInteractorProtocol?
     private let updateLock = NSRecursiveLock()
     
+    private let email: String = {
+        Firebase.Auth.auth().currentUser?.email ?? ""
+    }()
+    
     private func sendUpdateNotification(updateType: UpdateType) {
         updateLock.lock()
         defer { updateLock.unlock() }
@@ -78,6 +84,12 @@ class AuthorizationService {
 }
 
 extension AuthorizationService: AuthorizationServiceInput {
+    var userType: UserType {
+        email.components(separatedBy: "@").last == "afro.com"
+        ? .admin
+        : .customer
+    }
+    
     func isUserAuthorized() -> Bool {
         Firebase.Auth.auth().currentUser != nil
     }

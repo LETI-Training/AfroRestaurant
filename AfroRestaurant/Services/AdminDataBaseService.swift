@@ -26,7 +26,7 @@ protocol AdminDataBaseServiceProtocol {
 
 final class AdminDataBaseService {
     
-    let lock = NSConditionLock()
+    let lock = NSRecursiveLock()
     
     private var dishesContainer = [String: [DishModel]]()
     private var categories = [CategoryModel]()

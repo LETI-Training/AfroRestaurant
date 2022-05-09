@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let appCoordinator = AppCoordinator(
             adminFactory: AdminAppCoordinatorFactory(),
-            customerFactory: AdminAppCoordinatorFactory()
+            customerFactory: ConsumerAppCoordinatorFactory()
         )
         let authService = AuthorizationService()
         interactor = AppInteractor(windowScene: windowScene, coordinator: appCoordinator, authService: authService)

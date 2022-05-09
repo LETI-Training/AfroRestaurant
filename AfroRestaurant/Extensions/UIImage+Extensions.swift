@@ -17,6 +17,13 @@ extension UIImage {
         static var homeHighlighted: UIImage { UIImage(named: "tab_home_highlighted")! }
         static var inventoryHighlighted: UIImage { UIImage(named: "tab_inventory_highlighted")! }
         static var profitsHighlighted: UIImage { UIImage(named: "tab_profits_highlighted")! }
+        
+        static var favorite: UIImage { UIImage(named: "tab_favorite")! }
+        static var cart: UIImage { UIImage(named: "tab_cart")! }
+        static var profile: UIImage { UIImage(named: "tab_profile")! }
+        static var favoriteHighlighted: UIImage { UIImage(named: "tab_favorite_highlighted")! }
+        static var cartHighlighted: UIImage { UIImage(named: "tab_cart_highlighted")! }
+        static var profileHighlighted: UIImage { UIImage(named: "tab_profile_highlighted")! }
     }
     
     static var afroHeader: UIImage { UIImage(named: "afro_header")! }
