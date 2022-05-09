@@ -65,8 +65,8 @@ final class ConsumerDataBaseService {
     
     init(adminDataBaseService: AdminDataBaseServiceProtocol) {
         self.adminService = adminDataBaseService
-        loadFavorites { _ in }
-        loadCarts { _ in }
+        loadFavoritesFromDataBase { _ in }
+        loadCartsFromDataBase { _ in }
     }
     
     private func deleteSavedDocuments(documents: [QueryDocumentSnapshot]?) {
@@ -308,6 +308,8 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
     }
     
     func loadCarts(completion: @escaping ([CartModel]?) -> ()) {
+        loadFavoritesFromDataBase { _ in }
+        loadCartsFromDataBase { _ in }
         lock.lock()
         defer { lock.unlock() }
         guard
@@ -356,6 +358,8 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
     }
     
     func loadFavorites(completion: @escaping ([DishModel]?) -> ()) {
+        loadFavoritesFromDataBase { _ in }
+        loadCartsFromDataBase { _ in }
         
         lock.lock()
         defer { lock.unlock() }

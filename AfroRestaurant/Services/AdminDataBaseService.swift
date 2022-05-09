@@ -43,6 +43,18 @@ final class AdminDataBaseService {
     
     init() {
         loadCategoriesFromDataBase { _ in }
+        addListner()
+    }
+    
+    private func addListner() {
+        Firestore
+            .firestore()
+            .collection("Restaurants")
+            .document("AfroRestaurant")
+            .collection("Categories")
+            .addSnapshotListener { [weak self] _, _ in
+                self?.loadCategoriesFromDataBase { _ in }
+            }
     }
     
     private func deleteSavedDocuments(documents: [QueryDocumentSnapshot]?) {
@@ -182,6 +194,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
     }
     
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ()) {
+        loadCategoriesFromDataBase { _ in }
         lock.lock()
         defer { lock.unlock() }
         guard
