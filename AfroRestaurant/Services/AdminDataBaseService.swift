@@ -126,6 +126,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
             .document(dishModel.dishName)
             .setData([
                 "dishName" : dishModel.dishName,
+                "categoryName": dishModel.category.categoryName,
                 "dishDescription" : dishModel.dishDescription,
                 "calories" : dishModel.calories,
                 "price" : dishModel.price,
@@ -220,11 +221,13 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                         let dishDescription = data["dishDescription"] as? String,
                         let calories = data["calories"] as? Int,
                         let price = data["price"] as? Double,
-                        let imageString = data["imageString"] as? String
+                        let imageString = data["imageString"] as? String,
+                        let categoryNAme = data["categoryName"] as? String
                     else { break }
                     
                     dishes.append(DishModel(
                         dishName: dishName,
+                        categoryName: categoryNAme,
                         dishDescription: dishDescription,
                         calories: calories,
                         price: price,

@@ -43,7 +43,7 @@ protocol ConsumerDataBaseServiceProtocol {
 
 final class ConsumerDataBaseService {
     
-    let lock = NSConditionLock()
+    let lock = NSRecursiveLock()
     
     private var favorites = [ConsumerDishMinimalModel]()
     private var carts = [CartModelMinimal]()
@@ -69,7 +69,6 @@ final class ConsumerDataBaseService {
         self.adminService = adminDataBaseService
         loadFavorites { _ in }
         loadCarts { _ in }
-//        loadCategoriesFromDataBase { _ in }
     }
     
     private func deleteSavedDocuments(documents: [QueryDocumentSnapshot]?) {

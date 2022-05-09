@@ -6,7 +6,7 @@ class ConsumerFavoritesAssembly {
         let view = ConsumerFavoritesViewController()
         let router = ConsumerFavoritesRouter()
         let presenter = ConsumerFavoritesPresenter()
-        let interactor = ConsumerFavoritesInteractor()
+        let interactor = ConsumerFavoritesInteractor(consumerDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view

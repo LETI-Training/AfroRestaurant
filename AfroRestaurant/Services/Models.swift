@@ -29,6 +29,7 @@ struct CategoryModel: Hashable {
 
 struct DishModel: Hashable {
     let dishName: String
+    let categoryName: String
     let dishDescription: String
     let calories: Int
     let price: Double
