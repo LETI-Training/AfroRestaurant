@@ -15,6 +15,7 @@ final class ConsumerCartViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        title = "Coming Soon"
     }
 
     private func setupUI() {
