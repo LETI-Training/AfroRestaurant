@@ -9,8 +9,8 @@ class AdminDishesRouter {
         view?.navigationController?.present(UINavigationController(rootViewController: newVC), animated: true, completion: nil)
     }
     
-    func routeToDishe(category: DishModel) {
-        let newVC = AdminDishViewAssembly.assemble()
+    func routeToDishe(dish: DishModel, categoryName: String) {
+        let newVC = AdminDishViewAssembly.assemble(dishModel: dish, categoryName: categoryName)
         view?.navigationController?.pushViewController(newVC, animated: true)
     }
 }

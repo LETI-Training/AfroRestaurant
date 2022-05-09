@@ -56,6 +56,11 @@ final class AdminDishesViewController: BaseViewController {
         setupUI()
         presenter?.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
 
     private func setupUI() {
         addSubviews()
@@ -120,7 +125,8 @@ extension AdminDishesViewController: UICollectionViewDataSource {
 extension AdminDishesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        presenter?.dishTapped(at: indexPath.row)
     }
     
     func collectionView(

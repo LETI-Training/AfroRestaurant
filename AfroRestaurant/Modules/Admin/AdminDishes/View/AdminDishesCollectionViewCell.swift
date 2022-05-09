@@ -40,7 +40,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
             dishLabel.text = viewModel.dishName
             ratingsLabel.text = String(format: "%.1f", viewModel.rating)
             priceLabel.text = "RUB " + String(format: "%.1f", viewModel.price)
-            caloriesLabel.text = String(format: "%.f", viewModel.calories) + " Cal."
+            caloriesLabel.text = String(format: "%d", viewModel.calories) + " Cal."
             
             switch viewModel.type {
                 

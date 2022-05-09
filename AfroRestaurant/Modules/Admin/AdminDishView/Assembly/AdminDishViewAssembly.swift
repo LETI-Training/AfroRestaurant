@@ -2,11 +2,11 @@ import UIKit
 
 class AdminDishViewAssembly {
 
-    static func assemble() -> UIViewController {
+    static func assemble(dishModel: DishModel, categoryName: String) -> UIViewController {
         let view = AdminDishViewViewController()
         let router = AdminDishViewRouter()
-        let presenter = AdminDishViewPresenter()
-        let interactor = AdminDishViewInteractor()
+        let presenter = AdminDishViewPresenter(dishModel: dishModel, categoryName: categoryName)
+        let interactor = AdminDishViewInteractor(databaseService: ServiceLocator.shared.getService())
 
         view.presenter = presenter
         presenter.view = view

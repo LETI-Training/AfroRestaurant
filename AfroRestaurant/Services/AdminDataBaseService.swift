@@ -19,7 +19,9 @@ protocol AdminDataBaseServiceProtocol {
     func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void)
     func addDishToCategory(dishModel: AdminCreateDishModel)
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
+    func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void)
     func deleteDish(_ dishName: String, in categoryName: String, completion: @escaping () -> Void)
+    func updateDishToCategory(dishModel: AdminCreateDishModel)
 }
 
 final class AdminDataBaseService {
@@ -109,6 +111,10 @@ final class AdminDataBaseService {
 }
 
 extension AdminDataBaseService: AdminDataBaseServiceProtocol {
+    func updateDishToCategory(dishModel: AdminCreateDishModel) {
+        addDishToCategory(dishModel: dishModel)
+    }
+    
     func addDishToCategory(dishModel: AdminCreateDishModel) {
         let document = getCategoryDocument(for: dishModel.category.categoryName)
         
@@ -225,6 +231,12 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
                 completion(dishes)
                 self?.updateDishes(dishesModels: dishes, categoryName: categoryName)
             }
+    }
+    
+    func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void) {
+        loadDishes(for: dishName) { dishModels in
+            completion(dishModels?.first(where: { $0.dishName == dishName }))
+        }
     }
     
     func deleteCategory(categoryModel: CategoryModel, completion: @escaping () -> Void) {

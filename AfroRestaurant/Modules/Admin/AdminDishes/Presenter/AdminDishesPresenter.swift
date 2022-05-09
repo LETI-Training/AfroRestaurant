@@ -57,6 +57,14 @@ class AdminDishesPresenter {
 }
 
 extension AdminDishesPresenter: AdminDishesPresenterProtocol {
+    func viewWillAppear() {
+        loadDishes()
+    }
+    
+    func dishTapped(at index: Int) {
+        router?.routeToDishe(dish: category.dishes[index], categoryName: category.categoryName)
+    }
+    
     func createNewDishTapped() {
         router?.presentNewDish(
             output: self,
