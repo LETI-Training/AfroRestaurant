@@ -22,6 +22,56 @@
 		B231CCB127F43EB4001DAE9E /* AfroRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCB027F43EB4001DAE9E /* AfroRestaurantTests.swift */; };
 		B231CCBB27F43EB4001DAE9E /* AfroRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */; };
 		B231CCBD27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */; };
+		B245551928293E3300D4B8FE /* ConsumerDataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245551828293E3300D4B8FE /* ConsumerDataBaseService.swift */; };
+		B245551B28293E5000D4B8FE /* ConsumerAppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245551A28293E5000D4B8FE /* ConsumerAppCoordinatorFactory.swift */; };
+		B245557128293EF000D4B8FE /* ConsumerFavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245551F28293EF000D4B8FE /* ConsumerFavoritesAssembly.swift */; };
+		B245557228293EF000D4B8FE /* ConsumerFavoritesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552128293EF000D4B8FE /* ConsumerFavoritesPresenterProtocol.swift */; };
+		B245557328293EF000D4B8FE /* ConsumerFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552228293EF000D4B8FE /* ConsumerFavoritesPresenter.swift */; };
+		B245557428293EF000D4B8FE /* ConsumerFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552428293EF000D4B8FE /* ConsumerFavoritesViewController.swift */; };
+		B245557528293EF000D4B8FE /* ConsumerFavoritesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552528293EF000D4B8FE /* ConsumerFavoritesViewInput.swift */; };
+		B245557628293EF000D4B8FE /* ConsumerFavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552728293EF000D4B8FE /* ConsumerFavoritesInteractor.swift */; };
+		B245557728293EF000D4B8FE /* ConsumerFavoritesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552828293EF000D4B8FE /* ConsumerFavoritesInteractorInput.swift */; };
+		B245557828293EF100D4B8FE /* ConsumerFavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552A28293EF000D4B8FE /* ConsumerFavoritesRouter.swift */; };
+		B245557928293EF100D4B8FE /* ConsumerMapAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552D28293EF000D4B8FE /* ConsumerMapAssembly.swift */; };
+		B245557A28293EF100D4B8FE /* ConsumerMapPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245552F28293EF000D4B8FE /* ConsumerMapPresenterProtocol.swift */; };
+		B245557B28293EF100D4B8FE /* ConsumerMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553028293EF000D4B8FE /* ConsumerMapPresenter.swift */; };
+		B245557C28293EF100D4B8FE /* ConsumerMapViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553228293EF000D4B8FE /* ConsumerMapViewInput.swift */; };
+		B245557D28293EF100D4B8FE /* ConsumerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553328293EF000D4B8FE /* ConsumerMapViewController.swift */; };
+		B245557E28293EF100D4B8FE /* ConsumerMapInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553528293EF000D4B8FE /* ConsumerMapInteractorInput.swift */; };
+		B245557F28293EF100D4B8FE /* ConsumerMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553628293EF000D4B8FE /* ConsumerMapInteractor.swift */; };
+		B245558028293EF100D4B8FE /* ConsumerMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553828293EF000D4B8FE /* ConsumerMapRouter.swift */; };
+		B245558128293EF100D4B8FE /* ConsumerProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553B28293EF000D4B8FE /* ConsumerProfileAssembly.swift */; };
+		B245558228293EF100D4B8FE /* ConsumerProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553D28293EF000D4B8FE /* ConsumerProfilePresenter.swift */; };
+		B245558328293EF100D4B8FE /* ConsumerProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245553E28293EF000D4B8FE /* ConsumerProfilePresenterProtocol.swift */; };
+		B245558428293EF100D4B8FE /* ConsumerProfileViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554028293EF000D4B8FE /* ConsumerProfileViewInput.swift */; };
+		B245558528293EF100D4B8FE /* ConsumerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554128293EF000D4B8FE /* ConsumerProfileViewController.swift */; };
+		B245558628293EF100D4B8FE /* ConsumerProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554328293EF000D4B8FE /* ConsumerProfileInteractor.swift */; };
+		B245558728293EF100D4B8FE /* ConsumerProfileInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554428293EF000D4B8FE /* ConsumerProfileInteractorInput.swift */; };
+		B245558828293EF100D4B8FE /* ConsumerProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554628293EF000D4B8FE /* ConsumerProfileRouter.swift */; };
+		B245558928293EF100D4B8FE /* ConsumerHomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554928293EF000D4B8FE /* ConsumerHomeAssembly.swift */; };
+		B245558A28293EF100D4B8FE /* ConsumerHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554B28293EF000D4B8FE /* ConsumerHomePresenterProtocol.swift */; };
+		B245558B28293EF100D4B8FE /* ConsumerHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554C28293EF000D4B8FE /* ConsumerHomePresenter.swift */; };
+		B245558C28293EF100D4B8FE /* ConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554E28293EF000D4B8FE /* ConsumerHomeViewController.swift */; };
+		B245558D28293EF100D4B8FE /* ConsumerHomeViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245554F28293EF000D4B8FE /* ConsumerHomeViewInput.swift */; };
+		B245558E28293EF100D4B8FE /* ConsumerHomeInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555128293EF000D4B8FE /* ConsumerHomeInteractorInput.swift */; };
+		B245558F28293EF100D4B8FE /* ConsumerHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555228293EF000D4B8FE /* ConsumerHomeInteractor.swift */; };
+		B245559028293EF100D4B8FE /* ConsumerHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555428293EF000D4B8FE /* ConsumerHomeRouter.swift */; };
+		B245559128293EF100D4B8FE /* ConsumerDishViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555728293EF000D4B8FE /* ConsumerDishViewAssembly.swift */; };
+		B245559228293EF100D4B8FE /* ConsumerDishViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555928293EF000D4B8FE /* ConsumerDishViewPresenterProtocol.swift */; };
+		B245559328293EF100D4B8FE /* ConsumerDishViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555A28293EF000D4B8FE /* ConsumerDishViewPresenter.swift */; };
+		B245559428293EF100D4B8FE /* ConsumerDishViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555C28293EF000D4B8FE /* ConsumerDishViewViewController.swift */; };
+		B245559528293EF100D4B8FE /* ConsumerDishViewViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555D28293EF000D4B8FE /* ConsumerDishViewViewInput.swift */; };
+		B245559628293EF100D4B8FE /* ConsumerDishViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245555F28293EF000D4B8FE /* ConsumerDishViewInteractor.swift */; };
+		B245559728293EF100D4B8FE /* ConsumerDishViewInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556028293EF000D4B8FE /* ConsumerDishViewInteractorInput.swift */; };
+		B245559828293EF100D4B8FE /* ConsumerDishViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556228293EF000D4B8FE /* ConsumerDishViewRouter.swift */; };
+		B245559928293EF100D4B8FE /* ConsumerCartAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556528293EF000D4B8FE /* ConsumerCartAssembly.swift */; };
+		B245559A28293EF100D4B8FE /* ConsumerCartPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556728293EF000D4B8FE /* ConsumerCartPresenterProtocol.swift */; };
+		B245559B28293EF100D4B8FE /* ConsumerCartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556828293EF000D4B8FE /* ConsumerCartPresenter.swift */; };
+		B245559C28293EF100D4B8FE /* ConsumerCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556A28293EF000D4B8FE /* ConsumerCartViewController.swift */; };
+		B245559D28293EF100D4B8FE /* ConsumerCartViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556B28293EF000D4B8FE /* ConsumerCartViewInput.swift */; };
+		B245559E28293EF100D4B8FE /* ConsumerCartInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556D28293EF000D4B8FE /* ConsumerCartInteractorInput.swift */; };
+		B245559F28293EF100D4B8FE /* ConsumerCartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245556E28293EF000D4B8FE /* ConsumerCartInteractor.swift */; };
+		B24555A028293EF100D4B8FE /* ConsumerCartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245557028293EF000D4B8FE /* ConsumerCartRouter.swift */; };
 		B246DC2F2805DF3800849F76 /* AdminInventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC2E2805DF3800849F76 /* AdminInventoryTableViewCell.swift */; };
 		B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */; };
 		B246DC692805EA9B00849F76 /* AdminNewCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */; };
@@ -168,6 +218,56 @@
 		B231CCB627F43EB4001DAE9E /* AfroRestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfroRestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B231CCBA27F43EB4001DAE9E /* AfroRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITests.swift; sourceTree = "<group>"; };
 		B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfroRestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B245551828293E3300D4B8FE /* ConsumerDataBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDataBaseService.swift; sourceTree = "<group>"; };
+		B245551A28293E5000D4B8FE /* ConsumerAppCoordinatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerAppCoordinatorFactory.swift; sourceTree = "<group>"; };
+		B245551F28293EF000D4B8FE /* ConsumerFavoritesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesAssembly.swift; sourceTree = "<group>"; };
+		B245552128293EF000D4B8FE /* ConsumerFavoritesPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesPresenterProtocol.swift; sourceTree = "<group>"; };
+		B245552228293EF000D4B8FE /* ConsumerFavoritesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesPresenter.swift; sourceTree = "<group>"; };
+		B245552428293EF000D4B8FE /* ConsumerFavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesViewController.swift; sourceTree = "<group>"; };
+		B245552528293EF000D4B8FE /* ConsumerFavoritesViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesViewInput.swift; sourceTree = "<group>"; };
+		B245552728293EF000D4B8FE /* ConsumerFavoritesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesInteractor.swift; sourceTree = "<group>"; };
+		B245552828293EF000D4B8FE /* ConsumerFavoritesInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesInteractorInput.swift; sourceTree = "<group>"; };
+		B245552A28293EF000D4B8FE /* ConsumerFavoritesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFavoritesRouter.swift; sourceTree = "<group>"; };
+		B245552D28293EF000D4B8FE /* ConsumerMapAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapAssembly.swift; sourceTree = "<group>"; };
+		B245552F28293EF000D4B8FE /* ConsumerMapPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapPresenterProtocol.swift; sourceTree = "<group>"; };
+		B245553028293EF000D4B8FE /* ConsumerMapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapPresenter.swift; sourceTree = "<group>"; };
+		B245553228293EF000D4B8FE /* ConsumerMapViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapViewInput.swift; sourceTree = "<group>"; };
+		B245553328293EF000D4B8FE /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapViewController.swift; sourceTree = "<group>"; };
+		B245553528293EF000D4B8FE /* ConsumerMapInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapInteractorInput.swift; sourceTree = "<group>"; };
+		B245553628293EF000D4B8FE /* ConsumerMapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapInteractor.swift; sourceTree = "<group>"; };
+		B245553828293EF000D4B8FE /* ConsumerMapRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapRouter.swift; sourceTree = "<group>"; };
+		B245553B28293EF000D4B8FE /* ConsumerProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileAssembly.swift; sourceTree = "<group>"; };
+		B245553D28293EF000D4B8FE /* ConsumerProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfilePresenter.swift; sourceTree = "<group>"; };
+		B245553E28293EF000D4B8FE /* ConsumerProfilePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		B245554028293EF000D4B8FE /* ConsumerProfileViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileViewInput.swift; sourceTree = "<group>"; };
+		B245554128293EF000D4B8FE /* ConsumerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileViewController.swift; sourceTree = "<group>"; };
+		B245554328293EF000D4B8FE /* ConsumerProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileInteractor.swift; sourceTree = "<group>"; };
+		B245554428293EF000D4B8FE /* ConsumerProfileInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileInteractorInput.swift; sourceTree = "<group>"; };
+		B245554628293EF000D4B8FE /* ConsumerProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileRouter.swift; sourceTree = "<group>"; };
+		B245554928293EF000D4B8FE /* ConsumerHomeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeAssembly.swift; sourceTree = "<group>"; };
+		B245554B28293EF000D4B8FE /* ConsumerHomePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomePresenterProtocol.swift; sourceTree = "<group>"; };
+		B245554C28293EF000D4B8FE /* ConsumerHomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomePresenter.swift; sourceTree = "<group>"; };
+		B245554E28293EF000D4B8FE /* ConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeViewController.swift; sourceTree = "<group>"; };
+		B245554F28293EF000D4B8FE /* ConsumerHomeViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeViewInput.swift; sourceTree = "<group>"; };
+		B245555128293EF000D4B8FE /* ConsumerHomeInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeInteractorInput.swift; sourceTree = "<group>"; };
+		B245555228293EF000D4B8FE /* ConsumerHomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeInteractor.swift; sourceTree = "<group>"; };
+		B245555428293EF000D4B8FE /* ConsumerHomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeRouter.swift; sourceTree = "<group>"; };
+		B245555728293EF000D4B8FE /* ConsumerDishViewAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewAssembly.swift; sourceTree = "<group>"; };
+		B245555928293EF000D4B8FE /* ConsumerDishViewPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		B245555A28293EF000D4B8FE /* ConsumerDishViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewPresenter.swift; sourceTree = "<group>"; };
+		B245555C28293EF000D4B8FE /* ConsumerDishViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewViewController.swift; sourceTree = "<group>"; };
+		B245555D28293EF000D4B8FE /* ConsumerDishViewViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewViewInput.swift; sourceTree = "<group>"; };
+		B245555F28293EF000D4B8FE /* ConsumerDishViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewInteractor.swift; sourceTree = "<group>"; };
+		B245556028293EF000D4B8FE /* ConsumerDishViewInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewInteractorInput.swift; sourceTree = "<group>"; };
+		B245556228293EF000D4B8FE /* ConsumerDishViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerDishViewRouter.swift; sourceTree = "<group>"; };
+		B245556528293EF000D4B8FE /* ConsumerCartAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartAssembly.swift; sourceTree = "<group>"; };
+		B245556728293EF000D4B8FE /* ConsumerCartPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartPresenterProtocol.swift; sourceTree = "<group>"; };
+		B245556828293EF000D4B8FE /* ConsumerCartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartPresenter.swift; sourceTree = "<group>"; };
+		B245556A28293EF000D4B8FE /* ConsumerCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartViewController.swift; sourceTree = "<group>"; };
+		B245556B28293EF000D4B8FE /* ConsumerCartViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartViewInput.swift; sourceTree = "<group>"; };
+		B245556D28293EF000D4B8FE /* ConsumerCartInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartInteractorInput.swift; sourceTree = "<group>"; };
+		B245556E28293EF000D4B8FE /* ConsumerCartInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartInteractor.swift; sourceTree = "<group>"; };
+		B245557028293EF000D4B8FE /* ConsumerCartRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCartRouter.swift; sourceTree = "<group>"; };
 		B246DC2E2805DF3800849F76 /* AdminInventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInventoryTableViewCell.swift; sourceTree = "<group>"; };
 		B246DC322805EA9A00849F76 /* AdminNewCategoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryAssembly.swift; sourceTree = "<group>"; };
 		B246DC342805EA9A00849F76 /* AdminNewCategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminNewCategoryPresenter.swift; sourceTree = "<group>"; };
@@ -396,6 +496,349 @@
 				B231CCBC27F43EB4001DAE9E /* AfroRestaurantUITestsLaunchTests.swift */,
 			);
 			path = AfroRestaurantUITests;
+			sourceTree = "<group>";
+		};
+		B245551C28293ED700D4B8FE /* Consumer */ = {
+			isa = PBXGroup;
+			children = (
+				B245556328293EF000D4B8FE /* ConsumerCart */,
+				B245555528293EF000D4B8FE /* ConsumerDishView */,
+				B245551D28293EF000D4B8FE /* ConsumerFavorites */,
+				B245554728293EF000D4B8FE /* ConsumerHome */,
+				B245552B28293EF000D4B8FE /* ConsumerMap */,
+				B245553928293EF000D4B8FE /* ConsumerProfile */,
+			);
+			path = Consumer;
+			sourceTree = "<group>";
+		};
+		B245551D28293EF000D4B8FE /* ConsumerFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				B245551E28293EF000D4B8FE /* Assembly */,
+				B245552028293EF000D4B8FE /* Presenter */,
+				B245552328293EF000D4B8FE /* View */,
+				B245552628293EF000D4B8FE /* Interactor */,
+				B245552928293EF000D4B8FE /* Router */,
+			);
+			path = ConsumerFavorites;
+			sourceTree = "<group>";
+		};
+		B245551E28293EF000D4B8FE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B245551F28293EF000D4B8FE /* ConsumerFavoritesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B245552028293EF000D4B8FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B245552128293EF000D4B8FE /* ConsumerFavoritesPresenterProtocol.swift */,
+				B245552228293EF000D4B8FE /* ConsumerFavoritesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B245552328293EF000D4B8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B245552428293EF000D4B8FE /* ConsumerFavoritesViewController.swift */,
+				B245552528293EF000D4B8FE /* ConsumerFavoritesViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B245552628293EF000D4B8FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B245552728293EF000D4B8FE /* ConsumerFavoritesInteractor.swift */,
+				B245552828293EF000D4B8FE /* ConsumerFavoritesInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B245552928293EF000D4B8FE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B245552A28293EF000D4B8FE /* ConsumerFavoritesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B245552B28293EF000D4B8FE /* ConsumerMap */ = {
+			isa = PBXGroup;
+			children = (
+				B245552C28293EF000D4B8FE /* Assembly */,
+				B245552E28293EF000D4B8FE /* Presenter */,
+				B245553128293EF000D4B8FE /* View */,
+				B245553428293EF000D4B8FE /* Interactor */,
+				B245553728293EF000D4B8FE /* Router */,
+			);
+			path = ConsumerMap;
+			sourceTree = "<group>";
+		};
+		B245552C28293EF000D4B8FE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B245552D28293EF000D4B8FE /* ConsumerMapAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B245552E28293EF000D4B8FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B245552F28293EF000D4B8FE /* ConsumerMapPresenterProtocol.swift */,
+				B245553028293EF000D4B8FE /* ConsumerMapPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B245553128293EF000D4B8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B245553228293EF000D4B8FE /* ConsumerMapViewInput.swift */,
+				B245553328293EF000D4B8FE /* ConsumerMapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B245553428293EF000D4B8FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B245553528293EF000D4B8FE /* ConsumerMapInteractorInput.swift */,
+				B245553628293EF000D4B8FE /* ConsumerMapInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B245553728293EF000D4B8FE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B245553828293EF000D4B8FE /* ConsumerMapRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B245553928293EF000D4B8FE /* ConsumerProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B245553A28293EF000D4B8FE /* Assembly */,
+				B245553C28293EF000D4B8FE /* Presenter */,
+				B245553F28293EF000D4B8FE /* View */,
+				B245554228293EF000D4B8FE /* Interactor */,
+				B245554528293EF000D4B8FE /* Router */,
+			);
+			path = ConsumerProfile;
+			sourceTree = "<group>";
+		};
+		B245553A28293EF000D4B8FE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B245553B28293EF000D4B8FE /* ConsumerProfileAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B245553C28293EF000D4B8FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B245553D28293EF000D4B8FE /* ConsumerProfilePresenter.swift */,
+				B245553E28293EF000D4B8FE /* ConsumerProfilePresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B245553F28293EF000D4B8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B245554028293EF000D4B8FE /* ConsumerProfileViewInput.swift */,
+				B245554128293EF000D4B8FE /* ConsumerProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B245554228293EF000D4B8FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B245554328293EF000D4B8FE /* ConsumerProfileInteractor.swift */,
+				B245554428293EF000D4B8FE /* ConsumerProfileInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B245554528293EF000D4B8FE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B245554628293EF000D4B8FE /* ConsumerProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B245554728293EF000D4B8FE /* ConsumerHome */ = {
+			isa = PBXGroup;
+			children = (
+				B245554828293EF000D4B8FE /* Assembly */,
+				B245554A28293EF000D4B8FE /* Presenter */,
+				B245554D28293EF000D4B8FE /* View */,
+				B245555028293EF000D4B8FE /* Interactor */,
+				B245555328293EF000D4B8FE /* Router */,
+			);
+			path = ConsumerHome;
+			sourceTree = "<group>";
+		};
+		B245554828293EF000D4B8FE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B245554928293EF000D4B8FE /* ConsumerHomeAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B245554A28293EF000D4B8FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B245554B28293EF000D4B8FE /* ConsumerHomePresenterProtocol.swift */,
+				B245554C28293EF000D4B8FE /* ConsumerHomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B245554D28293EF000D4B8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B245554E28293EF000D4B8FE /* ConsumerHomeViewController.swift */,
+				B245554F28293EF000D4B8FE /* ConsumerHomeViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B245555028293EF000D4B8FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B245555128293EF000D4B8FE /* ConsumerHomeInteractorInput.swift */,
+				B245555228293EF000D4B8FE /* ConsumerHomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B245555328293EF000D4B8FE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B245555428293EF000D4B8FE /* ConsumerHomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B245555528293EF000D4B8FE /* ConsumerDishView */ = {
+			isa = PBXGroup;
+			children = (
+				B245555628293EF000D4B8FE /* Assembly */,
+				B245555828293EF000D4B8FE /* Presenter */,
+				B245555B28293EF000D4B8FE /* View */,
+				B245555E28293EF000D4B8FE /* Interactor */,
+				B245556128293EF000D4B8FE /* Router */,
+			);
+			path = ConsumerDishView;
+			sourceTree = "<group>";
+		};
+		B245555628293EF000D4B8FE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B245555728293EF000D4B8FE /* ConsumerDishViewAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B245555828293EF000D4B8FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B245555928293EF000D4B8FE /* ConsumerDishViewPresenterProtocol.swift */,
+				B245555A28293EF000D4B8FE /* ConsumerDishViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B245555B28293EF000D4B8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B245555C28293EF000D4B8FE /* ConsumerDishViewViewController.swift */,
+				B245555D28293EF000D4B8FE /* ConsumerDishViewViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B245555E28293EF000D4B8FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B245555F28293EF000D4B8FE /* ConsumerDishViewInteractor.swift */,
+				B245556028293EF000D4B8FE /* ConsumerDishViewInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B245556128293EF000D4B8FE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B245556228293EF000D4B8FE /* ConsumerDishViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B245556328293EF000D4B8FE /* ConsumerCart */ = {
+			isa = PBXGroup;
+			children = (
+				B245556428293EF000D4B8FE /* Assembly */,
+				B245556628293EF000D4B8FE /* Presenter */,
+				B245556928293EF000D4B8FE /* View */,
+				B245556C28293EF000D4B8FE /* Interactor */,
+				B245556F28293EF000D4B8FE /* Router */,
+			);
+			path = ConsumerCart;
+			sourceTree = "<group>";
+		};
+		B245556428293EF000D4B8FE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				B245556528293EF000D4B8FE /* ConsumerCartAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		B245556628293EF000D4B8FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B245556728293EF000D4B8FE /* ConsumerCartPresenterProtocol.swift */,
+				B245556828293EF000D4B8FE /* ConsumerCartPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B245556928293EF000D4B8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B245556A28293EF000D4B8FE /* ConsumerCartViewController.swift */,
+				B245556B28293EF000D4B8FE /* ConsumerCartViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B245556C28293EF000D4B8FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B245556D28293EF000D4B8FE /* ConsumerCartInteractorInput.swift */,
+				B245556E28293EF000D4B8FE /* ConsumerCartInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B245556F28293EF000D4B8FE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B245557028293EF000D4B8FE /* ConsumerCartRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		B246DC302805EA9A00849F76 /* AdminNewCategory */ = {
@@ -678,6 +1121,7 @@
 		B25E31D727FA17CA0057D12C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B245551828293E3300D4B8FE /* ConsumerDataBaseService.swift */,
 				B25E31D827FA17DB0057D12C /* AuthorizationService.swift */,
 				B25E31DC27FA27BD0057D12C /* ServiceLocator.swift */,
 				B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */,
@@ -755,6 +1199,7 @@
 		B2802E9227F9B6F3002EB628 /* AppBaseHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				B245551A28293E5000D4B8FE /* ConsumerAppCoordinatorFactory.swift */,
 				B231CC9927F43EB2001DAE9E /* AppDelegate.swift */,
 				B2802EE127F9DF38002EB628 /* AppCoordinator.swift */,
 				B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */,
@@ -768,6 +1213,7 @@
 		B2802E9327F9BFA0002EB628 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B245551C28293ED700D4B8FE /* Consumer */,
 				B28F69AC28291CAC00EEDE74 /* Admin */,
 				7DB6B94A33874AEFE374DD09 /* Login */,
 				B25E31B927F9FC4E0057D12C /* Signup */,
@@ -1128,6 +1574,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25E31DB27FA18620057D12C /* UIViewController+Extension.swift in Sources */,
+				B245557128293EF000D4B8FE /* ConsumerFavoritesAssembly.swift in Sources */,
+				B245559E28293EF100D4B8FE /* ConsumerCartInteractorInput.swift in Sources */,
 				B25E31CE27F9FC4F0057D12C /* SignupRouter.swift in Sources */,
 				B246DC832805EA9B00849F76 /* AdminNewDishViewInput.swift in Sources */,
 				B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */,
@@ -1136,17 +1584,29 @@
 				B246DC892805FBCA00849F76 /* AdminDataBaseService.swift in Sources */,
 				B246DC682805EA9B00849F76 /* AdminNewCategoryAssembly.swift in Sources */,
 				B25E31DD27FA27BD0057D12C /* ServiceLocator.swift in Sources */,
+				B245558928293EF100D4B8FE /* ConsumerHomeAssembly.swift in Sources */,
+				B245559928293EF100D4B8FE /* ConsumerCartAssembly.swift in Sources */,
 				B2802EBB27F9C597002EB628 /* UIFont+Extension.swift in Sources */,
+				B245559228293EF100D4B8FE /* ConsumerDishViewPresenterProtocol.swift in Sources */,
+				B245551928293E3300D4B8FE /* ConsumerDataBaseService.swift in Sources */,
+				B245559728293EF100D4B8FE /* ConsumerDishViewInteractorInput.swift in Sources */,
 				B246DC6D2805EA9B00849F76 /* AdminNewCategoryInteractorInput.swift in Sources */,
 				B246DC6F2805EA9B00849F76 /* AdminNewCategoryRouter.swift in Sources */,
+				B245557228293EF000D4B8FE /* ConsumerFavoritesPresenterProtocol.swift in Sources */,
 				B25E31CC27F9FC4F0057D12C /* SignupInteractor.swift in Sources */,
+				B245557E28293EF100D4B8FE /* ConsumerMapInteractorInput.swift in Sources */,
 				B2AA090C27FB7E840038DDB1 /* AdminProfitsInteractorInput.swift in Sources */,
+				B245559B28293EF100D4B8FE /* ConsumerCartPresenter.swift in Sources */,
+				B245559F28293EF100D4B8FE /* ConsumerCartInteractor.swift in Sources */,
+				B245559528293EF100D4B8FE /* ConsumerDishViewViewInput.swift in Sources */,
 				B25E31CA27F9FC4F0057D12C /* SignupViewController.swift in Sources */,
 				B2802E9D27F9C184002EB628 /* UIColor+Extensions.swift in Sources */,
 				B25E31F727FA46DC0057D12C /* WeakRefeferenceWrapper.swift in Sources */,
 				B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */,
 				B246DC6E2805EA9B00849F76 /* AdminNewCategoryInteractor.swift in Sources */,
 				B2AA091027FB7E840038DDB1 /* AdminInventoryPresenterProtocol.swift in Sources */,
+				B245559028293EF100D4B8FE /* ConsumerHomeRouter.swift in Sources */,
+				B245559D28293EF100D4B8FE /* ConsumerCartViewInput.swift in Sources */,
 				B246DC7F2805EA9B00849F76 /* AdminDishViewRouter.swift in Sources */,
 				B2802E9727F9C028002EB628 /* BaseViewController.swift in Sources */,
 				B2802EE027F9D263002EB628 /* UIImage+Extensions.swift in Sources */,
@@ -1163,9 +1623,12 @@
 				B246DC722805EA9B00849F76 /* AdminDishesPresenterProtocol.swift in Sources */,
 				B246DC8B280600E600849F76 /* Models.swift in Sources */,
 				B2AA091327FB7E840038DDB1 /* AdminInventoryInteractor.swift in Sources */,
+				B245558828293EF100D4B8FE /* ConsumerProfileRouter.swift in Sources */,
+				B245557D28293EF100D4B8FE /* ConsumerMapViewController.swift in Sources */,
 				B246DC732805EA9B00849F76 /* AdminDishesViewInput.swift in Sources */,
 				B231CC9C27F43EB2001DAE9E /* SceneDelegate.swift in Sources */,
 				B2AA090B27FB7E840038DDB1 /* AdminProfitsInteractor.swift in Sources */,
+				B245558428293EF100D4B8FE /* ConsumerProfileViewInput.swift in Sources */,
 				B25E31F427FA3EF00057D12C /* AdminHomeRouter.swift in Sources */,
 				B246DC762805EA9B00849F76 /* AdminDishesInteractorInput.swift in Sources */,
 				B2AA091527FB7E840038DDB1 /* AdminInventoryRouter.swift in Sources */,
@@ -1175,30 +1638,49 @@
 				B2AA090827FB7E840038DDB1 /* AdminProfitsPresenterProtocol.swift in Sources */,
 				B2AA08E927FB57920038DDB1 /* AdminTableHeaderView.swift in Sources */,
 				9B6EC996BFA034D1D601BDB3 /* LoginViewController.swift in Sources */,
+				B245559428293EF100D4B8FE /* ConsumerDishViewViewController.swift in Sources */,
 				B25E31CB27F9FC4F0057D12C /* SignupViewInput.swift in Sources */,
 				B246DC842805EA9B00849F76 /* AdminNewDishViewController.swift in Sources */,
 				B25E31D227FA05E00057D12C /* UIView+Extensions.swift in Sources */,
+				B245557828293EF100D4B8FE /* ConsumerFavoritesRouter.swift in Sources */,
+				B245558528293EF100D4B8FE /* ConsumerProfileViewController.swift in Sources */,
+				B245558E28293EF100D4B8FE /* ConsumerHomeInteractorInput.swift in Sources */,
 				B246DC7A2805EA9B00849F76 /* AdminDishViewPresenter.swift in Sources */,
+				B245559128293EF100D4B8FE /* ConsumerDishViewAssembly.swift in Sources */,
+				B245558D28293EF100D4B8FE /* ConsumerHomeViewInput.swift in Sources */,
 				B246DC852805EA9B00849F76 /* AdminNewDishInteractor.swift in Sources */,
+				B245557F28293EF100D4B8FE /* ConsumerMapInteractor.swift in Sources */,
 				B246DC752805EA9B00849F76 /* AdminDishesInteractor.swift in Sources */,
 				B2AA091427FB7E840038DDB1 /* AdminInventoryInteractorInput.swift in Sources */,
+				B245558628293EF100D4B8FE /* ConsumerProfileInteractor.swift in Sources */,
 				B2AA090627FB7E840038DDB1 /* AdminProfitsAssembly.swift in Sources */,
 				B246DC692805EA9B00849F76 /* AdminNewCategoryPresenter.swift in Sources */,
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
+				B245559328293EF100D4B8FE /* ConsumerDishViewPresenter.swift in Sources */,
 				B2AA091127FB7E840038DDB1 /* AdminInventoryViewInput.swift in Sources */,
 				B2AA090E27FB7E840038DDB1 /* AdminInventoryAssembly.swift in Sources */,
 				B2AA090A27FB7E840038DDB1 /* AdminProfitsViewInput.swift in Sources */,
 				B25E31D927FA17DB0057D12C /* AuthorizationService.swift in Sources */,
+				B245558128293EF100D4B8FE /* ConsumerProfileAssembly.swift in Sources */,
+				B245558F28293EF100D4B8FE /* ConsumerHomeInteractor.swift in Sources */,
 				B246DC782805EA9B00849F76 /* AdminDishViewAssembly.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
 				B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */,
+				B245559C28293EF100D4B8FE /* ConsumerCartViewController.swift in Sources */,
+				B245557B28293EF100D4B8FE /* ConsumerMapPresenter.swift in Sources */,
 				B25E31CD27F9FC4F0057D12C /* SignupInteractorInput.swift in Sources */,
 				B2AA090727FB7E840038DDB1 /* AdminProfitsPresenter.swift in Sources */,
+				B245557528293EF000D4B8FE /* ConsumerFavoritesViewInput.swift in Sources */,
 				B2AA090927FB7E840038DDB1 /* AdminProfitsViewController.swift in Sources */,
 				B246DC792805EA9B00849F76 /* AdminDishViewPresenterProtocol.swift in Sources */,
 				B24812512815891E00373D3C /* AdminDishesCollectionViewCell.swift in Sources */,
 				B2AA091227FB7E840038DDB1 /* AdminInventoryViewController.swift in Sources */,
 				B246DC2F2805DF3800849F76 /* AdminInventoryTableViewCell.swift in Sources */,
+				B245558A28293EF100D4B8FE /* ConsumerHomePresenterProtocol.swift in Sources */,
+				B245557628293EF000D4B8FE /* ConsumerFavoritesInteractor.swift in Sources */,
+				B245559628293EF100D4B8FE /* ConsumerDishViewInteractor.swift in Sources */,
+				B245557928293EF100D4B8FE /* ConsumerMapAssembly.swift in Sources */,
+				B245557728293EF000D4B8FE /* ConsumerFavoritesInteractorInput.swift in Sources */,
 				B2AA091927FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift in Sources */,
 				B246DC7B2805EA9B00849F76 /* AdminDishViewViewInput.swift in Sources */,
 				B25E31ED27FA3EF00057D12C /* AdminHomeAssembly.swift in Sources */,
@@ -1209,25 +1691,39 @@
 				B246DC772805EA9B00849F76 /* AdminDishesRouter.swift in Sources */,
 				B25E31F227FA3EF00057D12C /* AdminHomeInteractor.swift in Sources */,
 				B246DC742805EA9B00849F76 /* AdminDishesViewController.swift in Sources */,
+				B245558028293EF100D4B8FE /* ConsumerMapRouter.swift in Sources */,
 				77CCF4E99F1295A667813F65 /* LoginInteractor.swift in Sources */,
 				B25E31F127FA3EF00057D12C /* AdminHomeViewController.swift in Sources */,
 				B2AA090D27FB7E840038DDB1 /* AdminProfitsRouter.swift in Sources */,
+				B245558B28293EF100D4B8FE /* ConsumerHomePresenter.swift in Sources */,
 				B2802EE227F9DF38002EB628 /* AppCoordinator.swift in Sources */,
+				B245558728293EF100D4B8FE /* ConsumerProfileInteractorInput.swift in Sources */,
+				B245557A28293EF100D4B8FE /* ConsumerMapPresenterProtocol.swift in Sources */,
+				B24555A028293EF100D4B8FE /* ConsumerCartRouter.swift in Sources */,
 				B2AA090F27FB7E840038DDB1 /* AdminInventoryPresenter.swift in Sources */,
 				B25E31EF27FA3EF00057D12C /* AdminHomePresenter.swift in Sources */,
 				1E14AE97A6F08E0923F12EC3 /* LoginRouter.swift in Sources */,
+				B245558228293EF100D4B8FE /* ConsumerProfilePresenter.swift in Sources */,
 				B2AA091727FB7F1C0038DDB1 /* AdminProfitsTableViewCell.swift in Sources */,
+				B245557C28293EF100D4B8FE /* ConsumerMapViewInput.swift in Sources */,
 				B246DC712805EA9B00849F76 /* AdminDishesPresenter.swift in Sources */,
+				B245559828293EF100D4B8FE /* ConsumerDishViewRouter.swift in Sources */,
 				B2802EE627F9E20D002EB628 /* UserType.swift in Sources */,
 				B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */,
+				B245558328293EF100D4B8FE /* ConsumerProfilePresenterProtocol.swift in Sources */,
+				B245557328293EF000D4B8FE /* ConsumerFavoritesPresenter.swift in Sources */,
 				B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */,
 				7172D1F14EB287C40467E9A7 /* LoginAssembly.swift in Sources */,
 				B246DC7C2805EA9B00849F76 /* AdminDishViewViewController.swift in Sources */,
 				B246DC812805EA9B00849F76 /* AdminNewDishPresenter.swift in Sources */,
 				B246DC6A2805EA9B00849F76 /* AdminNewCategoryPresenterProtocol.swift in Sources */,
 				B246DC702805EA9B00849F76 /* AdminDishesAssembly.swift in Sources */,
+				B245559A28293EF100D4B8FE /* ConsumerCartPresenterProtocol.swift in Sources */,
+				B245558C28293EF100D4B8FE /* ConsumerHomeViewController.swift in Sources */,
 				B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */,
 				B25E31EE27FA3EF00057D12C /* AdminHomePresenterProtocol.swift in Sources */,
+				B245551B28293E5000D4B8FE /* ConsumerAppCoordinatorFactory.swift in Sources */,
+				B245557428293EF000D4B8FE /* ConsumerFavoritesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

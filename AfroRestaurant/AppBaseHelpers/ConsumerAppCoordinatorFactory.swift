@@ -10,7 +10,7 @@ import UIKit
 
 class ConsumerAppCoordinatorFactory {
     private func createHomeVC() -> UINavigationController {
-        let viewController = AdminHomeAssembly.assemble()
+        let viewController = ConsumerHomeAssembly.assemble()
         viewController.tabBarItem = UITabBarItem(
             title: "Home",
             image: .tabBarItems.home,
@@ -20,7 +20,7 @@ class ConsumerAppCoordinatorFactory {
     }
     
     private func createFavoritesVC() -> UINavigationController {
-        let viewController = AdminProfitsAssembly.assemble()
+        let viewController = ConsumerFavoritesAssembly.assemble()
         viewController.tabBarItem = UITabBarItem(
             title: "Favorites",
             image: .tabBarItems.favorite,
@@ -30,7 +30,7 @@ class ConsumerAppCoordinatorFactory {
     }
     
     private func createCartVC() -> UINavigationController {
-        let viewController = AdminInventoryAssembly.assemble()
+        let viewController = ConsumerCartAssembly.assemble()
         viewController.tabBarItem = UITabBarItem(
             title: "Cart",
             image: .tabBarItems.cart,
@@ -40,7 +40,7 @@ class ConsumerAppCoordinatorFactory {
     }
     
     private func createProfileVC() -> UINavigationController {
-        let viewController = AdminInventoryAssembly.assemble()
+        let viewController = ConsumerProfileAssembly.assemble()
         viewController.tabBarItem = UITabBarItem(
             title: "Profile",
             image: .tabBarItems.profile,

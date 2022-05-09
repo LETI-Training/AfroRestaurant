@@ -58,9 +58,9 @@ class AuthorizationService {
     weak var appInteractor: AppInteractorProtocol?
     private let updateLock = NSRecursiveLock()
     
-    private let email: String = {
+    private var email: String {
         Firebase.Auth.auth().currentUser?.email ?? ""
-    }()
+    }
     
     private func sendUpdateNotification(updateType: UpdateType) {
         updateLock.lock()

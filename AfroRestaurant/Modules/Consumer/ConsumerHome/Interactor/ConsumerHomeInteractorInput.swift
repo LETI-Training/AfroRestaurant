@@ -1,0 +1,2 @@
+protocol ConsumerHomeInteractorInput: AnyObject {
+}

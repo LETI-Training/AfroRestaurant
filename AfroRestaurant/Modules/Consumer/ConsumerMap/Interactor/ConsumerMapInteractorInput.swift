@@ -1,0 +1,2 @@
+protocol ConsumerMapInteractorInput: AnyObject {
+}
