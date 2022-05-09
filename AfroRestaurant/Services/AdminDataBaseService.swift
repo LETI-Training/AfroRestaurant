@@ -243,7 +243,7 @@ extension AdminDataBaseService: AdminDataBaseServiceProtocol {
     }
     
     func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void) {
-        loadDishes(for: dishName) { dishModels in
+        loadDishes(for: categoryName) { dishModels in
             completion(dishModels?.first(where: { $0.dishName == dishName }))
         }
     }

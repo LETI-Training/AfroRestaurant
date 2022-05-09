@@ -44,4 +44,6 @@ extension UIImage {
     static var buyNow: UIImage { UIImage(named: "buyNow")! }
     static var cartAdd: UIImage { UIImage(named: "cartWhite_add")! }
     static var cartRemove: UIImage { UIImage(named: "cartWhite_remove")! }
+    static var isAddedToFavs: UIImage { UIImage(named: "isAddedToFavs")! }
+    static var notInFavs: UIImage { UIImage(named: "notInFavs")! }
 }

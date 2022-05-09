@@ -4,7 +4,7 @@ class ConsumerFavoritesRouter {
     weak var view: UIViewController?
     
     func routeToDishe(dish: DishModel, categoryName: String) {
-        let newVC = ConsumerDishViewAssembly.assemble(dishModel: dish, categoryName: categoryName)
+        let newVC = ConsumerDishViewAssembly.assemble(dishModel: dish)
         view?.navigationController?.pushViewController(newVC, animated: true)
     }
     
