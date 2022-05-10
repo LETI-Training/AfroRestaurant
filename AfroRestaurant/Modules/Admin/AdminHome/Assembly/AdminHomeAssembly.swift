@@ -7,7 +7,7 @@ class AdminHomeAssembly {
         let router = AdminHomeRouter()
         let presenter = AdminHomePresenter()
         let authService: AuthorizationServiceInput? = ServiceLocator.shared.getService()
-        let interactor = AdminHomeInteractor(authService: authService)
+        let interactor = AdminHomeInteractor(authService: authService, orderDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view

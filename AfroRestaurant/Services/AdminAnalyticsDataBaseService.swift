@@ -68,7 +68,10 @@ final class AdminAnalyticsDataBaseService {
             .document("AfroRestaurant")
             .collection("Orders")
             .addSnapshotListener { [weak self] _, _ in
-                self?.loadOrders()
+                // firebase is slow to update all
+                DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.3) {
+                    self?.loadOrders()
+                }
             }
     }
     private func getOrderDocument(for orderNumber: String) -> DocumentReference {

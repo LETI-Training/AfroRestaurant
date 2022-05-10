@@ -30,7 +30,7 @@ class AdminOrdersTableViewCell: UITableViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             let priceString = String(format: "%.2f", viewModel.price)
-            actionLabel.text = "Qty:\(viewModel.quantity). - \(viewModel.dishName)"
+            actionLabel.text = "Qty: \(viewModel.quantity) - \(viewModel.dishName)"
             priceLabel.text = "+RUB \(priceString)"
             
             switch viewModel.orderType {

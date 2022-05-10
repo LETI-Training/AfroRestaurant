@@ -7,6 +7,10 @@ class AdminOrdersInteractor {
         self.orderDataBase = orderDataBase
         orderDataBase.addListner(self)
     }
+    
+    deinit {
+        orderDataBase.removeListner(self)
+    }
 }
 
 extension AdminOrdersInteractor: AdminOrdersInteractorInput {

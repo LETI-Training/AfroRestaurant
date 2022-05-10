@@ -1,7 +1,11 @@
+import Foundation
+
 class AdminHomePresenter {
     weak var view: AdminHomeViewInput?
     var interactor: AdminHomeInteractorInput?
     var router: AdminHomeRouter?
+    
+    var orders: [AdminAnalyticsDataBaseService.OrderModel] = []
 
     init() {}
     
@@ -14,10 +18,39 @@ class AdminHomePresenter {
                 action2: nil
             )
         }
+        
+        interactor?.ordersListener = { [weak self] orders in
+            self?.orders = orders
+            self?.generateOrderData()
+        }
+    }
+    
+    private func generateOrderData() {
+        
+        let newOrdersCount = orders.filter({ $0.type == .created }).count
+        let cancelledOrderCount = orders.filter({ $0.type == .cancelled }).count
+        
+        let profitsToday = orders
+            .filter({ $0.type == .delivered && Calendar.current.isDateInToday($0.date) })
+            .reduce(0.0) { partialResult, orderModel in
+                partialResult + orderModel.dishModels.reduce(0.0) { partialResult, dishModel in
+                    return partialResult + (dishModel.price * Double(dishModel.quantity))
+                }
+            }
+        
+        view?.updateUI(
+            dailyProfits: "RUB \(profitsToday)",
+            newOrders: "\(newOrdersCount)",
+            cancelledOrders: "\(cancelledOrderCount)"
+        )
     }
 }
 
 extension AdminHomePresenter: AdminHomePresenterProtocol {
+    func viewWillAppear() {
+        viewDidLoad()
+    }
+    
     func didTapCancelledView() {
         router?.routeToOrders(filterType: .cancelled)
     }
@@ -39,11 +72,7 @@ extension AdminHomePresenter: AdminHomePresenterProtocol {
     
     func viewDidLoad() {
         setupErrorListner()
-        view?.updateUI(
-            dailyProfits: "RUB 1,365",
-            newOrders: "\(Int.random(in: 0...50))",
-            cancelledOrders: "\(Int.random(in: 0...50))"
-        )
+        interactor?.loadOrders()
         view?.updateItems(viewModels: getTableViewModels())
     }
 }

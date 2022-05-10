@@ -77,7 +77,7 @@ class AdminOrdersPresenter {
                 let cellModel = AdminOrdersTableViewCell.ViewModel(
                     quantity: dishModel.quantity,
                     dishName: dishModel.dishName,
-                    price: dishModel.price,
+                    price: dishModel.price * Double(dishModel.quantity),
                     orderType: orderModel.type
                 )
                 viewModels.append(.init(type: .dishes(cellModel)))
@@ -107,7 +107,6 @@ extension AdminOrdersPresenter: AdminOrdersPresenterProtocol {
         interactor?.listener = { [weak self] models in
             self?.models = models
             self?.loadData()
-            self?.interactor?.loadOrders()
         }
     }
 }
