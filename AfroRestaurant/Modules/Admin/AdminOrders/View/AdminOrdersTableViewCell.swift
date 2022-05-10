@@ -36,13 +36,13 @@ class AdminOrdersTableViewCell: UITableViewCell {
             switch viewModel.orderType {
             case .delivered:
                 actionLabel.textColor = .textSecondary
-                priceLabel.textColor = .textPrimary
+                priceLabel.textColor = .brandGreen
             case .cancelled:
                 actionLabel.textColor = .red
                 priceLabel.textColor = .red
             case .created:
                 actionLabel.textColor = .textSecondary
-                priceLabel.textColor = .brandGreen
+                priceLabel.textColor = .brandOrange
             }
         }
     }

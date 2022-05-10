@@ -38,28 +38,31 @@ class AdminOrdersPresenter {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
-        let viewModels: [AdminOrdersViewController.ViewModel] = orders.compactMap { orderModel in
+        var viewModels: [AdminOrdersViewController.ViewModel] = []
+        orders.forEach { orderModel in
            let sectionModel =  AdminOrdersHeaderView.ViewModel(
                 dateString: formatter.string(from: orderModel.date),
                 orderNumber: orderModel.orderNumber,
+                orderStatus: orderModel.type,
+                userType: .admin,
                 userDetails: orderModel.userDetails) { [weak self, orderModel] viewModel in
-                    self?.interactor?.updateOrderStatus(status: .delivered, orderNumber: orderModel.orderNumber)
-                } deleteButtonTapped: { [weak self, orderModel] viewModel in
                     self?.interactor?.updateOrderStatus(status: .cancelled, orderNumber: orderModel.orderNumber)
+                } deliverButtonTapped: { [weak self, orderModel] viewModel in
+                    self?.interactor?.updateOrderStatus(status: .delivered, orderNumber: orderModel.orderNumber)
                 }
             
-            let cellModels: [AdminOrdersTableViewCell.ViewModel] = orderModel.dishModels.compactMap { dishModel in
-                return .init(
+            viewModels.append(.init(type: .header(sectionModel)))
+            
+            orderModel.dishModels.forEach { dishModel in
+                let cellModel = AdminOrdersTableViewCell.ViewModel(
                     quantity: dishModel.quantity,
                     dishName: dishModel.dishName,
                     price: dishModel.price,
                     orderType: orderModel.type
                 )
+                viewModels.append(.init(type: .dishes(cellModel)))
             }
-            return .init(
-                sectionModel: sectionModel,
-                cellModels: cellModels
-            )
+            
         }
         view?.updateItems(viewModels: viewModels)
     }

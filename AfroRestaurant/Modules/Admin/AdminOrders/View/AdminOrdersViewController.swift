@@ -7,8 +7,12 @@ extension AdminOrdersViewController {
     }
     
     struct ViewModel {
-        let sectionModel: AdminOrdersHeaderView.ViewModel
-        let cellModels: [AdminOrdersTableViewCell.ViewModel]
+        let type: CellType
+    }
+    
+    enum CellType {
+        case header(AdminOrdersHeaderView.ViewModel)
+        case dishes(AdminOrdersTableViewCell.ViewModel)
     }
 }
 
@@ -26,6 +30,7 @@ final class AdminOrdersViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AdminOrdersTableViewCell.self, forCellReuseIdentifier: AdminOrdersTableViewCell.identifier)
+        tableView.register(AdminOrdersHeaderView.self, forCellReuseIdentifier: AdminOrdersHeaderView.identifier)
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInsetAdjustmentBehavior = .never
@@ -44,7 +49,7 @@ final class AdminOrdersViewController: BaseViewController {
         presenter?.viewDidLoad()
         navigationController?.navigationBar.barStyle = .black
     }
-
+    
     private func setupUI() {
         addSubviews()
         makeConstraints()
@@ -73,40 +78,49 @@ extension AdminOrdersViewController: AdminOrdersViewInput {
 
 extension AdminOrdersViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        viewModels.count
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels[section].cellModels.count
+        return viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: AdminOrdersTableViewCell.identifier,
-            for: indexPath
-        ) as? AdminOrdersTableViewCell else {
-            return UITableViewCell()
+        
+        switch viewModels[indexPath.row].type {
+            
+        case .header(let viewModel):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: AdminOrdersHeaderView.identifier,
+                for: indexPath
+            ) as? AdminOrdersHeaderView else {
+                return UITableViewCell()
+            }
+            cell.accessoryType = .none
+            cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            return cell
+        case .dishes(let viewModel):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: AdminOrdersTableViewCell.identifier,
+                for: indexPath
+            ) as? AdminOrdersTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.accessoryType = .none
+            cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            return cell
         }
-        let cellViewModel = viewModels[indexPath.section].cellModels[indexPath.row]
-        cell.accessoryType = .none
-        cell.selectionStyle = .none
-        cell.viewModel = cellViewModel
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        AdminOrdersHeaderView(viewModel: viewModels[section].sectionModel)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        UITableView.automaticDimension
     }
 }
 
 extension AdminOrdersViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 42.0
+        switch viewModels[indexPath.row].type {
+        case .header:
+           return UITableView.automaticDimension
+        case .dishes:
+            return 42.0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

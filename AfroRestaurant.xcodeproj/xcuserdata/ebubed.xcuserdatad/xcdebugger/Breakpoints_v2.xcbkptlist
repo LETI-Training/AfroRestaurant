@@ -7,192 +7,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "31BC28B8-BB2E-4D36-8F03-4E822A00ECD5"
+            uuid = "8ACFE341-B096-4367-B62E-BCA200DEED50"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Admin/AdminOrders/Presenter/AdminOrdersPresenter.swift"
+            filePath = "AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "cancelButtonTapped()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8ACFE341-B096-4367-B62E-BCA200DEED50 - dad575e6b3593b1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AfroRestaurant.AdminOrdersHeaderView.cancelButtonTapped() -&gt; ()"
+                  moduleName = "AfroRestaurant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubed/Desktop/masters%20second%20semester/software%20engineering/AfroRestaurant/AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "8ACFE341-B096-4367-B62E-BCA200DEED50 - dad575e6b3593b1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AfroRestaurant.AdminOrdersHeaderView.cancelButtonTapped() -&gt; ()"
+                  moduleName = "AfroRestaurant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubed/Desktop/masters%20second%20semester/software%20engineering/AfroRestaurant/AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "95">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E3121020-425D-42C7-B6AF-73A5DDD70DAD"
+            uuid = "515305F8-78BE-4FCE-A1A8-BE679C68B04B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
+            filePath = "AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "loadOrders()"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "deliveredButtonTapped()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "515305F8-78BE-4FCE-A1A8-BE679C68B04B - 333703a397a44add"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AfroRestaurant.AdminOrdersHeaderView.deliveredButtonTapped() -&gt; ()"
+                  moduleName = "AfroRestaurant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubed/Desktop/masters%20second%20semester/software%20engineering/AfroRestaurant/AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "515305F8-78BE-4FCE-A1A8-BE679C68B04B - 333703a397a44add"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AfroRestaurant.AdminOrdersHeaderView.deliveredButtonTapped() -&gt; ()"
+                  moduleName = "AfroRestaurant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubed/Desktop/masters%20second%20semester/software%20engineering/AfroRestaurant/AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "95">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "13A1D0E4-4C63-4DE2-93BB-ED6347FB9995"
+            uuid = "12680421-E948-470A-9F30-FBAACA006220"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
+            filePath = "AfroRestaurant/Modules/Admin/AdminOrders/View/AdminOrdersHeaderView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "loadCartsFromDataBase(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E597B3E7-B943-4416-BF63-986C6D23F0F3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
-            landmarkName = "loadCartsFromDataBase(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CF5926EB-A095-4229-837B-637CAC32F041"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
-            landmarkName = "loadCartsFromDataBase(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D234106D-A5DB-403F-B935-9EF15335C2E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "loadCartsFromDataBase(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2EF0A902-3F2C-402C-8D60-77EDB4906879"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "createOrder(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3258A510-C45E-4625-AB25-8A95F2A4C518"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "createOrder(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "178221A8-A594-4B75-B750-BBE90C459FC3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerCart/Presenter/ConsumerCartPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "createOrder(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC85E3AF-9B1F-4F72-9332-2D8FE6A08B59"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerCart/Presenter/ConsumerCartPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "createOrder(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8211A0F6-4F57-4399-BA54-45557CFA927A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Admin/AdminOrders/Presenter/AdminOrdersPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2AD69954-1D79-44F0-81D2-7D28CA31A84F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "setupListner()"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "cancelButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
