@@ -68,8 +68,18 @@ class ConsumerCartPresenter {
     private func createOrder(from cartModels: [CartModel]) {
         guard
             let interactor = interactor,
-            let userDetails = interactor.userDetails
-        else { return }
+            let userDetails = interactor.userDetails,
+            userDetails.address.isEmpty,
+            userDetails.phoneNumber.isEmpty,
+            userDetails.userName.isEmpty
+        else {
+            view?.presentAlert(
+                title: "Update Details",
+                message: "Please update your details in profile section",
+                action: .init(actionText: "Ok", actionHandler: {}), action2: nil
+            )
+            return
+        }
         
         let dishModel: [AdminAnalyticsDataBaseService.DishOrderModel] = cartModels.compactMap({
             return .init(

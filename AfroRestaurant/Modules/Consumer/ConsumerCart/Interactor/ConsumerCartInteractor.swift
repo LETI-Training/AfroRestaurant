@@ -2,7 +2,7 @@ class ConsumerCartInteractor {
     let consumerDataBase: ConsumerDataBaseServiceProtocol
     let orderDataBase: AdminAnalyticsDataBaseServiceProtocol
     
-    var userDetails: ConsumerDataBaseService.UserDetails?
+    private(set) var userDetails: ConsumerDataBaseService.UserDetails?
     
     init(
         consumerDataBase: ConsumerDataBaseServiceProtocol,
@@ -12,12 +12,7 @@ class ConsumerCartInteractor {
         self.orderDataBase = orderDataBase
         
         consumerDataBase.getUserDetails { [weak self] userDetails in
-            self?.userDetails = userDetails ?? ConsumerDataBaseService.UserDetails(
-                userName: "",
-                address: "",
-                phoneNumber: "",
-                email: ""
-            )
+            self?.userDetails = userDetails
         }
     }
 }
