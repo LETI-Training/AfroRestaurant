@@ -68,6 +68,18 @@ class ConsumerHomePresenter {
                         .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), quantity: 1, date: nil))
                     self?.loadData()
                 } buyNowButtonTapped: { [weak self]  _ in
+                    let isInCart = self?.interactor?.isDishInCart(dishModel: dishModel) == true
+                    
+                    if !isInCart {
+                        self?.interactor?.addDishToCart(
+                            dishModel: .init(
+                                minimalModel: .init(dishName: dishModel.dishName, categoryName: dishModel.categoryName),
+                                quantity: 1,
+                                date: nil
+                            )
+                        )
+                        self?.loadData()
+                    }
                     self?.router?.moveToCartTab()
                 }
         }
