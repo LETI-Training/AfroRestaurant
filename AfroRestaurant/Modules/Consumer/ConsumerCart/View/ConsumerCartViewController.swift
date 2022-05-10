@@ -27,7 +27,7 @@ final class ConsumerCartViewController: BaseViewController {
     private lazy var gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
         layer.colors = [
-            UIColor(red: 0.451, green: 0.451, blue: 0.451, alpha: 1).cgColor,
+            UIColor(red: 0.031, green: 0.624, blue: 0.404, alpha: 1).cgColor,
             UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor
         ]
         layer.locations = [0, 1]
