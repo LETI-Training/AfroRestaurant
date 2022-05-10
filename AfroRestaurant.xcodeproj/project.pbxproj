@@ -176,6 +176,8 @@
 		B28EA1D1282AD7A200B7EBF9 /* AdminOrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28EA1C8282AD7A200B7EBF9 /* AdminOrdersInteractor.swift */; };
 		B28EA1D2282AD7A200B7EBF9 /* AdminOrdersInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28EA1C9282AD7A200B7EBF9 /* AdminOrdersInteractorInput.swift */; };
 		B28EA1D3282AD7A200B7EBF9 /* AdminOrdersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28EA1CB282AD7A200B7EBF9 /* AdminOrdersRouter.swift */; };
+		B28EA1D5282AD8E500B7EBF9 /* AdminOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28EA1D4282AD8E500B7EBF9 /* AdminOrdersTableViewCell.swift */; };
+		B28EA1D7282ADA8F00B7EBF9 /* AdminOrdersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28EA1D6282ADA8F00B7EBF9 /* AdminOrdersHeaderView.swift */; };
 		B2A0E1B7282A7C6400F36761 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */; };
 		B2A0E1B9282A838400F36761 /* CartPriceLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */; };
 		B2A0E1BB282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1BA282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift */; };
@@ -389,6 +391,8 @@
 		B28EA1C8282AD7A200B7EBF9 /* AdminOrdersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminOrdersInteractor.swift; sourceTree = "<group>"; };
 		B28EA1C9282AD7A200B7EBF9 /* AdminOrdersInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminOrdersInteractorInput.swift; sourceTree = "<group>"; };
 		B28EA1CB282AD7A200B7EBF9 /* AdminOrdersRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminOrdersRouter.swift; sourceTree = "<group>"; };
+		B28EA1D4282AD8E500B7EBF9 /* AdminOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		B28EA1D6282ADA8F00B7EBF9 /* AdminOrdersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersHeaderView.swift; sourceTree = "<group>"; };
 		B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPriceLabelCell.swift; sourceTree = "<group>"; };
 		B2A0E1BA282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAnalyticsDataBaseService.swift; sourceTree = "<group>"; };
@@ -1409,7 +1413,9 @@
 			isa = PBXGroup;
 			children = (
 				B28EA1C5282AD7A200B7EBF9 /* AdminOrdersViewInput.swift */,
+				B28EA1D6282ADA8F00B7EBF9 /* AdminOrdersHeaderView.swift */,
 				B28EA1C6282AD7A200B7EBF9 /* AdminOrdersViewController.swift */,
+				B28EA1D4282AD8E500B7EBF9 /* AdminOrdersTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1782,6 +1788,7 @@
 				B246DC6B2805EA9B00849F76 /* AdminNewCategoryViewController.swift in Sources */,
 				B246DC872805EA9B00849F76 /* AdminNewDishRouter.swift in Sources */,
 				B28EA1D1282AD7A200B7EBF9 /* AdminOrdersInteractor.swift in Sources */,
+				B28EA1D7282ADA8F00B7EBF9 /* AdminOrdersHeaderView.swift in Sources */,
 				B248124F281576A200373D3C /* AdminDishesHeaderView.swift in Sources */,
 				B25E31F027FA3EF00057D12C /* AdminHomeViewInput.swift in Sources */,
 				B246DC7E2805EA9B00849F76 /* AdminDishViewInteractor.swift in Sources */,
@@ -1862,6 +1869,7 @@
 				B25E31D027FA02B30057D12C /* UILabel+Extension.swift in Sources */,
 				9E4AAA558510EC2833689015 /* LoginInteractorInput.swift in Sources */,
 				B25E31C927F9FC4F0057D12C /* SignupPresenter.swift in Sources */,
+				B28EA1D5282AD8E500B7EBF9 /* AdminOrdersTableViewCell.swift in Sources */,
 				B28EA1BC282AD79500B7EBF9 /* ConsumerOrdersInteractor.swift in Sources */,
 				B25E31D627FA062B0057D12C /* AttributedStrings+Extension.swift in Sources */,
 				B28EA1CF282AD7A200B7EBF9 /* AdminOrdersViewInput.swift in Sources */,

@@ -18,6 +18,14 @@ class AdminHomePresenter {
 }
 
 extension AdminHomePresenter: AdminHomePresenterProtocol {
+    func didTapCancelledView() {
+        router?.routeToOrders(filterType: .cancelled)
+    }
+    
+    func didTapNewOrdersView() {
+        router?.routeToOrders(filterType: .new)
+    }
+    
     func didTapProfileImage() {
         view?.presentAlert(
             title: "Painful to see you go 😔",

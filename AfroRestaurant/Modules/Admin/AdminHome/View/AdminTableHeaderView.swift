@@ -18,6 +18,9 @@ extension AdminTableHeaderView {
 class AdminTableHeaderView: UIView {
     let appearance = Appearance()
     
+    var newOrdersTapped: (() -> Void)?
+    var cancelledOrdersTapped: (() -> Void)?
+    
     private lazy var profitsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Here’s your profit for today"
@@ -46,6 +49,9 @@ class AdminTableHeaderView: UIView {
     private lazy var blackViewContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .textPrimary
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapNewOrdersView(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -71,10 +77,13 @@ class AdminTableHeaderView: UIView {
     private lazy var orangeViewContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .brandOrange
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapCancelledView(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        view.isUserInteractionEnabled = true
         return view
     }()
     
-   private lazy var cancelledOrdersLabel: UILabel = {
+    private lazy var cancelledOrdersLabel: UILabel = {
         let label = UILabel()
         label.text = "Cancelled Orders"
         label.textColor = .background
@@ -83,6 +92,14 @@ class AdminTableHeaderView: UIView {
         label.sizeToFit()
         return label
     }()
+    
+    @objc func didTapCancelledView(_ sender: UITapGestureRecognizer) {
+        cancelledOrdersTapped?()
+    }
+    
+    @objc func didTapNewOrdersView(_ sender: UITapGestureRecognizer) {
+        newOrdersTapped?()
+    }
     
     lazy var cancelledOrdersCountLabel: UILabel = {
         let label = UILabel()

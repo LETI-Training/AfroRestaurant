@@ -7,6 +7,9 @@ class AdminProfitsPresenter {
 }
 
 extension AdminProfitsPresenter: AdminProfitsPresenterProtocol {
+    func profitsTapped() {
+        router?.routeToOrders(filterType: .all)
+    }
 
     func viewDidLoad() {
         view?.updateUI(totalProfits: "RUB 86,365")

@@ -69,9 +69,9 @@ class ConsumerCartPresenter {
         guard
             let interactor = interactor,
             let userDetails = interactor.userDetails,
-            userDetails.address.isEmpty,
-            userDetails.phoneNumber.isEmpty,
-            userDetails.userName.isEmpty
+            !userDetails.address.isEmpty,
+            !userDetails.phoneNumber.isEmpty,
+            !userDetails.userName.isEmpty
         else {
             view?.presentAlert(
                 title: "Update Details",

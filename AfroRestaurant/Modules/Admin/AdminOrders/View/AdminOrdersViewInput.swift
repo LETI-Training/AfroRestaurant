@@ -1,1 +1,3 @@
-protocol AdminOrdersViewInput: AnyObject {}
+protocol AdminOrdersViewInput: AnyObject {
+    func updateItems(viewModels: [AdminOrdersViewController.ViewModel])
+}

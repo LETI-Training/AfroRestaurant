@@ -14,7 +14,14 @@ final class AdminHomeViewController: BaseViewController {
     var viewModels: [AdminUpdatesTableViewCell.ViewModel] = []
     
     private lazy var headerView: AdminTableHeaderView = {
-        AdminTableHeaderView()
+        let view = AdminTableHeaderView()
+        view.cancelledOrdersTapped = { [weak self] in
+            self?.presenter?.didTapCancelledView()
+        }
+        view.newOrdersTapped = { [weak self] in
+            self?.presenter?.didTapNewOrdersView()
+        }
+        return view
     }()
     
     private lazy var navLargeLabel: UILabel = {

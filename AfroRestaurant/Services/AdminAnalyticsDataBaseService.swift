@@ -45,6 +45,7 @@ protocol AdminAnalyticsDataBaseServiceProtocol {
     func addListner(_ listener: AdminAnalyticsDataBaseServiceOutput)
     func removeListner(_ listener: AdminAnalyticsDataBaseServiceOutput)
     func createOrder(model: AdminAnalyticsDataBaseService.OrderCreateModel)
+    func updateOrderStatus(status: AdminAnalyticsDataBaseService.OrderStatus, orderNumber: String)
     func loadOrders()
 }
 
@@ -105,6 +106,16 @@ final class AdminAnalyticsDataBaseService {
 }
 
 extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
+    func updateOrderStatus(status: OrderStatus, orderNumber: String) {
+        let document = getOrderDocument(for: orderNumber)
+        
+        document
+            .setData([
+                "type" : status.rawValue,
+            ], merge: true)
+        loadOrders()
+    }
+    
     
     func createOrder(model: OrderCreateModel) {
         let orderNumber = model.date.timeIntervalSince1970.toString()
@@ -116,7 +127,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                 "address" : model.userDetails.address,
                 "phoneNumber" : model.userDetails.phoneNumber,
                 "email" : model.userDetails.email,
-                "date" : model.date,
+                "date" : model.date.timeIntervalSince1970,
                 "type" : model.type.rawValue,
                 "orderNumber" : orderNumber
             ], merge: true)
@@ -154,6 +165,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                     let data = category.data()
                     
                     let type = data["type"] as? String ?? ""
+                    let timeInterval: Double = data["date"] as? Double ?? Date().timeIntervalSince1970
                     
                     let orderModel = OrderModel(
                         orderNumber: data["orderNumber"] as? String ?? "",
@@ -164,7 +176,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                             phoneNumber: data["phoneNumber"] as? String ?? "",
                             email: data["email"] as? String ?? ""
                         ),
-                        date: data["date"] as? Date ?? Date(),
+                        date: Date(timeIntervalSince1970: timeInterval),
                         type: OrderStatus(rawValue: type) ?? .delivered
                     )
                     
@@ -192,7 +204,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
             .firestore()
             .collection("Restaurants")
             .document("AfroRestaurant")
-            .collection("Categories")
+            .collection("Orders")
             .document(orderNumber)
             .collection("Dishes")
             .getDocuments { querySnapshot, error in

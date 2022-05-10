@@ -244,7 +244,7 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                 "dishName" : model.minimalModel.dishName,
                 "categoryName" : model.minimalModel.categoryName,
                 "quantity": model.quantity,
-                "dateAdded": Date()
+                "dateAdded": Date().timeIntervalSince1970
             ], merge: true)
         addCartLocally(model: model)
         loadCartsFromDataBase(completion: { _ in })
@@ -365,13 +365,15 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                         let quantity = data["quantity"] as? Int
                     else { break }
                     
+                    let timeInterval: Double = data["dateAdded"] as? Double ?? Date().timeIntervalSince1970
+                    
                     carts.append(.init(
                         minimalModel: ConsumerDishMinimalModel(
                             dishName: dishName,
                             categoryName: categoryName
                         ),
                         quantity: quantity,
-                        date: data["dateAdded"] as? Date  ?? Date()
+                        date: Date(timeIntervalSince1970: timeInterval)
                     )
                     )
                 }

@@ -18,6 +18,8 @@ extension AdminProfitsHeaderView {
 class AdminProfitsHeaderView: UIView {
     let appearance = Appearance()
     
+    var profitsTapped: (() -> Void)?
+    
     private lazy var profitsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Total Profits of your restaurant"
@@ -31,8 +33,15 @@ class AdminProfitsHeaderView: UIView {
     private lazy var coinsImageView: UIImageView = {
         let imageView = UIImageView(image: .greenCoins)
         imageView.contentMode = .scaleAspectFit
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapProfitsView(_:)))
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
+    
+    @objc func didTapProfitsView(_ sender: UITapGestureRecognizer) {
+        profitsTapped?()
+    }
     
     var profitsLabel: UILabel = {
         let label = UILabel()

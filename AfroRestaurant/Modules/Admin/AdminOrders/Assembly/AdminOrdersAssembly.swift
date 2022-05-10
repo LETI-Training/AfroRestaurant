@@ -2,11 +2,11 @@ import UIKit
 
 class AdminOrdersAssembly {
 
-    static func assemble() -> UIViewController {
+    static func assemble(filterType: AdminOrdersPresenter.OrderFilterType) -> UIViewController {
         let view = AdminOrdersViewController()
         let router = AdminOrdersRouter()
-        let presenter = AdminOrdersPresenter()
-        let interactor = AdminOrdersInteractor()
+        let presenter = AdminOrdersPresenter(filterType: filterType)
+        let interactor = AdminOrdersInteractor(orderDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view

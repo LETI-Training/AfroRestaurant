@@ -17,7 +17,11 @@ final class AdminProfitsViewController: BaseViewController {
     var viewModels: [AdminProfitsTableViewCell.ViewModel] = []
     
     private lazy var headerView: AdminProfitsHeaderView = {
-        AdminProfitsHeaderView()
+        let view = AdminProfitsHeaderView()
+        view.profitsTapped = { [weak self] in
+            self?.presenter?.profitsTapped()
+        }
+        return view
     }()
     
     private lazy var navLargeLabel: UILabel = {
