@@ -26,6 +26,8 @@ final class AdminOrdersViewController: BaseViewController {
         let items: [String] = AdminOrdersPresenter.OrderFilterType.allCases.compactMap({ $0.name })
         let segmentedController = UISegmentedControl(items: items)
         segmentedController.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
+        segmentedController.backgroundColor = .gray.withAlphaComponent(0.5)
+        segmentedController.tintColor = .white
         return segmentedController
     }()
     
