@@ -80,6 +80,7 @@ final class ConsumerCartViewController: BaseViewController {
         button.backgroundColor = .brandGreen
         button.layer.cornerRadius = 25.0
         button.sizeToFit()
+        button.isHidden = true
         return button
     }()
 
@@ -145,6 +146,7 @@ final class ConsumerCartViewController: BaseViewController {
 
 extension ConsumerCartViewController: ConsumerCartViewInput {
     func updateItems(viewModels: [ConsumerCartViewController.ViewModel], cartCount: Int) {
+        checkoutButton.isHidden = viewModels.isEmpty
         self.viewModels = viewModels
         if cartCount <= 0 {
             navLargeLabel.text = "Cart"
