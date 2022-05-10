@@ -60,7 +60,7 @@ class AppInteractor {
         guard let authService = authService else { return }
         let adminDataBaseService = AdminDataBaseService()
         let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)
-        let orderService = AdminAnalyticsDataBaseService()
+        let orderService = AdminAnalyticsDataBaseService(userType: authService.userType)
         
         authService.consumerDataBaseService = consumerDataBase
         

@@ -62,6 +62,8 @@ final class AdminAnalyticsDataBaseService {
     private var outputs: [WeakRefeferenceWrapper<AdminAnalyticsDataBaseServiceOutput>] = []
     private let updateLock = NSRecursiveLock()
     
+    private let userType: UserType
+    
     private var userID: String {
         Firebase.Auth.auth().currentUser?.uid ?? ""
     }
@@ -72,11 +74,17 @@ final class AdminAnalyticsDataBaseService {
     
     weak var tabBar: UITabBarController? {
         didSet {
-            loadOrders()
+            switch userType {
+            case .customer:
+                loadOrdersForCurrentUser()
+            case .admin:
+                loadOrders()
+            }
         }
     }
     
-    init() {
+    init(userType: UserType) {
+        self.userType = userType
         setupListner()
     }
     
@@ -89,7 +97,14 @@ final class AdminAnalyticsDataBaseService {
             .addSnapshotListener { [weak self] _, _ in
                 // firebase is slow to update all
                 DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.3) {
-                    self?.loadOrders()
+                    switch self?.userType {
+                    case .customer:
+                        self?.loadOrdersForCurrentUser()
+                    case .admin:
+                        self?.loadOrders()
+                    case .none:
+                        break
+                    }
                 }
             }
     }

@@ -222,8 +222,8 @@
             filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "sendUpdateNotification(orderModels:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,10 +270,26 @@
             filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "loadOrdersForCurrentUser()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77615853-3AA2-4597-B422-F3881A902B69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AfroRestaurant/Services/AdminAnalyticsDataBaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "tabBar"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
