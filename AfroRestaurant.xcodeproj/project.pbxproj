@@ -160,6 +160,8 @@
 		B2802EE427F9DF97002EB628 /* AdminAppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */; };
 		B2802EE627F9E20D002EB628 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE527F9E20D002EB628 /* UserType.swift */; };
 		B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE727F9E2BE002EB628 /* AppInteractor.swift */; };
+		B2A0E1B7282A7C6400F36761 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */; };
+		B2A0E1B9282A838400F36761 /* CartPriceLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */; };
 		B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */; };
 		B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */; };
 		B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */; };
@@ -353,6 +355,8 @@
 		B2802EE327F9DF97002EB628 /* AdminAppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppCoordinatorFactory.swift; sourceTree = "<group>"; };
 		B2802EE527F9E20D002EB628 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		B2802EE727F9E2BE002EB628 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
+		B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPriceLabelCell.swift; sourceTree = "<group>"; };
 		B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdminHome+NavigationViews.swift"; sourceTree = "<group>"; };
 		B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -823,6 +827,8 @@
 			children = (
 				B245556A28293EF000D4B8FE /* ConsumerCartViewController.swift */,
 				B245556B28293EF000D4B8FE /* ConsumerCartViewInput.swift */,
+				B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */,
+				B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1669,6 +1675,7 @@
 				B245558F28293EF100D4B8FE /* ConsumerHomeInteractor.swift in Sources */,
 				B246DC782805EA9B00849F76 /* AdminDishViewAssembly.swift in Sources */,
 				15C69066AE255A71D1A1661E /* LoginPresenterProtocol.swift in Sources */,
+				B2A0E1B7282A7C6400F36761 /* CartTableViewCell.swift in Sources */,
 				B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */,
 				B245559C28293EF100D4B8FE /* ConsumerCartViewController.swift in Sources */,
 				B245557B28293EF100D4B8FE /* ConsumerMapPresenter.swift in Sources */,
@@ -1725,6 +1732,7 @@
 				B245559A28293EF100D4B8FE /* ConsumerCartPresenterProtocol.swift in Sources */,
 				B245558C28293EF100D4B8FE /* ConsumerHomeViewController.swift in Sources */,
 				B25E31C727F9FC4E0057D12C /* SignupAssembly.swift in Sources */,
+				B2A0E1B9282A838400F36761 /* CartPriceLabelCell.swift in Sources */,
 				B25E31EE27FA3EF00057D12C /* AdminHomePresenterProtocol.swift in Sources */,
 				B245551B28293E5000D4B8FE /* ConsumerAppCoordinatorFactory.swift in Sources */,
 				B245557428293EF000D4B8FE /* ConsumerFavoritesViewController.swift in Sources */,

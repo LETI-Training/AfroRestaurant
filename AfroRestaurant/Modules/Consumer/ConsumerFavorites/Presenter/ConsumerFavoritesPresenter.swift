@@ -55,7 +55,7 @@ class ConsumerFavoritesPresenter {
                                 self?.loadData()
                             })
                     : self?.interactor?
-                        .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: dishModel.categoryName), quantity: 1))
+                        .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: dishModel.categoryName), quantity: 1, date: nil))
                     self?.loadData()
                 } buyNowButtonTapped: { [weak self]  _ in
                     self?.router?.moveToCartTab()

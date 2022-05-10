@@ -15,9 +15,10 @@ extension ConsumerDataBaseService {
         let categoryName: String
     }
     
-    struct CartModelMinimal: Hashable {
+    struct CartModelMinimal {
         let minimalModel: ConsumerDishMinimalModel
         let quantity: Int
+        let date: Date?
     }
     
     struct UserDetails {
@@ -33,6 +34,7 @@ protocol ConsumerDataBaseServiceProtocol: AnyObject {
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
     func addDishToFavorite(model: ConsumerDataBaseService.ConsumerDishMinimalModel)
     func addDishToCart(model: ConsumerDataBaseService.CartModelMinimal)
+    func updateDishToCart(model: ConsumerDataBaseService.CartModelMinimal)
     func removeDishFromFavorite(dishModel: ConsumerDataBaseService.ConsumerDishMinimalModel, completion: @escaping () -> Void)
     func removeDishFromCart(dishModel: ConsumerDataBaseService.ConsumerDishMinimalModel, completion: @escaping () -> Void)
     func loadFavorites(completion: @escaping ([DishModel]?) -> ())
@@ -40,6 +42,7 @@ protocol ConsumerDataBaseServiceProtocol: AnyObject {
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
     func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void)
     func set(phoneNumber: String, address: String, name: String)
+    
     
     func isDishInCart(dishModel: DishModel) -> Bool
     func isDishInFavorites(dishModel: DishModel) -> Bool
@@ -90,6 +93,15 @@ final class ConsumerDataBaseService {
         
         carts.removeAll(where: { $0.minimalModel.dishName == model.minimalModel.dishName })
         carts.append(model)
+    }
+    
+    private func updateCartLocally(model: CartModelMinimal) {
+        lock.lock()
+        defer { lock.unlock() }
+        
+        guard let oldCart = carts.first(where: { $0.minimalModel.dishName == model.minimalModel.dishName }) else { return }
+        carts.removeAll(where: { $0.minimalModel.dishName == model.minimalModel.dishName })
+        carts.append(.init(minimalModel: oldCart.minimalModel, quantity: model.quantity, date: oldCart.date))
     }
     
     private func removeFavoriteLocally(model: ConsumerDishMinimalModel) {
@@ -158,7 +170,7 @@ final class ConsumerDataBaseService {
                     .getDishModel(dishName: $0.minimalModel.dishName, categoryName: $0.minimalModel.categoryName)
             else { return nil }
             
-            return .init(dishModel: model, quantity: $0.quantity)
+            return .init(dishModel: model, quantity: $0.quantity, date: $0.date ?? Date())
         }
     }
     
@@ -215,9 +227,22 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
             .setData([
                 "dishName" : model.minimalModel.dishName,
                 "categoryName" : model.minimalModel.categoryName,
-                "quantity": model.quantity
+                "quantity": model.quantity,
+                "dateAdded": Date()
             ], merge: true)
         addCartLocally(model: model)
+        loadCartsFromDataBase(completion: { _ in })
+    }
+    
+    func updateDishToCart(model: CartModelMinimal) {
+        let cartDocument = getCartDocument(for: model.minimalModel.dishName)
+        cartDocument
+            .setData([
+                "dishName" : model.minimalModel.dishName,
+                "categoryName" : model.minimalModel.categoryName,
+                "quantity": model.quantity,
+            ], merge: true)
+        updateCartLocally(model: model)
         loadCartsFromDataBase(completion: { _ in })
     }
     
@@ -306,7 +331,15 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                         let quantity = data["quantity"] as? Int
                     else { break }
                     
-                    carts.append(.init(minimalModel: ConsumerDishMinimalModel(dishName: dishName, categoryName: categoryName), quantity: quantity))
+                    carts.append(.init(
+                        minimalModel: ConsumerDishMinimalModel(
+                            dishName: dishName,
+                            categoryName: categoryName
+                        ),
+                        quantity: quantity,
+                        date: data["dateAdded"] as? Date  ?? Date()
+                    )
+                    )
                 }
                 self.updateAllCartsLocally(models: carts)
                 completion(self.getCarts())
@@ -375,9 +408,7 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
             completion(getFavorites())
             return
         }
-        
         loadFavoritesFromDataBase(completion: completion)
-        
     }
     
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void) {

@@ -6,7 +6,7 @@ class ConsumerCartAssembly {
         let view = ConsumerCartViewController()
         let router = ConsumerCartRouter()
         let presenter = ConsumerCartPresenter()
-        let interactor = ConsumerCartInteractor()
+        let interactor = ConsumerCartInteractor(consumerDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view

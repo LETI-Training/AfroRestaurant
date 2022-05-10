@@ -7,128 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A79F68EF-3DBE-4082-BA3D-7195E8CE950F"
+            uuid = "BB6C0D07-3582-40DD-AFDD-F4169C0DE441"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
+            filePath = "AfroRestaurant/Modules/Consumer/ConsumerCart/Presenter/ConsumerCartPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewWillAppear()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "generateViewModels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14983552-D9ED-40D6-85D6-6F44AA601FCE"
-            shouldBeEnabled = "Yes"
+            uuid = "A9652E32-CF1D-4C8E-A6E2-A6209B15479F"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
+            filePath = "AfroRestaurant/Modules/Consumer/ConsumerCart/Presenter/ConsumerCartPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "cartButtonTapped()"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "generateViewModels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81C2925E-F228-44D4-BAF4-E38DCB3E7E80"
-            shouldBeEnabled = "Yes"
+            uuid = "C4D05165-CACF-4B40-BAB7-BD1DE12F604E"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
+            filePath = "AfroRestaurant/Modules/Consumer/ConsumerCart/Presenter/ConsumerCartPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "updateView()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "generateViewModels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C50C305D-4A24-4481-8ED8-E99F9A1E35DB"
-            shouldBeEnabled = "Yes"
+            uuid = "AF82AA6E-2B8C-441D-B2C1-B6707CDC8631"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
+            filePath = "AfroRestaurant/Modules/Consumer/ConsumerCart/Presenter/ConsumerCartPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewWillAppear()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "generateViewModels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "64CCA716-9AC2-4DCC-9ABA-5BE252583070"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "viewWillAppear()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "64CCA716-9AC2-4DCC-9ABA-5BE252583070 - f49c55b2114484"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;AfroRestaurant.DishModel&gt;) -&gt; () in AfroRestaurant.ConsumerDishViewPresenter.viewWillAppear() -&gt; ()"
-                  moduleName = "AfroRestaurant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ebubed/Desktop/masters%20second%20semester/software%20engineering/AfroRestaurant/AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  uuid = "64CCA716-9AC2-4DCC-9ABA-5BE252583070 - f49c55b2114484"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;AfroRestaurant.DishModel&gt;) -&gt; () in AfroRestaurant.ConsumerDishViewPresenter.viewWillAppear() -&gt; ()"
-                  moduleName = "AfroRestaurant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ebubed/Desktop/masters%20second%20semester/software%20engineering/AfroRestaurant/AfroRestaurant/Modules/Consumer/ConsumerDishView/Presenter/ConsumerDishViewPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "143">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA5771FA-8E58-44D4-BE1A-BA0DE30CE8AE"
+            uuid = "EA223AA6-56B9-40F1-808F-99B4236A08A4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
-            landmarkName = "loadFavoritesFromDataBase(completion:)"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "updateDishToCart(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14772560-DAA8-4DE1-BD8D-C0D68CD67E3F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "addDishToCart(model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

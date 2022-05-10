@@ -44,7 +44,8 @@ extension ConsumerDishViewPresenter: ConsumerDishViewPresenterProtocol {
             interactor?.addDishToCart(
                 dishModel: .init(
                     minimalModel: .init(dishName: dishModel.dishName, categoryName: dishModel.categoryName),
-                    quantity: 1
+                    quantity: 1,
+                    date: nil
                 )
             )
             updateView()
@@ -58,7 +59,8 @@ extension ConsumerDishViewPresenter: ConsumerDishViewPresenterProtocol {
             interactor?.addDishToCart(
                 dishModel: .init(
                     minimalModel: .init(dishName: dishModel.dishName, categoryName: dishModel.categoryName),
-                    quantity: 1
+                    quantity: 1,
+                    date: nil
                 )
             )
             updateView()

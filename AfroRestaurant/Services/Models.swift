@@ -6,6 +6,7 @@
 //  Copyright © 2022 AfroRestaurant. All rights reserved.
 //
 
+import Foundation
 
 struct AdminCreateCategoryModel {
     let categoryName: String
@@ -42,4 +43,5 @@ struct DishModel: Hashable {
 struct CartModel: Hashable {
     let dishModel: DishModel
     let quantity: Int
+    let date: Date
 }

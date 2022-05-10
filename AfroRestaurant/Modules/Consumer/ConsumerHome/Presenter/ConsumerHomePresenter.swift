@@ -65,7 +65,7 @@ class ConsumerHomePresenter {
                                 self?.loadData()
                             })
                     : self?.interactor?
-                        .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), quantity: 1))
+                        .addDishToCart(dishModel: .init(minimalModel: .init(dishName: dishModel.dishName, categoryName: categoryModel.categoryName), quantity: 1, date: nil))
                     self?.loadData()
                 } buyNowButtonTapped: { [weak self]  _ in
                     self?.router?.moveToCartTab()
