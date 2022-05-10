@@ -45,6 +45,7 @@ protocol AdminAnalyticsDataBaseServiceProtocol {
     func addListner(_ listener: AdminAnalyticsDataBaseServiceOutput)
     func removeListner(_ listener: AdminAnalyticsDataBaseServiceOutput)
     func createOrder(model: AdminAnalyticsDataBaseService.OrderCreateModel)
+    func loadOrders()
 }
 
 protocol AdminAnalyticsDataBaseServiceOutput: AnyObject {
@@ -55,6 +56,20 @@ final class AdminAnalyticsDataBaseService {
     private var outputs: [WeakRefeferenceWrapper<AdminAnalyticsDataBaseServiceOutput>] = []
     private let updateLock = NSRecursiveLock()
     
+    init() {
+        setupListner()
+    }
+    
+    private func setupListner() {
+        Firestore
+            .firestore()
+            .collection("Restaurants")
+            .document("AfroRestaurant")
+            .collection("Orders")
+            .addSnapshotListener { [weak self] _, _ in
+                self?.loadOrders()
+            }
+    }
     private func getOrderDocument(for orderNumber: String) -> DocumentReference {
         Firestore
             .firestore()
@@ -102,7 +117,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                 "phoneNumber" : model.userDetails.phoneNumber,
                 "email" : model.userDetails.email,
                 "date" : model.date,
-                "type" : model.type,
+                "type" : model.type.rawValue,
                 "orderNumber" : orderNumber
             ], merge: true)
         
@@ -118,7 +133,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
         }
     }
     
-    private func loadOrders() {
+    func loadOrders() {
         var orderModels: [OrderModel] = []
         
         Firestore
@@ -138,6 +153,8 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                 for category in querySnapshot.documents {
                     let data = category.data()
                     
+                    let type = data["type"] as? String ?? ""
+                    
                     let orderModel = OrderModel(
                         orderNumber: data["orderNumber"] as? String ?? "",
                         dishModels: [],
@@ -148,7 +165,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                             email: data["email"] as? String ?? ""
                         ),
                         date: data["date"] as? Date ?? Date(),
-                        type: data["type"] as? OrderStatus ?? .delivered
+                        type: OrderStatus(rawValue: type) ?? .delivered
                     )
                     
                     self?.loadDishesModel(for: orderModel.orderNumber, completion: { [weak self, orderModel] disModels in
@@ -161,13 +178,15 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                         )
                         
                         orderModels.append(newOrderModel)
-                        self?.sendUpdateNotification(orderModels: orderModels)
+                        if orderModels.count == querySnapshot.documents.count {
+                            self?.sendUpdateNotification(orderModels: orderModels)
+                        }
                     })
                 }
             }
     }
     
-    func loadDishesModel(for orderNumber: String, completion: @escaping ([DishOrderModel]) -> Void) {
+    private func loadDishesModel(for orderNumber: String, completion: @escaping ([DishOrderModel]) -> Void) {
         var dishes: [DishOrderModel] = []
         Firestore
             .firestore()

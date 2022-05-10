@@ -64,11 +64,43 @@ class ConsumerCartPresenter {
         
         view?.updateItems(viewModels: viewModels, cartCount: cartModels.count)
     }
+    
+    private func createOrder(from cartModels: [CartModel]) {
+        guard
+            let interactor = interactor,
+            let userDetails = interactor.userDetails
+        else { return }
+        
+        let dishModel: [AdminAnalyticsDataBaseService.DishOrderModel] = cartModels.compactMap({
+            return .init(
+                dishName: $0.dishModel.dishName,
+                price: $0.dishModel.price,
+                quantity: $0.quantity
+            )
+        })
+        let orderModel = AdminAnalyticsDataBaseService.OrderCreateModel(
+            dishModels: dishModel,
+            userDetails: userDetails,
+            date: Date(),
+            type: .created
+        )
+        
+        interactor.createOrder(model: orderModel)
+        view?.presentAlert(
+            title: "New Order",
+            message: "We are currently Working with your order",
+            action: .init(actionText: "Ok", actionHandler: {}), action2: nil
+        )
+    }
 }
 
 extension ConsumerCartPresenter: ConsumerCartPresenterProtocol {
     func checkoutButtonTapped() {
-        
+        let models = cartModels
+        self.createOrder(from: models)
+        interactor?.removeAllDishesFromCart { [weak self] in
+            self?.loadData()
+        }
     }
     
     func viewWillAppear() {

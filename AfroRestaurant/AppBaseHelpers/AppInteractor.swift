@@ -53,11 +53,14 @@ class AppInteractor {
         guard let authService = authService else { return }
         let adminDataBaseService = AdminDataBaseService()
         let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)
+        let orderService = AdminAnalyticsDataBaseService()
+        
         authService.consumerDataBaseService = consumerDataBase
         
         ServiceLocator.shared.addService(service: authService as AuthorizationServiceInput)
         ServiceLocator.shared.addService(service: adminDataBaseService as AdminDataBaseServiceProtocol)
         ServiceLocator.shared.addService(service: consumerDataBase as ConsumerDataBaseServiceProtocol)
+        ServiceLocator.shared.addService(service: orderService as AdminAnalyticsDataBaseServiceProtocol)
     }
 }
 

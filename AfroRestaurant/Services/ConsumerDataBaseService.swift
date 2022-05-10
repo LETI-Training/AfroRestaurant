@@ -45,6 +45,7 @@ protocol ConsumerDataBaseServiceProtocol: AnyObject {
     func loadDishes(for categoryName: String, completion: @escaping ([DishModel]?) -> Void)
     func loadDish(dishName: String, for categoryName: String, completion: @escaping (DishModel?) -> Void)
     func set(phoneNumber: String, address: String, name: String)
+    func removeAllDishesFromCart(completion: @escaping (() -> Void))
     
     
     func isDishInCart(dishModel: DishModel) -> Bool
@@ -299,6 +300,24 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                 self?.loadCartsFromDataBase(completion: { _ in })
             }
         }
+    }
+    
+    func removeAllDishesFromCart(completion: @escaping () -> Void) {
+        Firestore
+            .firestore()
+            .collection("Users")
+            .document(userID)
+            .collection("Cart")
+            .getDocuments { [weak self] (querySnapShot, error) in
+                defer { completion() }
+                guard error == nil,
+                      let querySnapShot = querySnapShot else { return }
+                if !querySnapShot.documents.isEmpty {
+                    self?.deleteSavedDocuments(documents: querySnapShot.documents)
+                    self?.updateAllCartsLocally(models: [])
+                    self?.loadCartsFromDataBase(completion: { _ in })
+                }
+            }
     }
     
     func isDishInCart(dishModel: DishModel) -> Bool {

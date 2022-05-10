@@ -78,8 +78,8 @@
             filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "updateDishToCart(model:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "AfroRestaurant/Services/ConsumerDataBaseService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "addDishToCart(model:)"
             landmarkType = "7">
          </BreakpointContent>
