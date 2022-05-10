@@ -42,8 +42,15 @@ class AppInteractor {
         }
         
         if authService.isUserAuthorized() {
-            let customerDataBaseService: ConsumerDataBaseServiceProtocol = ServiceLocator.shared.getService()!
-            customerDataBaseService.tabBar = coordinator.createHomePages(for: authService.userType, scene: windowScene)
+            switch authService.userType {
+            case .customer:
+                let customerDataBaseService: ConsumerDataBaseServiceProtocol = ServiceLocator.shared.getService()!
+                customerDataBaseService.tabBar = coordinator.createHomePages(for: authService.userType, scene: windowScene)
+            case .admin:
+                let orderDataBase: AdminAnalyticsDataBaseServiceProtocol = ServiceLocator.shared.getService()!
+                orderDataBase.tabBar = coordinator.createHomePages(for: authService.userType, scene: windowScene)
+            }
+           
         } else {
             coordinator.createLandingPage(scene: windowScene)
         }

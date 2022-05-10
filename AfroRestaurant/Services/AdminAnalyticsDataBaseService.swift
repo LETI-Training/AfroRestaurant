@@ -10,6 +10,7 @@ import Foundation
 import Foundation
 import FirebaseFirestore
 import Firebase
+import UIKit
 
 extension AdminAnalyticsDataBaseService {
     struct OrderCreateModel {
@@ -41,7 +42,9 @@ extension AdminAnalyticsDataBaseService {
 }
 
 
-protocol AdminAnalyticsDataBaseServiceProtocol {
+protocol AdminAnalyticsDataBaseServiceProtocol: AnyObject {
+    var tabBar: UITabBarController? { get set }
+    
     func addListner(_ listener: AdminAnalyticsDataBaseServiceOutput)
     func removeListner(_ listener: AdminAnalyticsDataBaseServiceOutput)
     func createOrder(model: AdminAnalyticsDataBaseService.OrderCreateModel)
@@ -56,6 +59,12 @@ protocol AdminAnalyticsDataBaseServiceOutput: AnyObject {
 final class AdminAnalyticsDataBaseService {
     private var outputs: [WeakRefeferenceWrapper<AdminAnalyticsDataBaseServiceOutput>] = []
     private let updateLock = NSRecursiveLock()
+    
+    weak var tabBar: UITabBarController? {
+        didSet {
+            loadOrders()
+        }
+    }
     
     init() {
         setupListner()
@@ -99,6 +108,11 @@ final class AdminAnalyticsDataBaseService {
     }
     
     private func sendUpdateNotification(orderModels: [OrderModel]) {
+        DispatchQueue.main.async {
+            let newOrders = orderModels.filter({ $0.type == .created })
+            guard let tabItems = self.tabBar?.tabBar.items else { return }
+            tabItems[0].badgeValue = newOrders.count <= 0 ? nil : "\(newOrders.count)"
+        }
         updateLock.lock()
         defer { updateLock.unlock() }
         

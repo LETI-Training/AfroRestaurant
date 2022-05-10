@@ -70,7 +70,8 @@ extension AppCoordinator: AppCoordinatorProtocol {
             tabBar = customerFactory.createTabBar()
             window?.rootViewController = tabBar
         case .admin:
-            window?.rootViewController = adminFactory.createTabBar()
+            tabBar = adminFactory.createTabBar()
+            window?.rootViewController = tabBar
         }
         
         window?.makeKeyAndVisible()
