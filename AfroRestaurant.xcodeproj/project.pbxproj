@@ -162,6 +162,8 @@
 		B2802EE827F9E2BE002EB628 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2802EE727F9E2BE002EB628 /* AppInteractor.swift */; };
 		B2A0E1B7282A7C6400F36761 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */; };
 		B2A0E1B9282A838400F36761 /* CartPriceLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */; };
+		B2A0E1BB282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1BA282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift */; };
+		B2A0E1BD282ABF2F00F36761 /* Numbers+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0E1BC282ABF2F00F36761 /* Numbers+Extension.swift */; };
 		B2AA08E327FB031D0038DDB1 /* AdminHome+NavigationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */; };
 		B2AA08E527FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */; };
 		B2AA08E727FB4B5C0038DDB1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */; };
@@ -357,6 +359,8 @@
 		B2802EE727F9E2BE002EB628 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
 		B2A0E1B6282A7C6400F36761 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		B2A0E1B8282A838400F36761 /* CartPriceLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPriceLabelCell.swift; sourceTree = "<group>"; };
+		B2A0E1BA282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAnalyticsDataBaseService.swift; sourceTree = "<group>"; };
+		B2A0E1BC282ABF2F00F36761 /* Numbers+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numbers+Extension.swift"; sourceTree = "<group>"; };
 		B2AA08E227FB031D0038DDB1 /* AdminHome+NavigationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdminHome+NavigationViews.swift"; sourceTree = "<group>"; };
 		B2AA08E427FB45FE0038DDB1 /* AdminUpdatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -1134,6 +1138,7 @@
 				B25E31DC27FA27BD0057D12C /* ServiceLocator.swift */,
 				B246DC882805FBCA00849F76 /* AdminDataBaseService.swift */,
 				B246DC8A280600E600849F76 /* Models.swift */,
+				B2A0E1BA282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1250,6 +1255,7 @@
 				B25E31D527FA062B0057D12C /* AttributedStrings+Extension.swift */,
 				B25E31DA27FA18620057D12C /* UIViewController+Extension.swift */,
 				B2AA08E627FB4B5C0038DDB1 /* UITableView+Extension.swift */,
+				B2A0E1BC282ABF2F00F36761 /* Numbers+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1665,6 +1671,7 @@
 				B245558628293EF100D4B8FE /* ConsumerProfileInteractor.swift in Sources */,
 				B2AA090627FB7E840038DDB1 /* AdminProfitsAssembly.swift in Sources */,
 				B246DC692805EA9B00849F76 /* AdminNewCategoryPresenter.swift in Sources */,
+				B2A0E1BB282AB91A00F36761 /* AdminAnalyticsDataBaseService.swift in Sources */,
 				2BAF976BA12D2D37933C3020 /* LoginPresenter.swift in Sources */,
 				B245559328293EF100D4B8FE /* ConsumerDishViewPresenter.swift in Sources */,
 				B2AA091127FB7E840038DDB1 /* AdminInventoryViewInput.swift in Sources */,
@@ -1691,6 +1698,7 @@
 				B245557628293EF000D4B8FE /* ConsumerFavoritesInteractor.swift in Sources */,
 				B245559628293EF100D4B8FE /* ConsumerDishViewInteractor.swift in Sources */,
 				B245557928293EF100D4B8FE /* ConsumerMapAssembly.swift in Sources */,
+				B2A0E1BD282ABF2F00F36761 /* Numbers+Extension.swift in Sources */,
 				B245557728293EF000D4B8FE /* ConsumerFavoritesInteractorInput.swift in Sources */,
 				B2AA091927FB7F3B0038DDB1 /* AdminProfitsHeaderView.swift in Sources */,
 				B246DC7B2805EA9B00849F76 /* AdminDishViewViewInput.swift in Sources */,

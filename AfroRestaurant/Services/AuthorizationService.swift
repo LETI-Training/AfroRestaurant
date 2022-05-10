@@ -38,7 +38,7 @@ protocol AuthorizationServiceOutput: AnyObject {
     func authorizationService(didFailWith error: AuthorizationService.ErrorType)
 }
 
-class AuthorizationService {
+final class AuthorizationService {
     
     enum ErrorType: Error {
         case login(error: Error)
