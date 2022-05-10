@@ -10,7 +10,7 @@ import UIKit
 
 protocol AppCoordinatorProtocol: AnyObject {
     func createLandingPage(scene: UIWindowScene)
-    func createHomePages(for userType: UserType, scene: UIWindowScene)
+    func createHomePages(for userType: UserType, scene: UIWindowScene) -> UITabBarController?
 }
 
 protocol AppCordinatorFactory: AnyObject {
@@ -52,7 +52,8 @@ extension AppCoordinator: AppCoordinatorProtocol {
         window?.makeKeyAndVisible()
     }
     
-    func createHomePages(for userType: UserType, scene: UIWindowScene) {
+    func createHomePages(for userType: UserType, scene: UIWindowScene) -> UITabBarController? {
+        var tabBar: UITabBarController?
         window = UIWindow(windowScene: scene)
         UITabBar.appearance().tintColor = .brandGreen
         UIBarButtonItem.appearance()
@@ -66,11 +67,13 @@ extension AppCoordinator: AppCoordinatorProtocol {
             )
         switch userType {
         case .customer:
-            window?.rootViewController = customerFactory.createTabBar()
+            tabBar = customerFactory.createTabBar()
+            window?.rootViewController = tabBar
         case .admin:
             window?.rootViewController = adminFactory.createTabBar()
         }
         
         window?.makeKeyAndVisible()
+        return tabBar
     }
 }

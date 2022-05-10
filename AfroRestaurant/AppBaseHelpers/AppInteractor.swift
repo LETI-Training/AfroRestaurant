@@ -42,14 +42,14 @@ class AppInteractor {
         }
         
         if authService.isUserAuthorized() {
-            coordinator.createHomePages(for: authService.userType, scene: windowScene)
+            let customerDataBaseService: ConsumerDataBaseServiceProtocol = ServiceLocator.shared.getService()!
+            customerDataBaseService.tabBar = coordinator.createHomePages(for: authService.userType, scene: windowScene)
         } else {
             coordinator.createLandingPage(scene: windowScene)
         }
     }
     
     private func setupServiceLocator() {
-//        authService?.signOut()
         guard let authService = authService else { return }
         let adminDataBaseService = AdminDataBaseService()
         let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)

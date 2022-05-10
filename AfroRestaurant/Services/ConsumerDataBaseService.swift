@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import Firebase
+import UIKit
 
 extension ConsumerDataBaseService {
     struct ConsumerDishMinimalModel: Hashable {
@@ -30,6 +31,8 @@ extension ConsumerDataBaseService {
 }
 
 protocol ConsumerDataBaseServiceProtocol: AnyObject {
+    var tabBar: UITabBarController? { get set }
+    
     func getUserDetails(completion: @escaping (ConsumerDataBaseService.UserDetails?) -> ())
     func loadCategories(completion: @escaping ([CategoryModel]?) -> ())
     func addDishToFavorite(model: ConsumerDataBaseService.ConsumerDishMinimalModel)
@@ -56,6 +59,11 @@ final class ConsumerDataBaseService {
     private var carts = [CartModelMinimal]()
     
     let adminService: AdminDataBaseServiceProtocol
+    weak var tabBar: UITabBarController? {
+        didSet {
+            loadCartsFromDataBase { _ in }
+        }
+    }
     
     private var dishesContainer = [String: [DishModel]]()
     private var userID: String {
@@ -66,7 +74,9 @@ final class ConsumerDataBaseService {
         Firebase.Auth.auth().currentUser?.email ?? ""
     }
     
-    init(adminDataBaseService: AdminDataBaseServiceProtocol) {
+    init(
+        adminDataBaseService: AdminDataBaseServiceProtocol
+    ) {
         self.adminService = adminDataBaseService
         loadFavoritesFromDataBase { _ in }
         loadCartsFromDataBase { _ in }
@@ -130,6 +140,11 @@ final class ConsumerDataBaseService {
         defer { lock.unlock() }
         
         carts = models
+        
+        DispatchQueue.main.async {
+            guard let tabItems = self.tabBar?.tabBar.items else { return }
+            tabItems[2].badgeValue = models.count <= 0 ? nil : "\(models.count)"
+        }
     }
     
     private func getFavoritesDocument(for dishName: String) -> DocumentReference {
