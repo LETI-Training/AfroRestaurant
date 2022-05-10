@@ -42,6 +42,7 @@ class AdminTableHeaderView: UIView {
         label.textColor = .background
         label.font = .font(.extraBold, size: 32.0)
         label.textAlignment = .left
+        label.text = "Loading..."
         label.sizeToFit()
         return label
     }()
@@ -68,6 +69,7 @@ class AdminTableHeaderView: UIView {
     lazy var newOrdersCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .background
+        label.text = "Loading..."
         label.font = .font(.extraBold, size: 32.0)
         label.textAlignment = .left
         label.sizeToFit()
@@ -106,6 +108,7 @@ class AdminTableHeaderView: UIView {
         label.textColor = .background
         label.font = .font(.extraBold, size: 32.0)
         label.textAlignment = .left
+        label.text = "Loading..."
         label.sizeToFit()
         return label
     }()
