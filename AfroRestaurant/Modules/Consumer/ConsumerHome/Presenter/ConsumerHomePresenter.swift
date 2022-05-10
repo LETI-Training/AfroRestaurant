@@ -87,6 +87,10 @@ class ConsumerHomePresenter {
 }
 
 extension ConsumerHomePresenter: ConsumerHomePresenterProtocol {
+    func myOrdersButtonPressed() {
+        router?.routeToOrders()
+    }
+    
     func dishTapped(at indexPath: IndexPath) {
         router?.routeToDishe(
             dish: models[indexPath.section].dishes[indexPath.row],

@@ -51,6 +51,19 @@ final class ConsumerHomeViewController: BaseViewController {
         return label
     }()
     
+    private lazy var myOrdersLabel: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = .init(x: 0, y: 0, width: 75, height: 29)
+        button.setTitle("My Orders", for: .normal)
+        button.setTitleColor(.background, for: .normal)
+        button.titleLabel?.font = .font(.regular, size: 14.0)
+        button.addTarget(self, action: #selector(myOrdersButtonTapped), for: .touchUpInside)
+        button.clipsToBounds = true
+        button.backgroundColor = .brandOrange
+        button.layer.cornerRadius = 8.0
+        return button
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -101,6 +114,12 @@ final class ConsumerHomeViewController: BaseViewController {
         makeConstraints()
         navigationController?.navigationBar.barStyle = .black
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navLargeLabel)
+        let barButtonItem = UIBarButtonItem(customView: myOrdersLabel)
+        navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    @objc private func myOrdersButtonTapped() {
+        presenter?.myOrdersButtonPressed()
     }
 
     private func addSubviews() {

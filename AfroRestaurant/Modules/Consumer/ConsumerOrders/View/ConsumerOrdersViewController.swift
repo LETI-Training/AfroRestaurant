@@ -3,6 +3,16 @@ import SnapKit
 
 extension ConsumerOrdersViewController {
     struct Appearance {
+        let leadingTrailingInset: CGFloat = 26.0
+    }
+    
+    struct ViewModel {
+        let type: CellType
+    }
+    
+    enum CellType {
+        case header(AdminOrdersHeaderView.ViewModel)
+        case dishes(AdminOrdersTableViewCell.ViewModel)
     }
 }
 
@@ -10,24 +20,138 @@ final class ConsumerOrdersViewController: BaseViewController {
 
     private let appearance = Appearance()
     var presenter: ConsumerOrdersPresenterProtocol?
-
+    
+    var viewModels: [ViewModel] = []
+    
+    let segmentedController: UISegmentedControl = {
+        let items: [String] = ConsumerOrdersPresenter.OrderFilterType.allCases.compactMap({ $0.name })
+        let segmentedController = UISegmentedControl(items: items)
+        segmentedController.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
+        segmentedController.backgroundColor = .gray.withAlphaComponent(0.5)
+        segmentedController.tintColor = .white
+        return segmentedController
+    }()
+    
+    @objc private func segmentedValueChanged() {
+        presenter?.segmentedControllerTapped(newIndex: segmentedController.selectedSegmentIndex)
+    }
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = .none
+        tableView.keyboardDismissMode = .interactive
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(AdminOrdersTableViewCell.self, forCellReuseIdentifier: AdminOrdersTableViewCell.identifier)
+        tableView.register(AdminOrdersHeaderView.self, forCellReuseIdentifier: AdminOrdersHeaderView.identifier)
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        return tableView
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        presenter?.viewWillAppear()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        navigationController?.navigationBar.barStyle = .black
     }
 
     private func setupUI() {
         addSubviews()
         makeConstraints()
+        self.title = "Orders"
     }
 
     private func addSubviews() {
+        view.addSubview(tableView)
+        view.addSubview(segmentedController)
     }
 
     private func makeConstraints() {
+        segmentedController.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(appearance.leadingTrailingInset)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.top.equalTo(segmentedController.snp.bottom).offset(3.0)
+        }
     }
 }
 
 extension ConsumerOrdersViewController: ConsumerOrdersViewInput {
+    func changeSelectedIndex(index: Int) {
+        segmentedController.selectedSegmentIndex = index
+    }
+    
+    func updateItems(viewModels: [ViewModel]) {
+        self.viewModels = viewModels
+        tableView.reloadData()
+    }
 }
+
+
+extension ConsumerOrdersViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch viewModels[indexPath.row].type {
+            
+        case .header(let viewModel):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: AdminOrdersHeaderView.identifier,
+                for: indexPath
+            ) as? AdminOrdersHeaderView else {
+                return UITableViewCell()
+            }
+            cell.accessoryType = .none
+            cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            return cell
+        case .dishes(let viewModel):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: AdminOrdersTableViewCell.identifier,
+                for: indexPath
+            ) as? AdminOrdersTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.accessoryType = .none
+            cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            return cell
+        }
+    }
+}
+
+extension ConsumerOrdersViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch viewModels[indexPath.row].type {
+        case .header:
+           return UITableView.automaticDimension
+        case .dishes:
+            return 42.0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+
+

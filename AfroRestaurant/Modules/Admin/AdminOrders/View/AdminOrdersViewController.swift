@@ -22,16 +22,6 @@ final class AdminOrdersViewController: BaseViewController {
     var presenter: AdminOrdersPresenterProtocol?
     var viewModels: [AdminOrdersViewController.ViewModel] = []
     
-    private lazy var navLargeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Orders"
-        label.textColor = .textPrimary
-        label.font = .font(.extraBold, size: 32.0)
-        label.textAlignment = .left
-        label.sizeToFit()
-        return label
-    }()
-    
     let segmentedController: UISegmentedControl = {
         let items: [String] = AdminOrdersPresenter.OrderFilterType.allCases.compactMap({ $0.name })
         let segmentedController = UISegmentedControl(items: items)

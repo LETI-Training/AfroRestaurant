@@ -35,9 +35,16 @@ class AdminOrdersHeaderView: UITableViewCell {
     var viewModel: ViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
+            [
+                usernameLabel,
+                addressLabel,
+                phoneNumberLabel
+            ].forEach {
+                $0.isHidden = false
+            }
             orderNumberLabel.text = "#Order: " + viewModel.orderNumber
             dateLabel.text = viewModel.dateString
-            usernameLabel.text = "User: " + viewModel.userDetails.userName
+            usernameLabel.text = "UserName: " + viewModel.userDetails.userName
             addressLabel.text = "Address: " + viewModel.userDetails.address
             phoneNumberLabel.text = "PhoneNumber: " + viewModel.userDetails.phoneNumber
             
@@ -70,14 +77,16 @@ class AdminOrdersHeaderView: UITableViewCell {
             
             switch viewModel.userType {
             case .consumer:
+                [
+                    addressLabel,
+                    phoneNumberLabel
+                ].forEach {
+                    $0.isHidden = true
+                    $0.text = ""
+                }
                 deliveredButton.isHidden = true
-                cancelButton.snp.updateConstraints { make in
-                    make.trailing.equalTo(self.snp.trailing).inset(appearance.leadingTrailingInset)
-                }
             case .admin:
-                cancelButton.snp.updateConstraints { make in
-                    make.trailing.equalTo(self.snp.centerX).offset(-5.0)
-                }
+                break
             }
         }
     }
@@ -196,6 +205,7 @@ class AdminOrdersHeaderView: UITableViewCell {
     private func setupUI() {
         addSubviews()
         makeConstraints()
+        self.backgroundColor = .clear
     }
     
     private func addSubviews() {

@@ -6,7 +6,7 @@ class ConsumerOrdersAssembly {
         let view = ConsumerOrdersViewController()
         let router = ConsumerOrdersRouter()
         let presenter = ConsumerOrdersPresenter()
-        let interactor = ConsumerOrdersInteractor()
+        let interactor = ConsumerOrdersInteractor(orderDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view

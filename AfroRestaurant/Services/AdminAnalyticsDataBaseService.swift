@@ -26,6 +26,7 @@ extension AdminAnalyticsDataBaseService {
         let userDetails: ConsumerDataBaseService.UserDetails
         let date: Date
         let type: OrderStatus
+        let userID: String
     }
     
     struct DishOrderModel {
@@ -50,6 +51,7 @@ protocol AdminAnalyticsDataBaseServiceProtocol: AnyObject {
     func createOrder(model: AdminAnalyticsDataBaseService.OrderCreateModel)
     func updateOrderStatus(status: AdminAnalyticsDataBaseService.OrderStatus, orderNumber: String)
     func loadOrders()
+    func loadOrdersForCurrentUser()
 }
 
 protocol AdminAnalyticsDataBaseServiceOutput: AnyObject {
@@ -59,6 +61,14 @@ protocol AdminAnalyticsDataBaseServiceOutput: AnyObject {
 final class AdminAnalyticsDataBaseService {
     private var outputs: [WeakRefeferenceWrapper<AdminAnalyticsDataBaseServiceOutput>] = []
     private let updateLock = NSRecursiveLock()
+    
+    private var userID: String {
+        Firebase.Auth.auth().currentUser?.uid ?? ""
+    }
+    
+    var email: String {
+        Firebase.Auth.auth().currentUser?.email ?? ""
+    }
     
     weak var tabBar: UITabBarController? {
         didSet {
@@ -143,10 +153,11 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                 "userName" : model.userDetails.userName,
                 "address" : model.userDetails.address,
                 "phoneNumber" : model.userDetails.phoneNumber,
-                "email" : model.userDetails.email,
+                "email" : email,
                 "date" : model.date.timeIntervalSince1970,
                 "type" : model.type.rawValue,
-                "orderNumber" : orderNumber
+                "orderNumber" : orderNumber,
+                "userID": userID
             ], merge: true)
         
         for dishModel in model.dishModels {
@@ -162,8 +173,6 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
     }
     
     func loadOrders() {
-        var orderModels: [OrderModel] = []
-        
         Firestore
             .firestore()
             .collection("Restaurants")
@@ -171,6 +180,7 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
             .collection("Orders")
             .getDocuments { [weak self] querySnapshot, error in
                 guard
+                    let self = self,
                     error == nil,
                     let querySnapshot = querySnapshot
                 else {
@@ -178,41 +188,69 @@ extension AdminAnalyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol {
                     return
                 }
                 
-                for category in querySnapshot.documents {
-                    let data = category.data()
-                    
-                    let type = data["type"] as? String ?? ""
-                    let timeInterval: Double = data["date"] as? Double ?? Date().timeIntervalSince1970
-                    
-                    let orderModel = OrderModel(
-                        orderNumber: data["orderNumber"] as? String ?? "",
-                        dishModels: [],
-                        userDetails: .init(
-                            userName: data["userName"] as? String ?? "",
-                            address: data["address"] as? String ?? "",
-                            phoneNumber: data["phoneNumber"] as? String ?? "",
-                            email: data["email"] as? String ?? ""
-                        ),
-                        date: Date(timeIntervalSince1970: timeInterval),
-                        type: OrderStatus(rawValue: type) ?? .delivered
-                    )
-                    
-                    self?.loadDishesModel(for: orderModel.orderNumber, completion: { [weak self, orderModel] disModels in
-                        let newOrderModel = OrderModel(
-                            orderNumber: orderModel.orderNumber,
-                            dishModels: disModels,
-                            userDetails: orderModel.userDetails,
-                            date: orderModel.date,
-                            type: orderModel.type
-                        )
-                        
-                        orderModels.append(newOrderModel)
-                        if orderModels.count == querySnapshot.documents.count {
-                            self?.sendUpdateNotification(orderModels: orderModels)
-                        }
-                    })
-                }
+                self.generateOrderModels(from: querySnapshot.documents)
             }
+    }
+    
+    func loadOrdersForCurrentUser() {
+        Firestore
+            .firestore()
+            .collection("Restaurants")
+            .document("AfroRestaurant")
+            .collection("Orders")
+            .whereField("userID", isEqualTo: userID)
+            .getDocuments { [weak self] querySnapshot, error in
+                guard
+                    let self = self,
+                    error == nil,
+                    let querySnapshot = querySnapshot
+                else {
+                    self?.sendUpdateNotification(orderModels: [])
+                    return
+                }
+                self.generateOrderModels(from: querySnapshot.documents)
+            }
+    }
+
+    
+    private func generateOrderModels(from documents: [QueryDocumentSnapshot]) {
+        var orderModels: [OrderModel] = []
+        for category in documents {
+            let data = category.data()
+            
+            let type = data["type"] as? String ?? ""
+            let timeInterval: Double = data["date"] as? Double ?? Date().timeIntervalSince1970
+            
+            let orderModel = OrderModel(
+                orderNumber: data["orderNumber"] as? String ?? "",
+                dishModels: [],
+                userDetails: .init(
+                    userName: data["userName"] as? String ?? "",
+                    address: data["address"] as? String ?? "",
+                    phoneNumber: data["phoneNumber"] as? String ?? "",
+                    email: data["email"] as? String ?? ""
+                ),
+                date: Date(timeIntervalSince1970: timeInterval),
+                type: OrderStatus(rawValue: type) ?? .delivered,
+                userID: data["userID"] as? String ?? self.userID
+            )
+            
+            self.loadDishesModel(for: orderModel.orderNumber, completion: { [weak self, orderModel] disModels in
+                let newOrderModel = OrderModel(
+                    orderNumber: orderModel.orderNumber,
+                    dishModels: disModels,
+                    userDetails: orderModel.userDetails,
+                    date: orderModel.date,
+                    type: orderModel.type,
+                    userID: orderModel.userID
+                )
+                
+                orderModels.append(newOrderModel)
+                if orderModels.count == documents.count {
+                    self?.sendUpdateNotification(orderModels: orderModels)
+                }
+            })
+        }
     }
     
     private func loadDishesModel(for orderNumber: String, completion: @escaping ([DishOrderModel]) -> Void) {

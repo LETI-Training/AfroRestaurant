@@ -13,4 +13,9 @@ class ConsumerHomeRouter {
         
         tabBar.selectedIndex = 2
     }
+    
+    func routeToOrders() {
+        let newVC = ConsumerOrdersAssembly.assemble()
+        view?.navigationController?.pushViewController(newVC, animated: true)
+    }
 }
