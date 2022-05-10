@@ -3,7 +3,7 @@ import SnapKit
 
 extension AdminOrdersViewController {
     struct Appearance {
-        
+        let leadingTrailingInset: CGFloat = 26.0
     }
     
     struct ViewModel {
@@ -21,6 +21,27 @@ final class AdminOrdersViewController: BaseViewController {
     private let appearance = Appearance()
     var presenter: AdminOrdersPresenterProtocol?
     var viewModels: [AdminOrdersViewController.ViewModel] = []
+    
+    private lazy var navLargeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Orders"
+        label.textColor = .textPrimary
+        label.font = .font(.extraBold, size: 32.0)
+        label.textAlignment = .left
+        label.sizeToFit()
+        return label
+    }()
+    
+    let segmentedController: UISegmentedControl = {
+        let items: [String] = AdminOrdersPresenter.OrderFilterType.allCases.compactMap({ $0.name })
+        let segmentedController = UISegmentedControl(items: items)
+        segmentedController.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
+        return segmentedController
+    }()
+    
+    @objc private func segmentedValueChanged() {
+        presenter?.segmentedControllerTapped(newIndex: segmentedController.selectedSegmentIndex)
+    }
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -53,22 +74,34 @@ final class AdminOrdersViewController: BaseViewController {
     private func setupUI() {
         addSubviews()
         makeConstraints()
+        navigationController?.navigationBar.barStyle = .black
+        self.title = "Orders"
     }
 
     private func addSubviews() {
         view.addSubview(tableView)
+        view.addSubview(segmentedController)
     }
 
     private func makeConstraints() {
+        segmentedController.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(appearance.leadingTrailingInset)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
+        
         tableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(segmentedController.snp.bottom).offset(3.0)
         }
     }
 }
 
 extension AdminOrdersViewController: AdminOrdersViewInput {
+    func changeSelectedIndex(index: Int) {
+        segmentedController.selectedSegmentIndex = index
+    }
+    
     func updateItems(viewModels: [AdminOrdersViewController.ViewModel]) {
         self.viewModels = viewModels
         tableView.reloadData()

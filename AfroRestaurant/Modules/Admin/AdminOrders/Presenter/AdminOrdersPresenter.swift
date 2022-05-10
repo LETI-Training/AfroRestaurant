@@ -1,9 +1,10 @@
 import Foundation
 
 extension AdminOrdersPresenter {
-    enum OrderFilterType: Int, CaseIterable {
+    enum OrderFilterType: Int, CaseIterable, Equatable {
         case all = 0
         case new
+        case delivered
         case cancelled
         
         var name: String {
@@ -14,6 +15,8 @@ extension AdminOrdersPresenter {
                 return "New"
             case .cancelled:
                 return "Cancelled"
+            case .delivered:
+                return "Delivered"
             }
         }
     }
@@ -33,7 +36,24 @@ class AdminOrdersPresenter {
     }
     
     private func loadData() {
-        let orders = models.sorted(by: { $1.date < $0.date })
+        let orderStatus: AdminAnalyticsDataBaseService.OrderStatus?
+        
+        switch filterType {
+        case .all:
+            orderStatus = nil
+        case .new:
+            orderStatus = .created
+        case .cancelled:
+            orderStatus = .cancelled
+        case .delivered:
+            orderStatus = .delivered
+        }
+        
+        var orders = models.sorted(by: { $1.date < $0.date })
+        
+        if let orderStatus = orderStatus {
+            orders = orders.filter({ $0.type == orderStatus })
+        }
         
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -71,7 +91,10 @@ class AdminOrdersPresenter {
 
 extension AdminOrdersPresenter: AdminOrdersPresenterProtocol {
     func segmentedControllerTapped(newIndex: Int) {
+        guard let filterType = OrderFilterType(rawValue: newIndex) else { return }
         
+        self.filterType = filterType
+        loadData()
     }
     
     func viewWillAppear() {
@@ -79,7 +102,7 @@ extension AdminOrdersPresenter: AdminOrdersPresenterProtocol {
     }
     
     func viewDidLoad() {
-        
+        view?.changeSelectedIndex(index: filterType.rawValue)
         interactor?.loadOrders()
         interactor?.listener = { [weak self] models in
             self?.models = models

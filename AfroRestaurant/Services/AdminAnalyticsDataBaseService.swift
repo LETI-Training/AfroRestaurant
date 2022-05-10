@@ -33,7 +33,7 @@ extension AdminAnalyticsDataBaseService {
         let quantity: Int
     }
     
-    enum OrderStatus: String, Codable {
+    enum OrderStatus: String, Codable, Equatable {
         case delivered
         case cancelled
         case created

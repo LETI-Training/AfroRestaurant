@@ -81,11 +81,6 @@ final class AdminHomeViewController: BaseViewController {
         navigationController?.navigationBar.barStyle = .default
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
     }
