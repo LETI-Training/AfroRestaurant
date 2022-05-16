@@ -217,6 +217,7 @@ final class AdminDishViewViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        presenter?.viewWillAppear()
     }
     
     override func viewDidLoad() {
@@ -438,8 +439,14 @@ extension AdminDishViewViewController: AdminDishViewViewInput {
         descriptionTextField.text = model.dishDescription
         priceTextField.text = "\(model.price)"
         caloriesTextField.text = "\(model.calories)"
-        favoritesLabel.text = "\(model.favoritesCount ?? 0)"
-        ratingsLabel.text = "\(model.rating ?? 0)"
+    }
+    
+    func updateRatings(rating: Double) {
+        ratingsLabel.text = String(format: "%.1f", rating)
+    }
+    
+    func updateLikes(likesCount: Int) {
+        favoritesLabel.text = "\(likesCount)"
     }
     
     func updateImage(image: UIImage?) {

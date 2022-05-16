@@ -6,7 +6,10 @@ class ConsumerDishViewAssembly {
         let view = ConsumerDishViewViewController()
         let router = ConsumerDishViewRouter()
         let presenter = ConsumerDishViewPresenter(dishModel: dishModel)
-        let interactor = ConsumerDishViewInteractor(consumerDataBase: ServiceLocator.shared.getService()!)
+        let interactor = ConsumerDishViewInteractor(
+            consumerDataBase: ServiceLocator.shared.getService()!,
+            ordersService: ServiceLocator.shared.getService()!
+        )
 
         view.presenter = presenter
         presenter.view = view

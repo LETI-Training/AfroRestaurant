@@ -59,8 +59,9 @@ class AppInteractor {
     private func setupServiceLocator() {
         guard let authService = authService else { return }
         let adminDataBaseService = AdminDataBaseService()
-        let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService)
         let orderService = AdminAnalyticsDataBaseService(userType: authService.userType)
+        let consumerDataBase = ConsumerDataBaseService(adminDataBaseService: adminDataBaseService, analyticsDataBaseService: orderService)
+        
         
         authService.consumerDataBaseService = consumerDataBase
         

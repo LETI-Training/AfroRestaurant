@@ -10,6 +10,8 @@ import FirebaseFirestore
 import Firebase
 import UIKit
 
+typealias UserDetails = ConsumerDataBaseService.UserDetails
+
 extension ConsumerDataBaseService {
     struct ConsumerDishMinimalModel: Hashable {
         let dishName: String
@@ -60,6 +62,7 @@ final class ConsumerDataBaseService {
     private var carts = [CartModelMinimal]()
     
     let adminService: AdminDataBaseServiceProtocol
+    let analyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol
     weak var tabBar: UITabBarController? {
         didSet {
             loadCartsFromDataBase { _ in }
@@ -76,9 +79,11 @@ final class ConsumerDataBaseService {
     }
     
     init(
-        adminDataBaseService: AdminDataBaseServiceProtocol
+        adminDataBaseService: AdminDataBaseServiceProtocol,
+        analyticsDataBaseService: AdminAnalyticsDataBaseServiceProtocol
     ) {
         self.adminService = adminDataBaseService
+        self.analyticsDataBaseService = analyticsDataBaseService
         loadFavoritesFromDataBase { _ in }
         loadCartsFromDataBase { _ in }
     }
@@ -233,6 +238,7 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                 "dishName" : model.dishName,
                 "categoryName" : model.categoryName
             ], merge: true)
+        analyticsDataBaseService.likeDish(dishname: model.dishName, categoryName: model.categoryName)
         addFavoriteLocally(model: model)
         loadFavoritesFromDataBase(completion: { _ in })
     }
@@ -276,6 +282,7 @@ extension ConsumerDataBaseService: ConsumerDataBaseServiceProtocol {
                   let querySnapShot = querySnapShot else { return }
             if !querySnapShot.documents.isEmpty {
                 self?.deleteSavedDocuments(documents: querySnapShot.documents)
+                self?.analyticsDataBaseService.unlikeDish(dishname: dishModel.dishName, categoryName: dishModel.categoryName)
                 self?.removeFavoriteLocally(model: dishModel)
                 self?.loadFavoritesFromDataBase(completion: { _ in })
             }

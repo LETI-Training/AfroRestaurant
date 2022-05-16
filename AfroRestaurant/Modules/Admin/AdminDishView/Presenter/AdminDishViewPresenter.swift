@@ -72,19 +72,51 @@ extension AdminDishViewPresenter: AdminDishViewPresenterProtocol {
             })
         )
     }
-
-func addPhotoTapped() {
-    if #available(iOS 14, *) {
-        router?.openPhotos(delegate: self)
-    } else {
-        router?.routeToImagePicker(delegate: self)
+    
+    func addPhotoTapped() {
+        if #available(iOS 14, *) {
+            router?.openPhotos(delegate: self)
+        } else {
+            router?.routeToImagePicker(delegate: self)
+        }
     }
-}
-
-
-func viewDidLoad() {
-    view?.updateUI(model: dishModel)
-}
+    
+    
+    func viewDidLoad() {
+        
+        interactor?.likesListener = { [weak self] likes, dish, category  in
+            guard
+                dish == self?.dishModel.dishName,
+                category == self?.dishModel.categoryName else { return }
+            
+            self?.view?.updateLikes(likesCount: likes)
+        }
+        
+        interactor?.ratingsListener = { [weak self] ratings, dish, category  in
+            guard
+                dish == self?.dishModel.dishName,
+                category == self?.dishModel.categoryName else { return }
+            
+            self?.view?.updateRatings(rating: ratings)
+        }
+        view?.updateUI(model: dishModel)
+        interactor?.loadLikesCount(dishname: dishModel.dishName, in: dishModel.categoryName)
+        interactor?.loadRatingsCount(dishName: dishModel.dishName, in: dishModel.categoryName)
+    }
+    
+    func viewWillAppear() {
+        interactor?.loadLikesCount(dishname: dishModel.dishName, in: dishModel.categoryName)
+        interactor?.loadRatingsCount(dishName: dishModel.dishName, in: dishModel.categoryName)
+        interactor?.loadDish(dishName: dishModel.dishName, for: categoryName, completion: { [weak self] dishModel in
+            guard
+                let self = self,
+                let dishModel = dishModel
+            else { return }
+            self.dishModel = dishModel
+            self.view?.updateUI(model: dishModel)
+        })
+    }
+    
 }
 
 extension AdminDishViewPresenter: PHPickerViewControllerDelegate {

@@ -1,6 +1,7 @@
 import UIKit
 protocol AdminDishViewPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func viewWillAppear()
     func saveButtonPressed(
         image: UIImage?,
         dishName: String,

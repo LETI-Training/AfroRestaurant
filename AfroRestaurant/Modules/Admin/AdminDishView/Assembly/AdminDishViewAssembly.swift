@@ -6,7 +6,10 @@ class AdminDishViewAssembly {
         let view = AdminDishViewViewController()
         let router = AdminDishViewRouter()
         let presenter = AdminDishViewPresenter(dishModel: dishModel, categoryName: categoryName)
-        let interactor = AdminDishViewInteractor(databaseService: ServiceLocator.shared.getService())
+        let interactor = AdminDishViewInteractor(
+            databaseService: ServiceLocator.shared.getService(),
+            ordersService: ServiceLocator.shared.getService()!
+        )
 
         view.presenter = presenter
         presenter.view = view

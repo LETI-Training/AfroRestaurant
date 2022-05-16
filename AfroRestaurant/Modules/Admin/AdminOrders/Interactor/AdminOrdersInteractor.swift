@@ -24,6 +24,16 @@ extension AdminOrdersInteractor: AdminOrdersInteractorInput {
 }
 
 extension AdminOrdersInteractor: AdminAnalyticsDataBaseServiceOutput {
+    func adminService(didFinishLoadingLikes likesCount: Int, for dishName: String, in categoryName: String) {}
+    
+    func adminService(didFinishLoadingRatings ratingsAverage: Double, for dishName: String, in categoryName: String) {}
+    
+    func adminService(didFinishLoadingRatingsForRestaurant ratingsAverage: Double) {}
+    
+    func adminService(didFinishLoadingUserDetails: UserDetails) {}
+    
+    func adminService(didFinishLoadingAllUpdates: [UpdateModel]) {}
+    
     func adminService(didFinishLoading orderModels: [AdminAnalyticsDataBaseService.OrderModel]) {
         listener?(orderModels)
     }

@@ -107,6 +107,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
     
     private lazy var ratingContainerView: UIView = {
         let view = UIView()
+        view.isHidden = true
         view.backgroundColor = .black.withAlphaComponent(0.4)
         return view
     }()

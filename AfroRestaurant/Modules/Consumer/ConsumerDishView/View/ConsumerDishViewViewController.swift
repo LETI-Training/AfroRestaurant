@@ -390,8 +390,6 @@ extension ConsumerDishViewViewController: ConsumerDishViewViewInput {
         descriptionTextField.text = model.dishDescription
         priceTextField.text = "\(model.price)"
         caloriesTextField.text = "\(model.calories)"
-        favoritesLabel.text = "\(model.favoritesCount ?? 0)"
-        ratingsLabel.text = "\(model.rating ?? 0)"
         
         viewModel.isLiked
         ? favoritesButton.setImage(.isAddedToFavs, for: .normal)
@@ -404,5 +402,13 @@ extension ConsumerDishViewViewController: ConsumerDishViewViewInput {
             cartButton.setTitle("Add To Cart", for: .normal)
             cartButton.backgroundColor = .textPrimary
         }
+    }
+    
+    func updateRatings(rating: Double) {
+        ratingsLabel.text = String(format: "%.1f", rating)
+    }
+    
+    func updateLikes(likesCount: Int) {
+        favoritesLabel.text = "\(likesCount)"
     }
 }
