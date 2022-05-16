@@ -69,6 +69,7 @@ final class ConsumerProfileViewController: BaseViewController {
         textField.autocapitalizationType = .none
         textField.backgroundColor = .none
         textField.font = .font(.regular, size: 16.0)
+        textField.isUserInteractionEnabled = false
         return textField
     }()
     
