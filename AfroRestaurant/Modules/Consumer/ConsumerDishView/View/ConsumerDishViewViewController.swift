@@ -29,6 +29,7 @@ final class ConsumerDishViewViewController: BaseViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -78,8 +79,15 @@ final class ConsumerDishViewViewController: BaseViewController {
     private lazy var ratingContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black.withAlphaComponent(0.4)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapNewRateView(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        view.isUserInteractionEnabled = true
         return view
     }()
+    
+    @objc func didTapNewRateView(_ sender: UITapGestureRecognizer) {
+        presenter?.didTapNewRateView()
+    }
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)

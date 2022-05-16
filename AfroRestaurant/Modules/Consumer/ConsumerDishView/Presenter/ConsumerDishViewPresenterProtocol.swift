@@ -4,4 +4,5 @@ protocol ConsumerDishViewPresenterProtocol: AnyObject {
     func cartButtonTapped()
     func buyMealPressed()
     func addToFavoritesPressed()
+    func didTapNewRateView()
 }

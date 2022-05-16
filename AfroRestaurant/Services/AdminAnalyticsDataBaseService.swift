@@ -293,7 +293,7 @@ extension AdminAnalyticsDataBaseService {
     
     func rateDish(rating: Double, dishname: String, categoryName: String) {
         
-        deleteQueryForNewUpdate(collectionName: "Ratings") { [weak self] in
+        deleteQueryForNewUpdate(collectionName: "Ratings", dishName: dishname, category: categoryName) { [weak self] in
             guard let self = self else { return }
             Firestore
                 .firestore()
@@ -314,7 +314,7 @@ extension AdminAnalyticsDataBaseService {
     }
     
     func likeDish(dishname: String, categoryName: String) {
-        deleteQueryForNewUpdate(collectionName: "Likes") { [weak self] in
+        deleteQueryForNewUpdate(collectionName: "Likes", dishName: dishname, category: categoryName) { [weak self] in
             guard let self = self else { return }
             Firestore
                 .firestore()
@@ -333,7 +333,7 @@ extension AdminAnalyticsDataBaseService {
     }
     
     func unlikeDish(dishname: String, categoryName: String) {
-        deleteQueryForNewUpdate(collectionName: "Likes", completion: { })
+        deleteQueryForNewUpdate(collectionName: "Likes", dishName: dishname, category: categoryName, completion: { })
     }
     
     private func updateUpdates(dishname: String, rating: Double?, type: UpdateType) {
@@ -374,7 +374,7 @@ extension AdminAnalyticsDataBaseService {
             .firestore()
             .collection("Restaurants")
             .document("AfroRestaurant")
-            .collection("Likes")
+            .collection("Ratings")
             .whereField("dishName", isEqualTo: dishName)
             .whereField("categoryName", isEqualTo: categoryName)
             .getDocuments { [weak self] querySnapshot, error in
@@ -397,7 +397,7 @@ extension AdminAnalyticsDataBaseService {
                         let dishRating = data["rating"] as? Double
                     else { break }
                     
-                    if rating > 0 {
+                    if dishRating > 0 {
                         rating += dishRating
                         count += 1
                     }
@@ -457,13 +457,18 @@ extension AdminAnalyticsDataBaseService {
             }
     }
     
-    private func deleteQueryForNewUpdate(collectionName: String, completion: @escaping () -> Void) {
+    private func deleteQueryForNewUpdate(
+        collectionName: String,
+        dishName: String,
+        category: String,
+        completion: @escaping () -> Void) {
         let database = Firestore.firestore()
         let queriedCollection = database
             .collection("Restaurants")
             .document("AfroRestaurant")
             .collection(collectionName)
-            .whereField("userID", isEqualTo: userID)
+            .whereField("dishName", isEqualTo: dishName)
+            .whereField("categoryName", isEqualTo: category)
         
         queriedCollection.getDocuments { [weak self] (querySnapShot, error) in
             defer { completion() }

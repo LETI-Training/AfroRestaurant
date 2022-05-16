@@ -14,6 +14,7 @@ class ConsumerDishViewPresenter {
             }
         }
     }
+    
     private var ratings = 0.0 {
         didSet {
             DispatchQueue.main.async {
@@ -124,5 +125,40 @@ extension ConsumerDishViewPresenter: ConsumerDishViewPresenterProtocol {
         updateView()
         interactor?.loadLikesCount(dishname: dishModel.dishName, in: dishModel.categoryName)
         interactor?.loadRatingsCount(dishName: dishModel.dishName, in: dishModel.categoryName)
+    }
+    
+    func didTapNewRateView() {
+        view?.presentAlertWithTextField(
+            title: "Rate Dish from 1-5",
+            actionCancel: .init(actionText: "Cancel", actionHandler: {}),
+            actionComplete: .init(actionText: "Rate", actionHandler: {}),
+            placeHolder: "Rate from 1-5",
+            completion: { [weak self] rating in
+                guard
+                    let self = self,
+                    let rating = Int(rating),
+                    rating <= 5 && rating > 0
+                else {
+                    self?.view?.presentAlert(
+                        title: "Error",
+                        message: "Rating must be an integer \n value from 1 - 5",
+                        action: .init(actionText: "Okay", actionHandler: {}))
+                    return
+                }
+                
+                self.interactor?.rateDish(
+                    rating: Double(rating),
+                    dishname: self.dishModel.dishName,
+                    categoryName: self.dishModel.categoryName
+                )
+                
+                DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+                    self.interactor?.loadRatingsCount(
+                        dishName: self.dishModel.dishName,
+                        in: self.dishModel.categoryName
+                    )
+                }
+            }
+        )
     }
 }
