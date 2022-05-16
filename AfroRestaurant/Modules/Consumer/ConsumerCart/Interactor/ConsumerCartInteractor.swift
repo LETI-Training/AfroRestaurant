@@ -10,11 +10,18 @@ class ConsumerCartInteractor {
     ) {
         self.consumerDataBase = consumerDataBase
         self.orderDataBase = orderDataBase
+        orderDataBase.addListner(self)
         
         consumerDataBase.getUserDetails { [weak self] userDetails in
             self?.userDetails = userDetails
         }
     }
+    
+    deinit {
+        orderDataBase.removeListner(self)
+    }
+    
+    
 }
 
 extension ConsumerCartInteractor: ConsumerCartInteractorInput {
@@ -41,4 +48,20 @@ extension ConsumerCartInteractor: ConsumerCartInteractorInput {
     func removeDishFromCart(dishModel: ConsumerDataBaseService.ConsumerDishMinimalModel, completion: @escaping () -> Void) {
         consumerDataBase.removeDishFromCart(dishModel: dishModel, completion: completion)
     }
+}
+
+extension ConsumerCartInteractor: AdminAnalyticsDataBaseServiceOutput {
+    func adminService(didFinishLoading orderModels: [AdminAnalyticsDataBaseService.OrderModel]) {}
+    
+    func adminService(didFinishLoadingLikes likesCount: Int, for dishName: String, in categoryName: String) {}
+    
+    func adminService(didFinishLoadingRatings ratingsAverage: Double, for dishName: String, in categoryName: String) {}
+    
+    func adminService(didFinishLoadingRatingsForRestaurant ratingsAverage: Double) {}
+    
+    func adminService(didFinishLoadingUserDetails: UserDetails) {
+        self.userDetails = didFinishLoadingUserDetails
+    }
+    
+    func adminService(didFinishLoadingAllUpdates: [UpdateModel]) {}
 }
