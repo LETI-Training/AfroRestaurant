@@ -2,6 +2,7 @@ class AdminHomeInteractor {
     private let orderDataBase: AdminAnalyticsDataBaseServiceProtocol
     var ordersListener: (([AdminAnalyticsDataBaseService.OrderModel]) -> Void)?
     var updatesListener: (([UpdateModel]) -> Void)?
+    var restaurantRatingListener: ((Double) -> Void)?
     private let authService: AuthorizationServiceInput?
     var authErrorListner: ((_ errorText: String) -> Void)?
     
@@ -34,6 +35,10 @@ extension AdminHomeInteractor: AdminHomeInteractorInput {
     func loadAllUpdates() {
         orderDataBase.loadAllUpdates()
     }
+    
+    func loadRestaurantRating() {
+        orderDataBase.loadRestaurantRatingsAverage()
+    }
 }
 
 extension AdminHomeInteractor: AuthorizationServiceOutput {
@@ -57,7 +62,9 @@ extension AdminHomeInteractor: AdminAnalyticsDataBaseServiceOutput {
     
     func adminService(didFinishLoadingRatings ratingsAverage: Double, for dishName: String, in categoryName: String) {}
     
-    func adminService(didFinishLoadingRatingsForRestaurant ratingsAverage: Double) {}
+    func adminService(didFinishLoadingRatingsForRestaurant ratingsAverage: Double) {
+        restaurantRatingListener?(ratingsAverage)
+    }
     
     func adminService(didFinishLoadingUserDetails: UserDetails) {}
     

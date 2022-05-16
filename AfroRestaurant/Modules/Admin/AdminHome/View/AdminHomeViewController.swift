@@ -12,6 +12,7 @@ final class AdminHomeViewController: BaseViewController {
     private let appearance = Appearance()
     var presenter: AdminHomePresenterProtocol?
     var viewModels: [AdminUpdatesTableViewCell.ViewModel] = []
+    var ratings = "0.0"
     
     private lazy var headerView: AdminTableHeaderView = {
         let view = AdminTableHeaderView()
@@ -102,7 +103,7 @@ final class AdminHomeViewController: BaseViewController {
     private func setupNavigationBar(isDark: Bool) {
         navLargeLabel.textColor = isDark ? .background : .textPrimary
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navLargeLabel)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: makeRightBar(text: "4.5", isDark: isDark))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: makeRightBar(text: ratings, isDark: isDark))
     }
     
     private func addSubviews() {
@@ -130,6 +131,11 @@ final class AdminHomeViewController: BaseViewController {
 }
 
 extension AdminHomeViewController: AdminHomeViewInput {
+    func updateRatings(ratings: Double) {
+        let ratings = String(format: "%.1f", ratings)
+        self.ratings = ratings
+        setupNavigationBar(isDark: navLargeLabel.textColor ==  .background)
+    }
     
     func updateUI(dailyProfits: String, newOrders: String, cancelledOrders: String) {
         headerView.profitsLabel.text = dailyProfits

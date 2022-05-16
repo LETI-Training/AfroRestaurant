@@ -7,4 +7,5 @@ protocol AdminHomeViewInput: AnyObject {
     )
     func updateUI(dailyProfits: String, newOrders: String, cancelledOrders: String)
     func updateItems(viewModels: [AdminUpdatesTableViewCell.ViewModel])
+    func updateRatings(ratings: Double)
 }

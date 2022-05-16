@@ -30,6 +30,11 @@ class AdminHomePresenter {
             self.updates = updates
             self.view?.updateItems(viewModels: self.getTableViewModels())
         }
+        
+        interactor?.restaurantRatingListener = { [weak self] ratings in
+            guard let self = self else { return }
+            self.view?.updateRatings(ratings: ratings)
+        }
     }
     
     private func generateOrderData() {
@@ -81,6 +86,7 @@ extension AdminHomePresenter: AdminHomePresenterProtocol {
         setupErrorListner()
         interactor?.loadOrders()
         interactor?.loadAllUpdates()
+        interactor?.loadRestaurantRating()
         view?.updateItems(viewModels: getTableViewModels())
     }
 }

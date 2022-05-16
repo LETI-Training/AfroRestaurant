@@ -448,7 +448,7 @@ extension AdminAnalyticsDataBaseService {
                         let dishRating = data["rating"] as? Double
                     else { break }
                     
-                    if rating > 0 {
+                    if dishRating > 0 {
                         rating += dishRating
                         count += 1
                     }
@@ -456,6 +456,8 @@ extension AdminAnalyticsDataBaseService {
                 
                 if rating > 0.0 {
                     self.sendUpdateNotification(restaurantRatings: rating / Double (count))
+                } else {
+                    self.sendUpdateNotification(restaurantRatings: 0.0)
                 }
             }
     }
@@ -470,6 +472,7 @@ extension AdminAnalyticsDataBaseService {
             .collection("Restaurants")
             .document("AfroRestaurant")
             .collection(collectionName)
+            .whereField("userID", isEqualTo: userID)
             .whereField("dishName", isEqualTo: dishName)
             .whereField("categoryName", isEqualTo: category)
         
