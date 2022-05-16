@@ -54,7 +54,7 @@ class AdminProfitsHeaderView: UIView {
     
     private lazy var updatesLabel: UILabel = {
         let label = UILabel()
-        label.text = "Daily Profits"
+        label.text = "Successful Orders"
         label.textColor = .textPrimary
         label.font = .font(.extraBold, size: 20.0)
         label.textAlignment = .left

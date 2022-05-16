@@ -16,8 +16,8 @@ extension AdminProfitsTableViewCell {
     }
     
     struct ViewModel {
-        let orderNumber: Int
-        let dish: String
+        let orderNumber: String
+        let date: String
         let price: Double
     }
 }
@@ -28,7 +28,7 @@ class AdminProfitsTableViewCell: UITableViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             let priceString = String(format: "%.2f", viewModel.price)
-            actionLabel.text = "# Order\(viewModel.orderNumber). - \(viewModel.dish)"
+            actionLabel.text = "\(viewModel.date) - #\(viewModel.orderNumber.components(separatedBy: ".").last ?? viewModel.orderNumber)"
             priceLabel.text = "+RUB \(priceString)"
         }
     }
@@ -85,7 +85,7 @@ class AdminProfitsTableViewCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
         
-        priceLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        priceLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         priceLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(appearance.leadingTrailingInset)

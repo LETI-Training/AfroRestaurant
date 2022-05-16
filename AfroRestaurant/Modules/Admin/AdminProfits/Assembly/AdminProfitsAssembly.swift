@@ -6,7 +6,7 @@ class AdminProfitsAssembly {
         let view = AdminProfitsViewController()
         let router = AdminProfitsRouter()
         let presenter = AdminProfitsPresenter()
-        let interactor = AdminProfitsInteractor()
+        let interactor = AdminProfitsInteractor(orderDataBase: ServiceLocator.shared.getService()!)
 
         view.presenter = presenter
         presenter.view = view
