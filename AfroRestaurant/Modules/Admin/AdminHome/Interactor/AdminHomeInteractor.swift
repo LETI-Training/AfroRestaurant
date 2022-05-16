@@ -1,6 +1,7 @@
 class AdminHomeInteractor {
     private let orderDataBase: AdminAnalyticsDataBaseServiceProtocol
     var ordersListener: (([AdminAnalyticsDataBaseService.OrderModel]) -> Void)?
+    var updatesListener: (([UpdateModel]) -> Void)?
     private let authService: AuthorizationServiceInput?
     var authErrorListner: ((_ errorText: String) -> Void)?
     
@@ -29,6 +30,10 @@ extension AdminHomeInteractor: AdminHomeInteractorInput {
     func performLogout() {
         authService?.signOut()
     }
+    
+    func loadAllUpdates() {
+        orderDataBase.loadAllUpdates()
+    }
 }
 
 extension AdminHomeInteractor: AuthorizationServiceOutput {
@@ -56,5 +61,7 @@ extension AdminHomeInteractor: AdminAnalyticsDataBaseServiceOutput {
     
     func adminService(didFinishLoadingUserDetails: UserDetails) {}
     
-    func adminService(didFinishLoadingAllUpdates: [UpdateModel]) {}
+    func adminService(didFinishLoadingAllUpdates: [UpdateModel]) {
+        updatesListener?(didFinishLoadingAllUpdates)
+    }
 }

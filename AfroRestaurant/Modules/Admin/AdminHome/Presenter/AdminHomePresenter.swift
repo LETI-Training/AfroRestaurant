@@ -6,6 +6,7 @@ class AdminHomePresenter {
     var router: AdminHomeRouter?
     
     var orders: [AdminAnalyticsDataBaseService.OrderModel] = []
+    var updates = [UpdateModel]()
 
     init() {}
     
@@ -22,6 +23,12 @@ class AdminHomePresenter {
         interactor?.ordersListener = { [weak self] orders in
             self?.orders = orders
             self?.generateOrderData()
+        }
+        
+        interactor?.updatesListener = { [weak self] updates in
+            guard let self = self else { return }
+            self.updates = updates
+            self.view?.updateItems(viewModels: self.getTableViewModels())
         }
     }
     
@@ -73,50 +80,26 @@ extension AdminHomePresenter: AdminHomePresenterProtocol {
     func viewDidLoad() {
         setupErrorListner()
         interactor?.loadOrders()
+        interactor?.loadAllUpdates()
         view?.updateItems(viewModels: getTableViewModels())
     }
 }
 
 extension AdminHomePresenter {
     private func getTableViewModels() -> [AdminUpdatesTableViewCell.ViewModel] {
-        [
-            .init(name: "Michael", dish: "Spaghetti", type: .favorite),
-            .init(name: "Jane", dish: "Coconut Rice", type: .favorite),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jenny", dish: "Rice", type: .rating),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jamila", dish: "Beans", type: .rating),
-            .init(name: "Michael", dish: "Spaghetti", type: .favorite),
-            .init(name: "Jane", dish: "Coconut Rice", type: .favorite),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jenny", dish: "Rice", type: .rating),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jamila", dish: "Beans", type: .rating),
-            .init(name: "Michael", dish: "Spaghetti", type: .favorite),
-            .init(name: "Jane", dish: "Coconut Rice", type: .favorite),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jenny", dish: "Rice", type: .rating),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jamila", dish: "Beans", type: .rating),
-            .init(name: "Michael", dish: "Spaghetti", type: .favorite),
-            .init(name: "Jane", dish: "Coconut Rice", type: .favorite),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jenny", dish: "Rice", type: .rating),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jamila", dish: "Beans", type: .rating),
-            .init(name: "Michael", dish: "Spaghetti", type: .favorite),
-            .init(name: "Jane", dish: "Coconut Rice", type: .favorite),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jenny", dish: "Rice", type: .rating),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jamila", dish: "Beans", type: .rating),
-            .init(name: "Michael", dish: "Spaghetti", type: .favorite),
-            .init(name: "Jane", dish: "Coconut Rice", type: .favorite),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jenny", dish: "Rice", type: .rating),
-            .init(name: "Samuel", dish: "Egusi", type: .favorite),
-            .init(name: "Jamila", dish: "Beans", type: .rating)
-        ]
+        let updates = updates.sorted(by: { $1.date < $0.date })
+        return updates.compactMap({
+            let type: AdminUpdatesTableViewCell.ImageType
+            
+            switch $0.type {
+            case .rating:
+                type = .rating(rating: Int($0.rating))
+            case .likes:
+                type = .favorite
+            }
+            
+            return AdminUpdatesTableViewCell.ViewModel.init(name: $0.userName, dish: $0.dishname, type: type)
+        })
         
     }
 }

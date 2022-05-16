@@ -155,10 +155,9 @@ extension AdminHomeViewController: UITableViewDataSource {
         ) as? AdminUpdatesTableViewCell else {
             return UITableViewCell()
         }
-        let cellViewModel = viewModels[indexPath.row]
         cell.accessoryType = .none
         cell.selectionStyle = .none
-        cell.viewModel = cellViewModel
+        cell.viewModel = viewModels[indexPath.row]
         return cell
     }
     

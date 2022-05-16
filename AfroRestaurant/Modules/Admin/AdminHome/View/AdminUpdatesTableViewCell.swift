@@ -23,7 +23,7 @@ extension AdminUpdatesTableViewCell {
     
     enum ImageType {
         case favorite
-        case rating
+        case rating(rating: Int)
     }
 }
 
@@ -37,8 +37,8 @@ class AdminUpdatesTableViewCell: UITableViewCell {
             case .favorite:
                 actionLabel.text = "\(viewModel.name) added \(viewModel.dish) to favorites"
                 iconImageView.image = .favorite
-            case .rating:
-                actionLabel.text = "\(viewModel.name) added a rating for \(viewModel.dish)"
+            case .rating(let rating):
+                actionLabel.text = "\(viewModel.name) added a \(rating).0 rating for \(viewModel.dish)"
                 iconImageView.image = .greenStar
             }
         }

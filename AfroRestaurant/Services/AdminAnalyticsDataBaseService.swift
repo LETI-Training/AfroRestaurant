@@ -17,6 +17,7 @@ struct UpdateModel {
     let dishname: String
     let type: UpdateType
     let userName: String
+    let date: Date
 }
 
 enum UpdateType: String {
@@ -349,7 +350,8 @@ extension AdminAnalyticsDataBaseService {
                 "rating" : rating ?? 0.0,
                 "dishName": dishname,
                 "updateType": type.rawValue,
-                "userName": userDetails?.userName ?? ""
+                "userName": userDetails?.userName ?? "",
+                "dateAdded": Date().timeIntervalSince1970
             ], merge: true)
     }
     
@@ -512,11 +514,13 @@ extension AdminAnalyticsDataBaseService {
                     
                     let typeString = data["updateType"] as? String ?? ""
                     guard let type = UpdateType(rawValue: typeString) else { break }
+                    let timeInterval: Double = data["dateAdded"] as? Double ?? Date().timeIntervalSince1970
                     updates.append(.init(
                         rating: data["rating"] as? Double ?? 0,
                         dishname: data["dishName"] as? String ?? "a dish",
                         type: type,
-                        userName: data["userName"] as? String ?? "a user"
+                        userName: data["userName"] as? String ?? "a user",
+                        date: Date(timeIntervalSince1970: timeInterval)
                     ))
                 }
                 
