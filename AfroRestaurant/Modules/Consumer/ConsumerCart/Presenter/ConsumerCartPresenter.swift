@@ -57,8 +57,12 @@ class ConsumerCartPresenter {
             partialResult + (Double(model.quantity) * model.dishModel.price)
         }
         
+        let totalCals = cartModels.reduce(0) { partialResult, model in
+            partialResult + (model.quantity * model.dishModel.calories)
+        }
+        
         if !cartModels.isEmpty {
-            let amountViewModel = CartPriceLabelCell.ViewModel(totalAmount: totalAmount)
+            let amountViewModel = CartPriceLabelCell.ViewModel(totalAmount: totalAmount, totalCalories: totalCals)
             viewModels.append(.init(type: .amount(amountViewModel)))
         }
         

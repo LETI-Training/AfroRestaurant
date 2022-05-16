@@ -12,7 +12,7 @@ class ConsumerCartInteractor {
         self.orderDataBase = orderDataBase
         orderDataBase.addListner(self)
         
-        consumerDataBase.getUserDetails { [weak self] userDetails in
+        orderDataBase.getUserDetails { [weak self] userDetails in
             self?.userDetails = userDetails
         }
     }

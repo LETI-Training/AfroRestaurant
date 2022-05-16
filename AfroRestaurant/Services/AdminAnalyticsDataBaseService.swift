@@ -71,6 +71,7 @@ protocol AdminAnalyticsDataBaseServiceProtocol: AnyObject {
     func loadRatingsCount(dishName: String, in categoryName: String)
     func loadRestaurantRatingsAverage()
     func loadAllUpdates()
+    func getUserDetails(completion: @escaping (UserDetails?) -> ()) 
 }
 
 protocol AdminAnalyticsDataBaseServiceOutput: AnyObject {
@@ -119,7 +120,7 @@ final class AdminAnalyticsDataBaseService {
         }
     }
     
-    private func getUserDetails(completion: @escaping (UserDetails?) -> ()) {
+    func getUserDetails(completion: @escaping (UserDetails?) -> ()) {
         Firestore
             .firestore()
             .collection("Users")

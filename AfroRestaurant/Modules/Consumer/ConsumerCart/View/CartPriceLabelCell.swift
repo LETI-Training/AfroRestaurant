@@ -16,6 +16,7 @@ extension CartPriceLabelCell {
     
     struct ViewModel {
         let totalAmount: Double
+        let totalCalories: Int
     }
 }
 
@@ -25,6 +26,7 @@ class CartPriceLabelCell: UITableViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             priceLabel.text = "RUB " + String(format: "%.2f", viewModel.totalAmount)
+            caloriesLabel.text = String(format: "%d", viewModel.totalCalories) + " Cal."
         }
     }
     
@@ -44,6 +46,25 @@ class CartPriceLabelCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .brandGreen
         label.font = .font(.extraBold, size: 16.0)
+        label.textAlignment = .left
+        label.sizeToFit()
+        return label
+    }()
+    
+    private lazy var totalCaloriesLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .textPrimary
+        label.font = .font(.boldItalic, size: 12.0)
+        label.text = "Calories:"
+        label.textAlignment = .left
+        label.sizeToFit()
+        return label
+    }()
+    
+    private lazy var caloriesLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .textSecondary
+        label.font = .font(.mediumItalic, size: 12.0)
         label.textAlignment = .left
         label.sizeToFit()
         return label
@@ -71,6 +92,8 @@ class CartPriceLabelCell: UITableViewCell {
     private func addSubviews() {
         contentView.addSubview(totalLabel)
         contentView.addSubview(priceLabel)
+        contentView.addSubview(caloriesLabel)
+        contentView.addSubview(totalCaloriesLabel)
         contentView.addSubview(dividerView)
     }
     
@@ -82,6 +105,16 @@ class CartPriceLabelCell: UITableViewCell {
         
         priceLabel.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(13.0)
+            make.trailing.equalToSuperview()
+        }
+        
+        totalCaloriesLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(priceLabel.snp.top).offset(-5)
+            make.leading.equalToSuperview()
+        }
+        
+        caloriesLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(priceLabel.snp.top).offset(-5)
             make.trailing.equalToSuperview()
         }
         
