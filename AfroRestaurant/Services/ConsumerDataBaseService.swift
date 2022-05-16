@@ -176,8 +176,12 @@ final class ConsumerDataBaseService {
         defer { lock.unlock() }
         
         return favorites.compactMap {
-            return adminService
+            let model = adminService
                 .getDishModel(dishName: $0.dishName, categoryName: $0.categoryName)
+            if model == nil {
+                self.removeDishFromFavorite(dishModel: $0, completion: {})
+            }
+            return model
         }
     }
     
@@ -189,7 +193,10 @@ final class ConsumerDataBaseService {
             guard
                 let model =  adminService
                     .getDishModel(dishName: $0.minimalModel.dishName, categoryName: $0.minimalModel.categoryName)
-            else { return nil }
+            else {
+                self.removeDishFromCart(dishModel: $0.minimalModel, completion: {})
+                return nil
+            }
             
             return .init(dishModel: model, quantity: $0.quantity, date: $0.date ?? Date())
         }
